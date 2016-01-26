@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: Wsparcie dla NUMA we FreeBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "NUMA (Non-Uniform Memory Access) jest architekturą pamięci dla maszyn wieloprocesorowych
+  o&nbsp; pamięci wsp&oacute;łdzielonej. NUMA charakteryzującą się tym, że każdy fizyczny
+  procesor posiada dedykowany fragment pamięci fizycznej dołączony przez indywidualny
+  kontroler pamięci. NUMA umożliwia osiągnięcie większej skalowalności - w przeciwieństwie
+  do UMA, NUMA nie wprowadza pojedynczego wąskiego gardła w dostępie do pamięci.\r\n\r\n"
+wordpress_id: 939
+wordpress_url: http://beastie.pl/?p=939
+date: '2015-07-22 23:46:24 -0400'
+date_gmt: '2015-07-22 21:46:24 -0400'
+categories:
+- Bez kategorii
+tags:
+- freebsd
+- acpi
+- kernel
+- numa
+- wsp&oacute;łbieżność
+- uma
+- srat
+comments: []
+---
+<p>NUMA (Non-Uniform Memory Access) jest architekturą pamięci dla maszyn wieloprocesorowych o&nbsp; pamięci wsp&oacute;łdzielonej. NUMA charakteryzującą się tym, że każdy fizyczny procesor posiada dedykowany fragment pamięci fizycznej dołączony przez indywidualny kontroler pamięci. NUMA umożliwia osiągnięcie większej skalowalności - w przeciwieństwie do UMA, NUMA nie wprowadza pojedynczego wąskiego gardła w dostępie do pamięci.</p>
+<p><a id="more"></a><a id="more-939"></a></p>
+<p>Sama architektura NUMA jest realizowana sprzętowo bez udziału systemu operacyjnego, a do jej realizacji używane są technologie wbudowane w procesor oraz specjalna szyna, łącząca procesory w kostkę wielowymiarową i umożliwiającą procesorom dostęp do zakres&oacute;w pamięci innych procesor&oacute;w.</p>
+<p>System operacyjny może wykorzystywać wiedzę o topologii procesor&oacute;w i pamięci w celu zwiększenia swojej wydajności, a także aplikacji w nim uruchomionych. W tym celu do FreeBSD dodano <a href="https:&#47;&#47;svnweb.freebsd.org&#47;base&#47;head&#47;sys&#47;x86&#47;acpica&#47;srat.c?view=markup&amp;pathrev=276829">parser tablicy SRAT <&#47;a>z ACPI, kt&oacute;ra zawiera informację o zakresach pamięci przydzielonych do poszczeg&oacute;lnych procesor&oacute;w oraz zmodyfikowano podsystem zarządzania pamięcią wirtualną.</p>
+<p>Podziękowanie dla <a href="https:&#47;&#47;github.com&#47;kjopek">Konrada Jopka<&#47;a> za merytoryczne poszerzenie newsa.</p>

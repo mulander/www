@@ -1,0 +1,90 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Dmitrij D. Czarkoff'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nPiąty&nbsp;Dmitrij D. Czarkoff\r\n\r\n"
+wordpress_id: 1287
+wordpress_url: http://beastie.pl/?p=1287
+date: '2015-10-22 20:23:45 -0400'
+date_gmt: '2015-10-22 18:23:45 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Piąty&nbsp;Dmitrij D. Czarkoff</p>
+<p><a id="more"></a><a id="more-1287"></a></p>
+<hr &#47;>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our fifth&nbsp;interview - Dmitrij D. Czarkoff.</p>
+<hr &#47;>
+<p><b>1. For the readers who don&rsquo;t know you, can you shortly introduce yourself?<&#47;b></p>
+<p>I am Dmitrij D. Czarkoff (Дмитрий Царьков).&nbsp; I was born in Russia, where&nbsp;I graduated with degree in Law and worked as a lawyer for an insurance&nbsp;company.&nbsp; At some point I decided to make a switch and moved to Herceg&nbsp;Novi, a town on a western border of Montenegro, where I currently run a&nbsp;small consulting business.&nbsp; Earlier this year I became an OpenBSD&nbsp;developer.</p>
+<p><b>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;b></p>
+<p>In 2005 I tried OpenBSD for the first time.&nbsp; I still recall how I was&nbsp;impressed by the fact that I only needed ifconfig (as opposed to&nbsp;ifconfig, iwconfig and wpa_supplicant on Linux) to configure my wireless&nbsp;network card.</p>
+<p>At that time I had no interest in security, but there were aspects of&nbsp;OpenBSD that made me stay:&nbsp; availability of documentation, simplicity,&nbsp;consistency in base system, overall stability of the system, and&nbsp;particularily of device drivers.</p>
+<p><b>3. For those readers that still haven&rsquo;t joined the OpenBSD community, why should they try OpenBSD?<&#47;b></p>
+<p>OpenBSD has a strong reputation for its security features.&nbsp; But it has&nbsp;more to offer to all sorts of users.</p>
+<p>On OpenBSD everything has a manual page, and it is always easy to find&nbsp;necessary information without launching web browser.&nbsp; It is always up to&nbsp;date, even on -current branch.&nbsp; It is accessed with man(1) command, so&nbsp;user will never see something like "The full documentation for sed is&nbsp;maintained as a Texinfo manual."&nbsp; Developers discourage using howto&nbsp;articles from the web, and project doesn't have a wiki, just because&nbsp;it is not needed.&nbsp; There is a FAQ though, a document on OpenBSD's&nbsp;website containing answers and pointers to right manual pages for&nbsp;questions new OpenBSD user may have. And there are mailing lists.</p>
+<p>System is built with simplicity and consistency in mind.&nbsp; When user&nbsp;interface is in question, evolutionary changes are prefered to&nbsp;revolutionary.&nbsp; No configuration of device drivers is required. Software&nbsp;comes with sane defaults; when there is a need to configure something,&nbsp;it is very easy to get an idea how to do so.&nbsp; Programs are mostly&nbsp;compatible with POSIX standards. Consequently, learning curve is not as&nbsp;steep as with most other operating systems.</p>
+<p>Package management on OpenBSD is far ahead of competition.&nbsp; Update&nbsp;process is very reliable and does not require as much attention as on&nbsp;other systems.&nbsp; The ports infrastructure of OpenBSD is probably the&nbsp;easiest to grasp, so that porting third-party software to OpenBSD is&nbsp;very easy, although the collection of ports will most likely be&nbsp;sufficient for most users.</p>
+<p>Security features of OpenBSD make it an excellent choice for development&nbsp;platform:&nbsp; various countermeasures that are implemented in the system&nbsp;reveal many common bad practices and weak spots in code. Particularily,&nbsp;setting strict options for the memory allocator in malloc.conf(5) helps&nbsp;revealing errors in memory management that could otherwise evade&nbsp;detection on other platforms.&nbsp; Getting code running on OpenBSD may help&nbsp;a lot towards making it more portable and secure.</p>
+<p><b>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;b></p>
+<p>Yes, with some exceptions.&nbsp; Obviously my phone doesn't run OpenBSD.&nbsp; Some&nbsp;projects at work are not related to OpenBSD, but I do most of my work on&nbsp;OpenBSD anyway, whenever possible.</p>
+<p><b>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;b></p>
+<p>Some say that "commit bit" is a punishment for sending too many patches.&nbsp;When you contribute to the project, your contributions are good enough,&nbsp;and you show interest in continuing to contribute, you get CVS access.</p>
+<p><b>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;b></p>
+<p>I work on ports.&nbsp; Mainly, on telephony, instant messaging, multimedia&nbsp;and golang support, though I am slowly getting sucked into other areas,&nbsp;and the amount of ports I maintain is slowly growing.</p>
+<p><b>7. Do you have an idea of the time you spend working on the OpenBSD project?<&#47;b></p>
+<p>Not really.&nbsp; The only thing I know for sure -&nbsp; I'd love to spend more&nbsp;time on it.</p>
+<p><b>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the oustide world?<&#47;b></p>
+<p>I am not aware of such changes, and I don't see necessity.&nbsp; It works&nbsp;fine right now.</p>
+<p><b>9. It&rsquo;s been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;b></p>
+<p>I am a new developer, so I just don't have necessary track record to be&nbsp;proud of something.&nbsp; There is a long way ahead.</p>
+<p>There is a thing I'd like to revisit, and it is a lang&#47;go ports module,&nbsp;which is used by ports of software written in go.&nbsp; I am slowly working&nbsp;on improving go support in ports tree, but I am not ready to show&nbsp;anything yet.</p>
+<p><b>10. As a conclusion, can you tell us how you forecast OpenBSD&rsquo;s future? What&rsquo;s the next big challenge?<&#47;b></p>
+<p>Well, there are some long-running challenges like addressing new&nbsp;security risks and resisting Linux monoculture.&nbsp; The way things happen&nbsp;in technology these days make these challenges harder and harder.&nbsp; The&nbsp;pace of development of modern web doesn't make it easier either.</p>
+<p>Another, older challege that recently returned is diversity in commonly&nbsp;available hardware.&nbsp; Smartphones, tablets and other modern gadgets are&nbsp;basically another type of computing devices with unique short lived and&nbsp;opensource-unfriendly hardware platforms, and there are users who want&nbsp;these things to be as secure as their laptops.</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Jestem&nbsp;Dmitrij D. Czarkoff (Дмитрий Царьков). Urodziłem się w Rosji, gdzie ukończyłem Prawo i pracowałem jako prawnik w firmie ubezpieczeniowej. &nbsp;W pewnym momencie postanowiłem to zmienić i przeprowadziłem się do Herceg Novi, miasta przy&nbsp;zachodniej granicy Czarnog&oacute;ry, gdzie obecnie prowadzę mały biznes konsultingowy. Na początku bieżącego roku zostałem deweloperem OpenBSD.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Pierwszy raz spr&oacute;bowałem OpenBSD w 2015 roku. Nadal pamiętam pod jakim byłem wrażeniem, kiedy to okazało się, że potrzebuję jedynie ifconfig (w przeciwieństwie do ifconfig, iwconfig i wpa_supplicant w przypadku Linuksa), aby skonfigurować swoją kartę wifi.</p>
+<p>Wtedy jeszcze nie byłem zainteresowany bezpieczeństwem, lecz były inne aspekty OpenBSD, kt&oacute;re spowodowały, że przy nim pozostałem: dostępność dokumentacji, prostota, sp&oacute;jność bazowego systemu, og&oacute;lna stabilność, a w szczeg&oacute;lności sterowniki do sprzętu.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>OpenBSD&nbsp;ma wyrobioną reputację na podstawie swoich funkcjonalności związanych z bezpieczeństwem. Ma jednak więcej do zaoferowania całej gamie użytkownik&oacute;w.</p>
+<p>W OpenBSD wszystko posiada swoją stronę w man, bardzo łatwo jest znaleźć potrzebne&nbsp;informacje bez otwierania przeglądarki internetowej. Dokumentacja jest zawsze bieżąca, nawet na gałęzi -current. Dostęp do pełnej dokumentacji uzyskuje się przez program man(1), więc użytkownik nigdy nie zobaczy informacji w stylu "Pełna dokumentacja dla sed jest utrzymywana jako manual&nbsp;Texinfo". Deweloperzy aktywnie zniechęcają do używania artykuł&oacute;w howto z sieci, a projekt nie posiada wiki, ponieważ nie jest ona potrzebna. Istnieje FAQ, zwykły dokument na stronie OpenBSD, zawierający odpowiedzi i wskaz&oacute;wki dotyczące konkretnych stron manuala, odpowiadające na pytania nowych użytkownik&oacute;w. Istnieją ponadto listy mailingowe.</p>
+<p>System zbudowany jest z myślą o prostocie i sp&oacute;jności. Jeśli chodzi o interfejs użytkownika, to preferowane są rozwiązania ewolucyjne, a nie rewolucyjne. Żadna konfiguracja sterownik&oacute;w urządzeń nie jest wymagana. Oprogramowanie dostarczane jest z sensownymi ustawieniami domyślnymi - Jeżeli coś wymaga specyficznej konfiguracji, to bardzo łatwo jest uzyskać informację, jak to zrobić. Programy są w większości kompatybilne ze standardami POSIX. W konsekwencji, czas potrzebny na naukę nie jest tak długi, jak w przypadku innych system&oacute;w operacyjnych.</p>
+<p>Zarządzanie pakietami w OpenBSD zdecydowanie wiedzie prym wobec do konkurencji. Aktualizacja systemu jest&nbsp;praktycznie niezawodna i nie wymaga tyle uwagi, co inne systemy operacyjne. Infrastruktura port&oacute;w jest prawdopodobnie jedną z najłatwiejszych do ogarnięcia, zatem portowanie zewnętrznego oprogramowania pod OpenBSD jest bardzo łatwe. Mimo to obecna kolekcja port&oacute;w zapewne będzie wystarczająca dla większości użytkownik&oacute;w.</p>
+<p>Funkcjonalności związane z bezpieczeństwem w OpenBSD sprawiają, że jest ono fantastyczną platformą do rozwoju oprogramowania: wiele mechanizm&oacute;w kontrujących sposoby ataku zostało zaimplementowanych, a odsłaniają one wiele powszechnych i złych praktyk oraz wrażliwych miejsc w kodzie. W szczeg&oacute;lności korzystanie z opcji w alokatorze pamięci przez malloc.conf(5) pomaga wyłapywać błędy w zarządzaniu pamięcią, kt&oacute;re na innych systemach mogłyby pozostać niezauważone. Uruchamianie kodu na OpenBSD może bardzo pom&oacute;c w polepszaniu bezpieczeństwa oraz przenośności program&oacute;w.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Tak, z drobnymi wyjątkami. Oczywiście m&oacute;j telefon nie działa pod kontrolą OpenBSD. Niekt&oacute;re projekty w pracy nie są związane z OpenBSD, lecz ja i tak większość mojej pracy wykonuję używając OpenBSD, kiedy jest to tylko możliwe.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Niekt&oacute;rzy m&oacute;wią, że bit commitowania jest karą za wysyłanie zbyt dużej ilości łat. Jeżeli udzielasz się w projekcie, twoja praca jest wystarczająco dobra, a ty sam wykazujesz dalszą&nbsp;chęć do pracy - to dostajesz dostęp do CVS.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Pracuję przy portach, gł&oacute;wnie nad&nbsp;sekcjami port&oacute;w telefonii, komunikator&oacute;w, multimedi&oacute;w oraz wsparciem dla języka Go, chociaż powoli wciągany jestem w inne obszary, a liczba port&oacute;w, kt&oacute;rymi się zajmuję, powoli wzrasta.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>Nie wiem zbytnio. Jedno czego jestem pewien - chciałbym spędzać nad nim znacznie więcej czasu.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Nie jestem świadom tego typu zmian i nie widzę dla nich powodu. To co mamy obecnie, sprawdza się&nbsp;świetnie.</p>
+<p><strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Jestem nowym deweloperem, wiec brakuje mi odpowiedniego rozbiegu, by już teraz wskazywać projekty, z kt&oacute;rych jestem dumny. Spora droga przede mną.</p>
+<p>Jest jedna rzecz, do kt&oacute;rej chcę ponownie wr&oacute;cić, a jest nią moduł port&oacute;w lang&#47;go, używany do portowania oprogramowania napisanego w języku Go. Powoli ulepszam wsparcie dla języka Go w drzewie port&oacute;w, lecz jeszcze nie jestem got&oacute;w pokazać efekt&oacute;w tej pracy.</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>Są pewne długoterminowe wyzwania - takie jak adresowanie bieżących nowych zagrożeń bezpieczeństwa oraz opieranie się monokulturze Linuksa. Spos&oacute;b, w jaki ostatnimi czasy zachodzą zmiany w technologii sprawia, że jest to coraz bardziej&nbsp;trudne. Tempo rozwoju wsp&oacute;łczesnych sieci wcale tego nie ułatwia.</p>
+<p>Kolejnym starszym wyzwaniem, kt&oacute;re niedawno powr&oacute;ciło, jest zr&oacute;żnicowanie w powszechnie dostępnym sprzęcie. Smartfony, tablety, czy inne wsp&oacute;łczesne gadżety są r&oacute;żnych rodzaj&oacute;w komputerami z unikalnymi, kr&oacute;tko żyjącymi platformami sprzętowymi, z natury dość nieprzyjaznymi dla środowisk Open Source, a my mamy użytkownik&oacute;w, kt&oacute;rzy chcieliby, aby te rzeczy, były tak bezpieczne, jak ich laptopy.</p>

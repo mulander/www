@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: OpenSSH wyłącza w domyślnej instalacji protok&oacute;ł SSH-1
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: Zesp&oacute;ł OpenBSD poczynił kolejny krok mający na celu porzucenie protokołu
+  SSH-1 i zastąpienie go SSH-2 lub nowszym. W ostatnio wydanej wersji <a title="Nowa
+  wersja OpenSSH 6.8" href="http:&#47;&#47;beastie.pl&#47;nowa-wersja-openssh-6-8&#47;">OpenSSH
+  6.8<&#47;a> wsparcie dla tej sędziwej technologii zostało uczynione opcjonalnym,
+  a po niedawnej zmianie dokonanej w pliku <code>src&#47;usr.bin&#47;ssh&#47;Makefile.inc<&#47;code>
+  została ona domyślnie wyłączona. Zgodnie z <a href="https:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=142716088814469&amp;w=2">ogłoszeniem
+  Damiena Millera<&#47;a> wprowadzenie tej modyfikacji we wczesnej fazie rozwoju kolejnej
+  edycji oprogramowania ma na celu wczesne wykrycie potencjalnych problem&oacute;w
+  i rozeznanie czy ktoś tego jeszcze potrzebuje.
+wordpress_id: 230
+wordpress_url: http://beastie.pl/?p=230
+date: '2015-03-28 11:44:13 -0400'
+date_gmt: '2015-03-28 10:44:13 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- openssh
+- bezpieczeństwo
+comments: []
+---
+<p>Zesp&oacute;ł OpenBSD poczynił kolejny krok mający na celu porzucenie protokołu SSH-1 i zastąpienie go SSH-2 lub nowszym. W ostatnio wydanej wersji <a title="Nowa wersja OpenSSH 6.8" href="http:&#47;&#47;beastie.pl&#47;nowa-wersja-openssh-6-8&#47;">OpenSSH 6.8<&#47;a> wsparcie dla tej sędziwej technologii zostało uczynione opcjonalnym, a po niedawnej zmianie dokonanej w pliku <code>src&#47;usr.bin&#47;ssh&#47;Makefile.inc<&#47;code> została ona domyślnie wyłączona. Zgodnie z <a href="https:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=142716088814469&amp;w=2">ogłoszeniem Damiena Millera<&#47;a> wprowadzenie tej modyfikacji we wczesnej fazie rozwoju kolejnej edycji oprogramowania ma na celu wczesne wykrycie potencjalnych problem&oacute;w i rozeznanie czy ktoś tego jeszcze potrzebuje.<a id="more"></a><a id="more-230"></a></p>
+<p>SSH-1 jest protokołem zaprojektowanym i zaimplementowanym w 1995 r. przez&nbsp;<a href="http:&#47;&#47;docstore.mik.ua&#47;orelly&#47;networking_2ndEd&#47;ssh&#47;ch01_05.htm">Tatu Yl&ouml;nen<&#47;a>, naukowca z Technicznego Uniwersytetu Helsińskiego. Po nieoczekiwanym spopularyzowaniu tego rozwiązania z czasem rozpoznano w samym protokole problemy, kt&oacute;re nie mogły być rozwiązane bez zarzucenia kompatybilności wstecznej. W ten spos&oacute;b narodziła się kolejna rewizja protokołu SSH-2, kt&oacute;ry został opracowany w 1998 r.</p>
+<p>Nowsze implementacje SSH wspierają już tylko i wyłącznie SSH-2, wśr&oacute;d nich warto wymienić <a href="http:&#47;&#47;www.lysator.liu.se&#47;~nisse&#47;lsh&#47;">GNU lsh<&#47;a> i <a href="https:&#47;&#47;matt.ucc.asn.au&#47;dropbear&#47;dropbear.html">Dropbear<&#47;a>.</p>

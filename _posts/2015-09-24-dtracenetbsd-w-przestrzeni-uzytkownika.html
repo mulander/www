@@ -1,0 +1,34 @@
+---
+layout: post
+status: publish
+published: true
+title: DTrace&#47;NetBSD w przestrzeni użytkownika
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 1147
+wordpress_url: http://beastie.pl/?p=1147
+date: '2015-09-24 23:30:01 -0400'
+date_gmt: '2015-09-24 21:30:01 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- freebsd
+- dtrace
+- libproc
+- librtld_db
+comments: []
+---
+<p>Dzięki ogromowi wysiłu Christosa Zoulasa NetBSD otrzymało userlandowe wsparcie dla śledzenia proces&oacute;w narzędziem DTrace, na platformie NetBSD. Ogrom pracy herkulesowej Christosa trudno streścić w paru zdaniach, wystarczy wymienić, że NetBSD wzbogaciło się o:</p>
+<ul>
+<li>przeportowanie libproc (z FreeBSD),<&#47;li>
+<li>przeportowanie librtld_db (z FreeBSD),<&#47;li>
+<li>rozszerzenie interferfejsu <sys&#47;proc.h> o funkcję proc_find_locked(),<&#47;li>
+<li>dodanie nowych interfejs&oacute;w syscalli KERN_PROC_PATHNAME i VM_PROC_MAP,<&#47;li>
+<li>integrację nowych podsystem&oacute;w śledzenia proces&oacute;w z DTrace.<&#47;li><br />
+<&#47;ul></p>

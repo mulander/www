@@ -1,0 +1,55 @@
+---
+layout: topic
+status: publish
+published: true
+title: "Śledzenie wersji rozwojowej systemu BSD"
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 325
+wordpress_url: https://beastie.pl/forums/topic/sledzenie-wersji-rozwojowej-systemu-bsd/
+date: '2015-04-05 13:53:04 -0400'
+date_gmt: '2015-04-05 11:53:04 -0400'
+categories: []
+tags: []
+comments: []
+---
+<p>Systemy BSD były pionierami w wykorzystaniu narzędzi do zarządzania kodem. Z czasem te narzędzia ulegały zmianom i migrowały na alternatywne rozwiązania.</p>
+<p><strong>UWAGA: Nie korzystaj z zasob&oacute;w serwer&oacute;w macierzystych, zawsze korzystaj z mirrora!<&#47;strong></p>
+<p><strong>FreeBSD<&#47;strong> obecnie wykorzystuje Subversion i oferuje oficjalny mirror w gicie na GitHubie.</p>
+<p>svn:<br />
+<a href="https:&#47;&#47;www.freebsd.org&#47;doc&#47;handbook&#47;svn.html">https:&#47;&#47;www.freebsd.org&#47;doc&#47;handbook&#47;svn.html<&#47;a></p>
+<p>git:<br />
+<code>git clone https:&#47;&#47;github.com&#47;freebsd&#47;freebsd.git<&#47;code></p>
+<p><strong>DragonflyBSD<&#47;strong> prowadzi rozw&oacute;j w gicie.</p>
+<p><code>git clone git:&#47;&#47;git.dragonflybsd.org&#47;dragonfly.git dragonfly<&#47;code></p>
+<p><strong>NetBSD<&#47;strong> od początku wykorzystuje CVS, mirrory w gicie można znaleźć na GitHubie.</p>
+<p><a href="https:&#47;&#47;www.netbsd.org&#47;docs&#47;current&#47;">https:&#47;&#47;www.netbsd.org&#47;docs&#47;current&#47;<&#47;a></p>
+<p>CVS:<br />
+<code>cvs -d anoncvs@anoncvs.netbsd.org:&#47;cvsroot checkout -P src<&#47;code><br />
+<code>cvs -d anoncvs@anoncvs.netbsd.org:&#47;cvsroot checkout -P xsrc<&#47;code><br />
+<code>cvs -d anoncvs@anoncvs.netbsd.org:&#47;cvsroot checkout -P pkgsrc<&#47;code></p>
+<p>CVS + rsync:<br />
+Najpierw należy pobrać repozytoria rsyncem<br />
+<code>for m in CVSROOT htdocs src xsrc pkgsrc othersrc; do rsync -az --delete -h --progress rsync:&#47;&#47;anoncvs.netbsd.org&#47;cvsroot&#47;$m&#47; $m; done<&#47;code><br />
+<code>rsync -az --delete -h --progress rsync:&#47;&#47;pkgsrc-wip.cvs.sourceforge.net&#47;cvsroot&#47;pkgsrc-wip&#47; pkgsrc-wip<&#47;code></p>
+<p>Następnie w innym katalogu:<br />
+<code>cvs -d &#47;ścieżka&#47;do&#47;katalogu&#47;z&#47;CVSROOT -R checkout -P src<&#47;code><br />
+<code>cvs -d &#47;ścieżka&#47;do&#47;katalogu&#47;z&#47;CVSROOT -R checkout -P xsrc<&#47;code><br />
+<code>cvs -d &#47;ścieżka&#47;do&#47;katalogu&#47;z&#47;CVSROOT -R checkout -P pkgsrc<&#47;code></p>
+<p>Mirrory git:<br />
+IIJ:<br />
+<code>git clone https:&#47;&#47;github.com&#47;IIJ-NetBSD&#47;netbsd-src.git<&#47;code><br />
+Joerg Sonnenberg:<br />
+<code>git clone https:&#47;&#47;github.com&#47;jsonn&#47;src.git<&#47;code><br />
+<code>git clone https:&#47;&#47;github.com&#47;jsonn&#47;xsrc.git<&#47;code><br />
+<code>git clone https:&#47;&#47;github.com&#47;jsonn&#47;pkgsrc.git<&#47;code><br />
+Joyent:<br />
+<code>git clone https:&#47;&#47;github.com&#47;joyent&#47;pkgsrc.git<&#47;code><br />
+<code>git clone https:&#47;&#47;github.com&#47;joyent&#47;pkgsrc-wip.git<&#47;code></p>
+<p><strong>OpenBSD<&#47;strong> podobnie jak NetBSD, od początku swego istnienia wykorzystuje CVS.</p>
+<p><a href="http:&#47;&#47;www.openbsd.org&#47;anoncvs.html">http:&#47;&#47;www.openbsd.org&#47;anoncvs.html<&#47;a></p>

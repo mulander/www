@@ -1,0 +1,158 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy NetBSD-7.0: Martin Husemann'
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Martin Husemann jest już trzecim deweloperem NetBSD, z kt&oacute;rym zrobiliśmy
+  wywiad. Na co dzień pracuje prywatnie i zawodowo z komputerami działającymi na NetBSD,
+  a w projekcie jest odpowiedzialny za opiekę nad produkcją wydań.\r\n\r\n"
+wordpress_id: 1227
+wordpress_url: http://beastie.pl/?p=1227
+date: '2015-10-10 20:57:05 -0400'
+date_gmt: '2015-10-10 18:57:05 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- eurobsdcon
+- arm64
+- gcc
+- toolchain
+- cubietruck
+- releng
+- firefox
+- chromebook
+- debugowanie
+comments: []
+---
+<p>Martin Husemann jest już trzecim deweloperem NetBSD, z kt&oacute;rym zrobiliśmy wywiad. Na co dzień pracuje prywatnie i zawodowo z komputerami działającymi na NetBSD, a w projekcie jest odpowiedzialny za opiekę nad produkcją wydań.</p>
+<p><a id="more"></a><a id="more-1227"></a></p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p>Martin Husemann is now the 3rd NetBSD developer with whom we had an interview. He works privately and professionally with computers running NetBSD, in the project he's responsible for the release engineering.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you yet, can you shortly introduce yourself?<&#47;strong></p>
+<p>I have been a NetBSD developer since 2000 and served as a board member for four years. I am also the current "port-master" of sparc64 (and I think co-port-master for mac68k, despite my missing knowledge about the mac part of that platform).</p>
+<p>I have given talks about my NetBSD work at several conferences and am right now travelling to EuroBSDCon 2015 in Stockholm.</p>
+<p>More on NetBSD related activities below...</p>
+<p><strong>2. Why did you choose to run NetBSD? How long have you been using it? What are your ports (hardware platforms)?<&#47;strong></p>
+<p>I have been using it basically from the very start of the project (where at that point it was unclear to me what the difference to 386BSD was and I think FreeBSD did not even exist yet).</p>
+<p>I have to admit it was not a very conscious decision - I was looking for a router to get cheap but good internet access at home (which was basically impossible at that time). I made arrangements with a nearby university, but they would not allow fast modem access (which at that time was missing certificates for use in Germany), so it had to be ISDN.</p>
+<p>None of the readily available systems (usable for routers) had proper ISDN support, so I picked a system that sounded good for routers and planned to work on ISDN support.</p>
+<p>In the end I became part of the BISDN project and was made a developer to import that into NetBSD.</p>
+<p>Initially, my platform was i386 only, but since I did compiler construction at university, I was interested in other architectures. I acquired a fully grown zoo of various machines and at one time had an example machine for all CPUs supported by NetBSD running.</p>
+<p><strong>3. For those readers that still haven't joined the NetBSD community, why should they try NetBSD?<&#47;strong></p>
+<p>For me the main reasons are</p>
+<ul>
+<li>some special form of "purity"<br />
+Not all code in NetBSD is clean and shiny, there is ancient code, there is ugly code, but on the other hand NetBSD is not quick in following all new hypes and dropping them quickly soon afterwards. This fits my personal taste and is interestingly different from many other development environments<&#47;li><br />
+<&#47;ul></p>
+<ul>
+<li>all the same<br />
+I use various architectures, and NetBSD on them is the same, everywhere.<&#47;li><br />
+<&#47;ul></p>
+<ul>
+<li>works well enough (for me)<br />
+Sometimes modern hardware lacks support for drivers, especially in the "pc" area. But common hardware is usually well supported.<&#47;li><br />
+<&#47;ul></p>
+<ul>
+<li>will still work after years<br />
+I sometimes run ancient binaries (some of which I lost the source for a long time ago). NetBSD provides very strong binary compatibility with its own old versions, and with other operating systems.<&#47;li><br />
+<&#47;ul></p>
+<ul>
+<li>has a very friendly and helpful community<&#47;li><br />
+<&#47;ul><br />
+<strong>4. In your professional environment, do you work with NetBSD?<&#47;strong></p>
+<p>Yes, most of our servers run NetBSD. Mostly because (when I am in charge of the machine) NetBSD is the easiest solution for me.</p>
+<p><strong>5. How did you become a NetBSD developer? What do you think is required in order to join the NetBSD project as a developer?<&#47;strong></p>
+<p>I've already mentioned the ISDN story, at that time I provided patches and filed bug tickets (called PRs, problem reports in NetBSD&#47;gnats land).</p>
+<p>This is a good way to become involved, you poke other developers long enough until they get tired to commit your patches.</p>
+<p><strong>6. Can you tell us about some NetBSD-related areas you work on?<&#47;strong></p>
+<p>I work on the release engineering team, reviewing and processing pull-up requests from other developers for the release branches. "Normal" NetBSD developers are not allowed to commit changes on branches, we require a member of the releng team to review, apply and commit change requests.</p>
+<p>I also do regular (mostly weekly) automatic test runs on a variety of hardware platforms. This is done on real hardware, we also do fully automatized tests on emulated machines and Xen domU instances. This provides very useful data by spotting regressions in -current early and pointing at machine dependent issues where things can be improved.</p>
+<p>When a new hardware is added to the test runs, we usually start with more than 100 unexpected failures. After a while, we typically get that down to single-digit numbers. I talked about one special tricky case at AsiaBSDCon earlier this year - running a CUBIETRUCK board in big endian mode. There were lots of issues to fix, in all kinds of areas (kernel, libraries, development tools, tests). You can find it as well as other interesting talks about NetBSD here:</p>
+<p style="text-align: center;"><a href="https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;">https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;<&#47;a><&#47;p><br />
+<strong>7. What's your NetBSD workflow?<br />
+<&#47;strong></p>
+<p>This depends a lot - many hardware drivers can only be debugged on the real hardware, so I usually netboot and debug using serial console, printf [function to print textual messages in dmesg(8) - editor's note] and ddb [NetBSD builtin in-kernel debugger - editor's note].</p>
+<p>For other things, I use rump with gdb quite a bit, and for user land it is simply gdb. I always build with MKDEBUG=yes [build all executables with debug information - editor's note] MKDEBUGLIB=yes [build all libraries with debug information - editor's note], so all my installations have symbol information (in user land) available right away.</p>
+<p>I have sometimes used qemu and its integrated gdb port, but not a lot.</p>
+<p><strong>8. Do you have an idea of the time you spend working on the NetBSD project?<&#47;strong></p>
+<p>Not a lot (unfortunately) recently - I have been very busy at work and plan to make it to my 25th wedding anniversary, so I cannot spend a lot of time with computers after work.</p>
+<p>I am lucky to be able to do short-term things during working hours while waiting for compilers and similar things. This nicely fits the releng work.</p>
+<p><strong>9. Please tell us about the strongest points and features of the 7.0 release.<&#47;strong></p>
+<p>My personal favourite is the much improved ARM support, see an example of this in my blog post about ARM SMP working:</p>
+<p style="text-align: center;"><a href="http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;working_arm_multiprocessor_support">http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;working_arm_multiprocessor_support<&#47;a><&#47;p><br />
+But for most people the DRMKMS work is the most important - it catches up with modern graphics on x86 machines.</p>
+<p>Another highlight is the pretty modern toolchain we now have in our base: gcc 4.8 [4.8.5 - editor's note] (and optional clang 3.6). This helps when compiling external software, especially C++ code.</p>
+<p>As I am doing a lot of Firefox debugging: we can run full Firefox with debug info in the in-tree gdb (and we even have a wiki page describing how to do it [this is a kind of an insider joke - editor's note]).</p>
+<p><strong>10. Please tell us about some improvements for the NetBSD project that are worth picking up for newcomers?<&#47;strong></p>
+<p>We have a list of projects on the wiki, but some of them are just strange ideas somebody (maybe me?) came up with some time ago. They are also of very different difficulty and require a great range of skills.</p>
+<p>Add to this personal taste and it gets really complicated. So in short: I have trouble recommending projects to others.</p>
+<p>It always helps if you have a problem in your own usage of NetBSD and go to fix that. This may be the design of the web page (why don't we suggest something nice as an alternative?) or missing options to a program in the base system - provide patches, or try to discuss the idea. I think I've mentioned the friendly community before.</p>
+<p><strong>11. As a conclusion, can you tell us how you forecast NetBSD future?<&#47;strong></p>
+<p>I hope to see more X&#47;graphics related development, a lot of wlan enhancements and support for more hardware. My next pet for the test lab has just arrived:<br />
+an octacore arm 64bit machine.</p>
+<p>I hope to be carrying a 64bit arm Chromebook running only NetBSD when I go to EuroBSDCon 2016!</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie dla czytelnik&oacute;w, kt&oacute;rzy jeszcze Cię nie znają?<&#47;strong></p>
+<p>Jestem deweloperem NetBSD już od 2000 r., w tym czasie byłem podczas czteroletniej kadencji członkiem zarządu. Jestem też obecnym opiekunem portu sparc64 (oraz częściwo wsp&oacute;łopiekunem portu mac68k, pomimo brak&oacute;w mojej wiedzy o komputerach Macintosh na tej platformie).</p>
+<p>Byłem prelegentem nt. NetBSD podczas kilku konferencji, a w chwili obecnej wybieram się na EuroBSDCon 2015 do Sztokholmu.</p>
+<p>Więcej o moich aktywnościach w projekcie napisałem poniżej...</p>
+<p><strong>2. Dlaczego wybrałeś NetBSD? Jak długo korzystasz z tego systemu? Z kt&oacute;rymi portami (platformami sprzętowymi) masz do czynienia?<&#47;strong></p>
+<p>Korzystam z tego systemu już od samych jego początk&oacute;w (w czasie, gdy jeszcze nie było dla mnie wyraźne r&oacute;żnienie względem 386BSD, a FreeBSD - o ile pamięć mnie nie myli - nie zostało jeszcze powołane do życia).</p>
+<p>Przyznaję, że m&oacute;j wyb&oacute;r [NetBSD] nie był głęboko przemyślany - po prostu poszukiwałem w tym czasie rutera celem podłączenia taniego internetu w domu (co było w&oacute;wczas niemalże niemożliwe). Porozumiałem się wtedy z pobliskim uniwersytetem, niestety musiałem zadowolić się połączeniem ISDN (w owym czasie były problemy z certyfikatami na szybkie połączenia w Niemczech).</p>
+<p>Żaden z gotowych system&oacute;w (używalnych na ruterach) nie miał odpowiedniego wsparcia ISDN, więc postanowiłem wybrać jedną z opcji dla ruter&oacute;w i pracować nad funkcjonalnością ISDN.</p>
+<p>W końcu zostałem deweloperem w projekcie BISDN i stałem się odpowiedzialny za integrację tego kodu z NetBSD.</p>
+<p>Początkowo moją platformą było wyłącznie i386, ale odkąd zajmowałem się modelowaniem kompilatora na uniwersytecie, zainteresowałem się innymi architekturami. Stałem się posiadaczem swoistego zoo r&oacute;żnorakich maszyn - a w pewnym momencie miałem już po przykładzie z każdego procesora wspieranego przez NetBSD.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności NetBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Moimi powodami są następujące rzeczy:</p>
+<ul>
+<li>pewna wyjątkowa forma "czystości"<br />
+Nie cały kod wewnątrz NetBSD jest czysty i błyszczący, mamy do czynienia także z kodem przedpotopowym, brzydkim, ale z drugiej strony NetBSD nie podąża za wszystkimi chwilowymi modami, porzucając je r&oacute;wnie szybko w kolejnych fazach rozwoju. Ten aspekt odpowiada mojemu osobistemu gustowi i ciekawie się wyr&oacute;żnia na tle innych model&oacute;w rozwoju środowisk.<&#47;li></p>
+<li>zawsze takie samo<br />
+Używam wielu architektur i na każdej z nich NetBSD jest wszędzie takie samo.<&#47;li></p>
+<li>działa wystarczająco dobrze (dla mnie)<br />
+Czasem brakuje sterownik&oacute;w dla najnowszego sprzętu, szczeg&oacute;lnie na komputerach klasy PC. Natomiast typowy sprzęt jest dobrze wspierany.<&#47;li></p>
+<li>działa nadal po latach<br />
+Czasami uruchamiam pradawne pliki binarne (źr&oacute;dła do niekt&oacute;rych z nich straciłem dawno temu). NetBSD oferuje porządną kompatybilność binarną ze swoimi starszymi wersjami program&oacute;w oraz innymi systemami operacyjnymi.<&#47;li></p>
+<li>gromadzi wok&oacute;ł siebie bardzo przyjazną i pomocną społeczność.<&#47;li><br />
+<&#47;ul><br />
+<strong>4. Czy w swoim środowisku zawodowym masz do czynienia z NetBSD?<&#47;strong></p>
+<p>Tak, większość moich serwer&oacute;w działa na NetBSD. Gł&oacute;wnie dlatego, że (gdy nadzoruję maszynę) NetBSD jest dla mnie najprostszym rozwiązaniem.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem NetBSD? Co - Twoim zdaniem - jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Wspomniałem już o przygodzie z ISDN, w tym czasie dostarczyłem łatki i zgłosiłem błędy (żargonowo zwane PR - ang. problem reports - w systemie zgłaszania problem&oacute;w gnats w infrastrukturze NetBSD).</p>
+<p>To jest dobry spos&oacute;b, by się zaangażować: naprzykrzasz się innym deweloperom wystarczająco długo, by commitowali twoje łatki.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w NetBSD?<&#47;strong></p>
+<p>Pracuję w zespole produkcji wydań, przeglądam i przetwarzam pull-upy (propozycje wciągnięcia łatek) do gałęzi stabilnych (wydań) od innych deweloper&oacute;w. "Typowi" deweloperzy NetBSD nie mają uprawnień do commitowania zmian w tych gałęziach, stąd wymagana jest asysta inżyniera wydań celem przeglądu, zatwierdzenia i złączenia łatek.</p>
+<p>Uruchamiam r&oacute;wnież regularne (zazwyczaj raz w tygodniu) automatyczne testy na r&oacute;żnych platformach sprzętowych. Jest to robione na prawdziwym sprzęcie, wykonujemy r&oacute;wnież pełne, zautomatyzowane testy w maszynach wirtualnych i instancjach Xen domU. Dostarcza to bardzo przydatnych danych poprzez wczesne wykrycie regresji -current [wersji rozwojowej - przyp. tłum.] i ekploatowania błęd&oacute;w zależnych od architektury, pozwalając na całościową poprawę jakości.</p>
+<p>Tam, gdzie nowy sprzęt jest dodany do test&oacute;w, na początku zazwyczaj mamy ponad 100 niespodziewanych błęd&oacute;w. Po chwili zazwyczaj przypisujemy to liczbom jednocyfrowym. Rozmawiałem w tym roku na AsiaBSDCon o pewnym wyjątkowo wrednym przypadku - o uruchamianiu płyty CUBIETRUCK w trybie Big endian. Było wiele kwestii do naprawienia we wszystkich rodzajach obszar&oacute;w (kernel, biblioteki, narzędzia deweloperskie, testy). Można je znaleźć wraz z innymi ciekawymi slajdami na temat NetBSD tutaj:</p>
+<p style="text-align: center;"><a href="https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;">https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;<&#47;a><&#47;p><br />
+<strong>7. Jaka jest Twoja organizacja pracy z NetBSD?<&#47;strong></p>
+<p>To zależy od r&oacute;żnych rzeczy - wiele sterownik&oacute;w może być debugowanych tylko na prawdziwym sprzęcie, więc zazwyczaj netbootuję i debuguję korzystając z konsoli szeregowej, wywołań printf [funkcja do wypisywania wiadomości tekstowych w dmesg(8) - przyp. tłum.] i ddb [debuger kernelowy w NetBSD - przyp. tłum.].</p>
+<p>Do innych cel&oacute;w sporo wykorzystuję rump z gdb, a dla pracy w przestrzeni użytkownika jest to po prostu gdb. Zawsze buduję źr&oacute;dła NetBSD z flagami MKDEBUG=yes [zbuduj] i MKDEBUGLIB=yes, więc wszystko, co instaluję ma informację o symbolach (w przestrzeni użytkownika), kt&oacute;ra jest dostępna od ręki.</p>
+<p>Czasami korzystałem z qemu i zintegrowanego z nim gdb, ale niezbyt dużo.</p>
+<p><strong>8. Ile czasu zajmuje Ci praca w projekcie NetBSD?<&#47;strong></p>
+<p>Ostatnio (niestety) niezbyt dużo - mam bardzo dużo pracy zawodowej i planuję ją skończyć przed moją 25. rocznicą ślubu, tak więc nie mogę spędzać po pracy zbyt dużo czasu przy komputerze.</p>
+<p>Mam szczęście, że mogę wykonywać kr&oacute;tkie zadania w godzinach pracy w czasie, gdy czekam na kompilację itp. To bardzo dobrze pasuje do pracy inżyniera wydań.</p>
+<p><strong>9. Proszę przybliż nam najmocniejsze punkty i cechy charakterystyczne najbliższego wydania NetBSD-7.0.<&#47;strong></p>
+<p>Tym, co mnie osobiście podoba się najbardziej jest mocno ulepszone wsparcie platformy ARM, na blogu Fundacji NetBSD można przeczytać o zgodności tych procesor&oacute;w z naszym SMP [ang. Symmetric MultiProcessing - wieloprocesorowość symetryczna - przyp. tłum.]:</p>
+<p style="text-align: center;"><a href="http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;working_arm_multiprocessor_support">http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;working_arm_multiprocessor_support<&#47;a><&#47;p><br />
+Dla większości os&oacute;b progres w rozwoju DRMKMS jest najważniejszy - nadgania on możliwość użycia nowoczesnych kart graficznych na platformie x86.</p>
+<p>Inną ważną rzeczą jest dość nowoczesny toolchain, kt&oacute;ry obecnie mamy w systemie bazowym: gcc 4.8 [4.8.5 - przyp. tłum.] (i opcjonalnie clang 3.6). Jest to pomocne, gdy kompilujemy oprogramowanie zewnętrzne, zwłaszcza kod C++.</p>
+<p>Jako że sporo zajmuję się debugowaniem Firefoksa: możemy uruchomić pełnego Firefoksa z symbolami dla gdb z systemu bazowego (i mamy nawet stronę na wiki, opisującą jak to się robi [to jest pewien rodzaj żartu środowiskowego - przyp. tłum.]).</p>
+<p><strong>10. Proszę przybliż nam r&oacute;wnież obszary systemu NetBSD, kt&oacute;re uznajesz za wartościowe do ulepszenia dla nowych deweloper&oacute;w?<&#47;strong></p>
+<p>Mamy listę projekt&oacute;w na wiki, ale niekt&oacute;re z nich są po prostu dziwnymi pomysłami, na kt&oacute;re ktoś (może ja?) kiedyś wpadł. R&oacute;żnią się one także znacząco pod względem stopnia trudności i wymagają r&oacute;żnorodnych umiejętności.</p>
+<p>Jeśli dodamy do tego kwestię osobistego gustu, sprawy naprawdę zaczynają się komplikować. A zatem w skr&oacute;cie: mam problem z polecaniem projekt&oacute;w innym.</p>
+<p>Dobrze jest napotykać problemy samodzielnie w użytkowaniu NetBSD i pokonywać je. Może to być model strony internetowej (czemu nie zasugerować czegoś fajnego jako alternatywę?) albo brakujące opcje programu w systemie bazowym - dostarczenie łatek lub też pr&oacute;ba om&oacute;wienia problemu. Chyba wcześniej już wspominałem o przyjaznej społeczności.</p>
+<p><strong>11. Proszę przybliż nam r&oacute;wnież obszary systemu NetBSD, kt&oacute;re uznajesz za wartościowe do ulepszenia dla nowych deweloper&oacute;w?<&#47;strong></p>
+<p>Mam nadzieję zobaczyć więcej usprawneń w obsłudze X Window i grafiki, dużo więcej &#47;graphics, wiele ulepszeń w dziedzinie wlan&oacute;w i zgodności z większą ilością sprzętu. Właśnie przybył m&oacute;j kolejny ulubieniec do mojego laboratorium: Octacore wyposażony w 64-bitowy procesor ARM.</p>
+<p>Mam nadzieję zabrać ze sobą na EuroBSDCon 2016 Chromebooka wyposażonego właśnie w taki 64-bitowy ARM-owy procesor.</p>

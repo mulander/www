@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: Oracle pracuje nad SMP w filtrze pakiet&oacute;w OpenBSD
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Na liście mailingowej tech@ pojawił się <a href=\"http:&#47;&#47;marc.info&#47;?t=143526332700004&amp;r=1&amp;w=2\">patch<&#47;a>
+  od pracownik&oacute;w firmy Oracle dodający wsparcie SMP dla filtru pakiet&oacute;w
+  w OpenBSD - <a href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man4&#47;pf.4?query=pf\">pf(4)<&#47;a>.
+  Zmiany dostarczone przez technologicznego giganta są podobnych gabaryt&oacute;w
+  co sama firma. Developer&oacute;w OpenBSD czeka przegląd łaty o rozmiarze 10933
+  linii. Wstępna reakcja na nadesłany patch oraz zaangażowanie Oracle w dostarczenie
+  akceptowalnych zmian rokuje bardzo pozytywnie.\r\n\r\n"
+wordpress_id: 844
+wordpress_url: http://beastie.pl/?p=844
+date: '2015-06-26 21:33:36 -0400'
+date_gmt: '2015-06-26 19:33:36 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- pf
+- oracle
+- smp
+comments: []
+---
+<p>Na liście mailingowej tech@ pojawił się <a href="http:&#47;&#47;marc.info&#47;?t=143526332700004&amp;r=1&amp;w=2">patch<&#47;a> od pracownik&oacute;w firmy Oracle dodający wsparcie SMP dla filtru pakiet&oacute;w w OpenBSD - <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man4&#47;pf.4?query=pf">pf(4)<&#47;a>. Zmiany dostarczone przez technologicznego giganta są podobnych gabaryt&oacute;w co sama firma. Developer&oacute;w OpenBSD czeka przegląd łaty o rozmiarze 10933 linii. Wstępna reakcja na nadesłany patch oraz zaangażowanie Oracle w dostarczenie akceptowalnych zmian rokuje bardzo pozytywnie.</p>
+<p><a id="more"></a><a id="more-844"></a></p>
+<p>Wdrożenie pf(4) jako domyślnego filtru pakiet&oacute;w w systemie Solaris zapowiedział <a href="https:&#47;&#47;www.marc.info&#47;?l=openbsd-tech&amp;m=142822852613581&amp;w=2">pierwszy email<&#47;a> z łatami jaki pracownicy firmy wysłali na listę mailingową tech jeszcze 5 kwietnia bieżącego roku.</p>
+<p>System FreeBSD posiada pf(4) wraz z własnymi modyfikacjami wprowadzającymi wsparcie dla SMP, jednak wersja jest znacznie starsza. FreeBSD swoje zmiany bazuje na pf(4) z OpenBSD 4.1 w FreeBSD 8.x oraz 4.5 dla gałęzi 9.x.</p>
+<p>NetBSD r&oacute;wnież posiada pf(4) w systemie bazowym. Został on wygarnięty z OpenBSD 4.6. System utrzymuje pf jedynie jako warstwę kompatybilności, a docelowym pakietem filtr&oacute;w w systemie jest npf.</p>

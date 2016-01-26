@@ -1,0 +1,53 @@
+---
+layout: post
+status: publish
+published: true
+title: Natywne wsparcie wirtualizacji w OpenBSD
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Mike Larkin ogłosił wstępnie na <a href=\"https:&#47;&#47;twitter.com&#47;mlarkin2012&#47;status&#47;638265767864070144\">twitterze,
+  <&#47;a>a p&oacute;źniej oficjalnie na liście mailingowej <a href=\"http:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=144104398132541&amp;w=2\">tech@,<&#47;a>
+  zapowiedź natywnego wsparcia dla wirtualizacji w systemie OpenBSD.\r\n\r\nPraca
+  nad vmm(4) rozpoczęła się w tajemnicy kilka miesięcy temu. Sam pomysł narodził się
+  w głowie Mike'a kilka lat wcześniej, po czym nabrał rozpędu w trakcie hackathonu
+  w Brisbane w tym roku. <a href=\"http:&#47;&#47;openbsdfoundation.org&#47;\">Fundacja
+  OpenBSD<&#47;a> zaoferowała finansowanie dalszej pracy.\r\n\r\n"
+wordpress_id: 1075
+wordpress_url: http://beastie.pl/?p=1075
+date: '2015-09-01 16:44:08 -0400'
+date_gmt: '2015-09-01 14:44:08 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- kvm
+- vmm
+comments: []
+---
+<p>Mike Larkin ogłosił wstępnie na <a href="https:&#47;&#47;twitter.com&#47;mlarkin2012&#47;status&#47;638265767864070144">twitterze, <&#47;a>a p&oacute;źniej oficjalnie na liście mailingowej <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=144104398132541&amp;w=2">tech@,<&#47;a> zapowiedź natywnego wsparcia dla wirtualizacji w systemie OpenBSD.</p>
+<p>Praca nad vmm(4) rozpoczęła się w tajemnicy kilka miesięcy temu. Sam pomysł narodził się w głowie Mike'a kilka lat wcześniej, po czym nabrał rozpędu w trakcie hackathonu w Brisbane w tym roku. <a href="http:&#47;&#47;openbsdfoundation.org&#47;">Fundacja OpenBSD<&#47;a> zaoferowała finansowanie dalszej pracy.</p>
+<p><a id="more"></a><a id="more-1075"></a></p>
+<p>Projekt znajduje się na etapie, w kt&oacute;rym inni deweloperzy są w stanie pom&oacute;c przy kluczowych elementach nowego podsystemu. Obecnie vmm(4) jest w stanie uruchomić jądro systemu i zażądać gł&oacute;wnego systemu plik&oacute;w. Nie jest to może zbyt wiele, ale jak wspomina Mike, dojście do tego etapu wymagało przygotowania całego rusztowania umożliwiającego takie akcje. Pozwala ono r&oacute;wnież dodatkowym osobom na pomoc przy tworzeniu interfejs&oacute;w <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man4&#47;virtio.4?query=virtio">virtio(4)<&#47;a> do emulacji dysk&oacute;w i interfejs&oacute;w sieciowych.</p>
+<p>Dlaczego OpenBSD zdecydowało o utworzeniu wirtualizacji od podstaw zamiast dostosować gotowe rozwiązania? Zdaniem Mike'a, nie miało to sensu. Projekt implementuje funkcjonalności, dla innych dostawc&oacute;w mało istotne: wsparcie dla i386, <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Shadow_paging">shadow paging<&#47;a>, <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Nested_virtualization#Nested_virtualization">zagnieżdżona wirtualizacja<&#47;a>, wsparcie dla starszych peryferi&oacute;w etc.</p>
+<p>Mike zamieścił ponadto kr&oacute;tkie FAQ dotyczące projektu:</p>
+<p><strong>Q: Jakie systemy mogę uruchomić?<&#47;strong></p>
+<p>Każdy system, kt&oacute;ry wspiera virtio. Możliwe, że w przyszłości powstanie API pozwalające qemu na podpięcie (np. udostępniając ten sam interfejs co KVM), w celu wsparcia starszych system&oacute;w lub tych wymagających wsparcia BIOS&#47;UEFI.</p>
+<p><strong>Q: Kiedy będzie gotowe?<&#47;strong></p>
+<p>Jest szansa, że na koniec Października - ale bez obietnic. Dużo zależy od ilości os&oacute;b chętnych do pomocy przy tworzeniu zaplecza virtio.</p>
+<p><strong>Q: Jakie procesor będzie wymagany?<&#47;strong></p>
+<p>Dowolny procesor AMD lub Intela, kt&oacute;ry wspiera sprzętową wirtualizację (SVM dla AMD i VMX dla Intela). Procesory bez wsparcia RVI lub EPT będą używać shadow pagingu.</p>
+<p><strong>Q: Jaki system będzie wymagany?<&#47;strong></p>
+<p>Bazowe narzędzia (vmd(8) i vmmctl(8)) oraz gł&oacute;&oelig;ny vmm (vmm(4)) będzie zawarty z bazowym systemem OpenBSD dla platform i386 i amd64. To powinno wystarczyć do uruchamiania system&oacute;w gościnnie, bez żadnego dodatkowego oprogramowania.</p>
+<p><strong>Q: Fuj! i386?<&#47;strong></p>
+<p>Tak. i386 pomaga wyłapywać błędy. Autor zachęca do przeglądu tuzina jego ostatnich zmian dla platformy i386.</p>
+<p>I najważniejsze</p>
+<p><strong>Q: Jak mogę pom&oacute;c<&#47;strong></p>
+<p>Autor nie miałby czasu pracować z vmm bez finansowego wsparcia Fundacji OpenBSD. Dotacje, jakie zostały dotychczas wpłacone na rzecz fundacji, umożliwiły powstanie opisywanych zmian. Jeżeli chcecie zobaczyć natywne wsparcie dla wirtualizacji w OpenBSD (oraz masę innych ciekawych projekt&oacute;w), gorąco zachęcamy do <a href="http:&#47;&#47;www.openbsdfoundation.org&#47;donations.html">dotacji na rzecz Fundacji<&#47;a>.</p>
+<p>Kod nie wylądował jeszcze w drzewie systemu OpenBSD. Nic dziwnego - sam patch ma rozmiar ponad <a href="https:&#47;&#47;twitter.com&#47;mlarkin2012&#47;status&#47;638632763231371265">20 tysięcy<&#47;a> linii kodu.</p>
+<p>Zapewne kilka os&oacute;b przypomni sobie <a href="https:&#47;&#47;marc.info&#47;?l=openbsd-misc&amp;m=119318909016582">nastawienie Theo<&#47;a> do wirtualizacji z 2007 roku. Pamiętać jednak wypada o tym, że opinie się zmieniają, często w <a href="https:&#47;&#47;www.youtube.com&#47;watch?v=OXS8ljif9b8&amp;feature=youtu.be&amp;t=395">oficjalny, skromny spos&oacute;b<&#47;a>.</p>

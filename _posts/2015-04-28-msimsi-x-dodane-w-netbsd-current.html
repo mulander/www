@@ -1,0 +1,42 @@
+---
+layout: post
+status: publish
+published: true
+title: MSI&#47;MSI-X dodane w NetBSD-current
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Pracownik japońskiej firmy IIJ (<em>Internet Initiative Japan<&#47;em>)
+  Kengo NAKAHARA już od dłuższego czasu pracuje nad usprawnieniami MSI&#47;MSI-X w
+  NetBSD. Wysiłek ten wpisuje się w szerszy obraz starań nad modernizacją funkcjonalności
+  sieciowych podejmowanych przez IIJ. Stąd kluczowe staje się wsparcie dla MSI&#47;MSI-X
+  wraz z IRQ affinity -- a więc przydzielaniem przerwań do rdzenia procesora.\r\n\r\n"
+wordpress_id: 549
+wordpress_url: http://beastie.pl/?p=549
+date: '2015-04-28 02:56:27 -0400'
+date_gmt: '2015-04-28 00:56:27 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- sieci komputerowe
+- wieloprocesorowość
+- x86
+- msi
+- msi-x
+- irq affinity
+- intx
+- pci
+- pcie
+- iij
+comments: []
+---
+<p>Pracownik japońskiej firmy IIJ (<em>Internet Initiative Japan<&#47;em>) Kengo NAKAHARA już od dłuższego czasu pracuje nad usprawnieniami MSI&#47;MSI-X w NetBSD. Wysiłek ten wpisuje się w szerszy obraz starań nad modernizacją funkcjonalności sieciowych podejmowanych przez IIJ. Stąd kluczowe staje się wsparcie dla MSI&#47;MSI-X wraz z IRQ affinity -- a więc przydzielaniem przerwań do rdzenia procesora.</p>
+<p><a id="more"></a><a id="more-549"></a></p>
+<p><a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Message_Signaled_Interrupts">Message Signaled Interrupts<&#47;a> to system obsługi przerwań (można je rozumieć jako notyfikację urządzenia podłączonego do komputera o zdarzeniu) i jest on następcą tzw. INTx -- oryginalnego rozwiązania PCI. MSI wprowadzono w standardzie PCI 2.2, a jego rozszerzoną wersję MSI-X w PCI 3.0.</p>
+<p>Praca Kengo ma pozwolić na maksymalizację wykorzystania sprzętu -- dając możliwość zarządzania kt&oacute;ry procesor ma czym się zajmować. Takie rozwiązania są szczeg&oacute;lnie pożądane przy zarządzaniu maszynami wirtualnymi i urządzeniami sieciowymi.</p>
+<p>Zanim kod trafił do current, został poddany już pierwszej pr&oacute;bie pod koniec ubiegłego roku na liście dyskusyjnej <a href="https:&#47;&#47;mail-index.netbsd.org&#47;tech-kern&#47;2014&#47;11&#47;07&#47;msg017897.html">tech-kernel<&#47;a>, a 27 kwietnia wylądował w centralnym <a href="https:&#47;&#47;mail-index.netbsd.org&#47;source-changes&#47;2015&#47;04&#47;27&#47;msg065408.html">repozytorium<&#47;a> NetBSD. W chwili obecnej jest on dostosowany wyłącznie dla architektury x86.</p>

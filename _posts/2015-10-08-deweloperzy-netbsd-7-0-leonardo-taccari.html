@@ -1,0 +1,83 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy NetBSD-7.0: Leonardo Taccari'
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "W ramach cyklu pytań i odpowiedzi od deweloper&oacute;w NetBSD-7.0, zapoznamy
+  się z Leonardem Taccari, dość świeżym deweloperem NetBSD, pracującym z tym systemem
+  operacyjnym na biurku i rozwijającym system paczek pkgsrc.\r\n\r\n"
+wordpress_id: 1189
+wordpress_url: http://beastie.pl/?p=1189
+date: '2015-10-08 23:13:47 -0400'
+date_gmt: '2015-10-08 21:13:47 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- pkgsrc
+- wywiad
+- wydanie
+comments: []
+---
+<p>W ramach cyklu pytań i odpowiedzi od deweloper&oacute;w NetBSD-7.0, zapoznamy się z Leonardem Taccari, dość świeżym deweloperem NetBSD, pracującym z tym systemem operacyjnym na biurku i rozwijającym system paczek pkgsrc.</p>
+<p><a id="more"></a><a id="more-1189"></a></p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p>In the series of questions and answers from the NetBSD-7.0 developers, we will meet Leoardo Taccari, a recent NetBSD committer, who works with this system on his desktop and maintains in this field pkgsrc packages.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you yet, can you shortly introduce yourself?<&#47;strong></p>
+<p>Hello! I am Leonardo Taccari. In the real life I live in the Marche region, central Italy, between Macerata and Ancona where I am studying for a Master of Engineering in Computing and Automation at <em>Universit&agrave; Politecnica delle Marche<&#47;em>.</p>
+<p><strong>2. Why did you choose to run NetBSD? How long have you been using it? What are your ports (hardware platforms)?<&#47;strong></p>
+<p>I first started using it in 2006 or 2007. I was just looking for a free Unix-like operating system and tried a couple of them. I first read the various project goals and after trying NetBSD for a couple of months it was the system where I was more comfortable and sticked with it since then.</p>
+<p>I am using NetBSD&#47;amd64 and NetBSD&#47;i386... ...and now that I think about that... I have also a Banana Pi but still have not found time to use it!</p>
+<p><strong>3. For those readers that still haven't joined the NetBSD community, why should they try NetBSD?<&#47;strong></p>
+<p>There are both technical and non-technical reasons. If you have not tried NetBSD and you would like to try it, just do it!, maybe in a unused machine or in a virtual machine. For the technical reasons <a href="http:&#47;&#47;www.netbsd.org&#47;about&#47;">project goals<&#47;a> and <a href="http:&#47;&#47;www.netbsd.org&#47;about&#47;features.html">features<&#47;a> pages explain them pretty well. Regarding non-technical reasons (this can be an opinion! :)) I have found the NetBSD community very friendly and supportive.</p>
+<p><strong>4. In your professional environment, do you work with NetBSD?<&#47;strong></p>
+<p>Not strictly professional but for the various didactic projects that I had in the secondary school or university... yes I had never needed to run other operating systems (except for a project where I have used GNU&#47;Linux... However, a of know-how that I had acquired as a pkgsrc maintainer helped me a lot for that).</p>
+<p><strong>5. How did you become a NetBSD developer? What do you think is required in order to join the NetBSD project as a developer?<&#47;strong></p>
+<p>I stressed pkgsrc developers with problem reports (luckily nearly always with patches) for about a decade and at some point they gave up! More seriously, few months ago Thomas Klausner and Benny Siegert offered to sponsorship me as mentors due to my contribution to pkgsrc.</p>
+<p>I think the most important thing to become a developer it is just start helping out in whichever ways you can. Regarding pkgsrc please read <a href="http:&#47;&#47;www.netbsd.org&#47;docs&#47;pkgsrc&#47;">The pkgsrc guide<&#47;a>, pick a small outdated package (better if it is not very outdated and do not have a lot of patches) and try to update it to the latest stable version. Continue to do that, start to import new packages (regarding that, <a href="http:&#47;&#47;pkgsrc.org&#47;wip&#47;">pkgsrc-wip<&#47;a> is a great project to get more involved) and then try to pick up bigger packages; try to feed back pkgsrc patches upstream and so on... I think this is one of the best way to learn that.</p>
+<p>Apart that, both regarding NetBSD and pkgsrc it is also very helpful to track -current, provide feedbacks and find possible problems.</p>
+<p><strong>6. Can you tell us about some NetBSD-related areas you work on?<&#47;strong></p>
+<p>I maintain various packages in pkgsrc and always try to update packages. I mostly use NetBSD as a desktop system and usually the packages that I touch reflect that.</p>
+<p><strong>7. Do you have an idea of the time you spend working on the NetBSD project?<&#47;strong></p>
+<p>I think that usually I spend some hours per week but I have never counted that to be honest. :-)</p>
+<p><strong>8. Please tell us about the strongest points and features of the 7.0 release.<&#47;strong></p>
+<p>Apart new drivers, more hardware supported and various improvements (for a complete list please give a look to the <a href="http:&#47;&#47;www.netbsd.org&#47;changes&#47;changes-7.0.html">7.0 change log<&#47;a> there are two important changes in my opinion:</p>
+<ul>
+<li>new DRM&#47;KMS support (previously there was only drm(4) but it did not<br />
+supported recent GPUs)<&#47;li></p>
+<li>a lot of new ARM evaluation boards are now supported<&#47;li><br />
+<&#47;ul></p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie dla czytelnik&oacute;w, kt&oacute;rzy jeszcze Cię nie znają?<&#47;strong></p>
+<p>Witam! Nazywam się Leonardo Taccari. Mieszkam w Marchii, w środkowych Włoszech, między prowincjami Macerata i Ancona, gdzie studiuję, by zdobyć tytuł magistra inżyniera informatyki i automatyki na Politechnice Marchijskiej (wł.&nbsp;<em>Universit&agrave; Politecnica delle Marche<&#47;em>).</p>
+<p><strong>2. Dlaczego wybrałeś NetBSD? Jak długo korzystasz z tego systemu? Z kt&oacute;rymi portami (platformami sprzętowymi) masz do czynienia?<&#47;strong></p>
+<p>Po raz pierwszy zacząłem używać NetBSD w 2006 lub 2007 roku. Szukałem wolnego systemu uniksopodobnego i wypr&oacute;bowałem kilka z nich. Najpierw przeczytałem, jakie są cele projektu, a po kilku miesiącach wypr&oacute;bowywania, NetBSD okazał się być wygodniejszy od pozostałych, więc od tamtej pory pozostałem przy tym systemie.</p>
+<p>Używam NetBSD&#47;amd64 i NetBSD&#47;i386 i, skoro już o tym myślę... mam r&oacute;wnież Banana Pi, ale jeszcze nie znalazłem czasu, żeby je wykorzystać.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności NetBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Są przyczyny techniczne i pozatechniczne. Jeśli jeszcze nie pr&oacute;bowałeś&#47;-aś NetBSD, a chciał(a)byś, po prostu to zr&oacute;b! Przeznacz do tego jakąś nieużywaną maszynę lub uruchom maszynę wirtualną. Przyczyny techniczne są dość dobrze wytłumaczone na stronach <a href="http:&#47;&#47;www.netbsd.org&#47;about">project goals<&#47;a> oraz <a href="http:&#47;&#47;ww.netbsd.org&#47;about&#47;features.html">features<&#47;a>. Jeśli chodzi o przyczyny pozatechniczne (to może być opinia!:)), uważam, że społeczność NetBSD jest bardzo przyjazna i pomocna.</p>
+<p><strong>4. Czy w swoim środowisku zawodowym masz do czynienia z NetBSD?<&#47;strong></p>
+<p>To nie do końca profesjonalne zastosowania, ale w przypadku r&oacute;żnych projekt&oacute;w edukacyjnych w szkole średniej i na uczelni&hellip; tak i nigdy nie miałem potrzeby używać innych system&oacute;w (poza jednym projektem, w kt&oacute;rym użyłem GNU&#47;Linux). Niemniej, trochę obeznania, kt&oacute;re nabyłem jako opiekun pkgsrc, bardzo mi w tym pomogło.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem NetBSD? Co - Twoim zdaniem - jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Przyciskałem deweloper&oacute;w pkgsrc raportami o problemach (na szczęście prawie zawsze załączałem łatki) przez mniej więcej dekadę, aż w końcu się poddali. A tak poważnie, parę miesięcy temu, dzięki mojemu wkładowi w rozw&oacute;j pkgsrc, Thomas Klausner i Benny Siegert zaoferowali mi zostanie moimi promotorami w uzyskaniu praw dewelopera i pomoc w charakterze mentor&oacute;w.</p>
+<p>Myślę, że by zostać deweloperem, najlepiej po prostu zacząć pomagać w jakikolwiek spos&oacute;b. Jeśli chodzi o pkgsrc, przeczytaj <a href="http:&#47;&#47;www.netbsd.org&#47;docs&#47;pkgsrc&#47;">The pkgsrc guide<&#47;a>, wybierz małą, przestarzałą paczkę (najlepiej niezbyt przestarzałą i bez dużej liczby łatek) i spr&oacute;buj uaktualnić ją do najnowszej stabilnej wersji. R&oacute;b tak dalej, zacznij importować nowe paczki (dobrze jest się zaangażować w <a href="http:&#47;&#47;pkgsrc.org&#47;wip&#47;">pkgsrc-wip<&#47;a>), a potem pr&oacute;buj wybierać coraz to większe paczki, staraj się przekazać łatki z pkgsrc programistom danego projektu i tak dalej&hellip; Myślę, że to jeden z najlepszych sposob&oacute;w, żeby się tego nauczyć.</p>
+<p>Poza tym &mdash; dotyczy to tak NetBSD jak pkgsrc &mdash; dobrze jest śledzić <em>-current<&#47;em> [gałąź rozwojową &ndash; przyp. tłum.], wyrażać opinię i wynajdywać możliwe problemy.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w NetBSD?<&#47;strong></p>
+<p>Opiekuję się r&oacute;żnymi paczkami w pkgsrc i zawsze staram się je uaktualniać. Używam NetBSD gł&oacute;wnie jako system biurkowy, co dobrze odzwierciedla to, kt&oacute;rymi paczkami się zajmuję.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca w projekcie NetBSD?<&#47;strong></p>
+<p>Myślę, że zwykle zajmuje mi to kilka godzin tygodniowo, ale - szczerze m&oacute;wiąc - nigdy tego nie liczyłem. :-)</p>
+<p><strong>8. Proszę przybliż nam najmocniejsze punkty i cechy charakterystyczne najbliższego wydania NetBSD-7.0.<&#47;strong></p>
+<p>Poza nowymi sterownikami, wsparciem większej ilości sprzętu i r&oacute;żnymi ulepszeniami (można rzucić okiem na całą listę zmian pod adresem <a href="http:&#47;&#47;www.netbsd.org&#47;changes&#47;changes-7.0.html">7.0 change log<&#47;a>, moim zdaniem najważniejsze dwie zmiany to:</p>
+<ul>
+<li>nowe wsparcie DRM&#47;KMS (wcześniej było tylko drm(4), bez wspiercia najnowszych kart graficznych),<&#47;li>
+<li>wsparcie masy r&oacute;żnych płyt rozwojowych opartych o procesory ARM.<&#47;li><br />
+<&#47;ul></p>

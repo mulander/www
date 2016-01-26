@@ -1,0 +1,41 @@
+---
+layout: post
+status: publish
+published: true
+title: 'DragonflyBSD: libc od teraz nie jest ładowane do obszaru pamięci bez praw
+  uruchamiania'
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 1106
+wordpress_url: http://beastie.pl/?p=1106
+date: '2015-09-09 16:54:28 -0400'
+date_gmt: '2015-09-09 14:54:28 -0400'
+categories:
+- Bez kategorii
+tags:
+- bezpieczeństwo
+- dragonflybsd
+- libc
+comments:
+- id: 129
+  author: kj
+  author_email: kjopek@gmail.com
+  author_url: ''
+  date: '2015-09-11 10:52:02 -0400'
+  date_gmt: '2015-09-11 08:52:02 -0400'
+  content: "Kamil, koleś w tej łatce explicite pisze o \"non-executable stack\". Tytuł
+    w tym momencie wywołuje \"WTF\", bo sugeruje, że kod biblioteki jest ładowany
+    do obszaru pamięci bez praw uruchomienia, co oczywiście skutecznie uwaliłoby procesy
+    w systemie, korzystające z libc (czyli bodaj wszystkie).\r\n\r\nKr&oacute;tki
+    komentarz: idea jest taka, aby obszar stosu nie miał praw wykonywania. W x86 każda
+    strona pamięci też ma coś w rodzaju uprawnień \"rwx\". Stos oczywiście powinien
+    być rw, aby utrudnić exploitację błęd&oacute;w typu buffer overflow. Do czasu
+    zacomitowania tej łatki stos miał uprawnienia RWX (albo jak to w Dragonfly napisali:
+    RWE)."
+---
+<p>John Merino <a href="http:&#47;&#47;lists.dragonflybsd.org&#47;pipermail&#47;commits&#47;2015-September&#47;458203.html">pracuje<&#47;a> w DragonflyBSD nad zabezpieczeniami w libc. W ostatnim czasie dodał łatkę zapobiegającą uruchamiania kodu biblioteki standardowej C (libc), będącej fundamentalnym zbiorem funkcjonalności w przestrzeni użytkownika systemu uniksowego.</p>

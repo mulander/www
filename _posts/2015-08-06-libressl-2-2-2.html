@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: LibreSSL 2.2.2
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+wordpress_id: 995
+wordpress_url: http://beastie.pl/?p=995
+date: '2015-08-06 11:29:01 -0400'
+date_gmt: '2015-08-06 09:29:01 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- libressl
+comments: []
+---
+<p>Pojawiła się kolejną wersja biblioteki <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-announce&amp;m=143882451401333&amp;w=2">LibreSSL 2.2.2<&#47;a>.</p>
+<p>Najnowsza wersja zbiega się z momentem zakończenia cyklu rozwoju wersji 5.8 systemu OpenBSD. Poprawie uległ system budowania przenośnej wersji biblioteki. Tradycyjnie poprawiono sporo kodu i usunięto zbędne obejścia.</p>
+<p>W samej bibliotece największą zmianą jest całkowite usunięcie wsparcia dla SSLv3 z programu <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man1&#47;openssl.1?query=openssl">openssl(1)<&#47;a>. Ponadto użycie funkcji związanych z obsługą SSLv3 na wspieranych platformach kończy się obecnie ostrzeżeniami podczas linkowania. Developerzy wsp&oacute;łpracują z zewnętrznymi projektami celem usunięcia tych zależności, co umożliwiłoby kompletne pozbycie się SSLv3 z całe biblioteki.</p>

@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: System ślubowania pledge(2) zastępuje tame(2)
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Koniec oswajania aplikacji pod kontrolą OpenBSD przez kernel systemu.&nbsp;Wprowadzone
+  <a href=\"http:&#47;&#47;beastie.pl&#47;tame2-laduje-w-drzewie-openbsd&#47;\">niedawno<&#47;a>&nbsp;<a
+  href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man2&#47;tame.2?query
+  =tame\">tame(2)<&#47;a>&nbsp;przeistoczyło się w pledge(2). Od&nbsp;dzisiejszej&nbsp;<a
+  href=\"http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=144435348628077&amp;w=2\">zmiany<&#47;a>&nbsp;de
+  Raadta aplikacje ślubują pewne zachowanie, lub ponoszą&nbsp;przykre konsekwencje.\r\n\r\n"
+wordpress_id: 1206
+wordpress_url: http://beastie.pl/?p=1206
+date: '2015-10-09 14:36:42 -0400'
+date_gmt: '2015-10-09 12:36:42 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- bezpieczeństwo
+- tame
+- pledge
+- sec
+comments: []
+---
+<p>Koniec oswajania aplikacji pod kontrolą OpenBSD przez kernel systemu.&nbsp;Wprowadzone <a href="http:&#47;&#47;beastie.pl&#47;tame2-laduje-w-drzewie-openbsd&#47;">niedawno<&#47;a>&nbsp;<a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man2&#47;tame.2?query =tame">tame(2)<&#47;a>&nbsp;przeistoczyło się w pledge(2). Od&nbsp;dzisiejszej&nbsp;<a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=144435348628077&amp;w=2">zmiany<&#47;a>&nbsp;de Raadta aplikacje ślubują pewne zachowanie, lub ponoszą&nbsp;przykre konsekwencje.</p>
+<p><a id="more"></a><a id="more-1206"></a></p>
+<p>W związku z tym, że funkcja systemowa zmieniła nazwę, wszystkie rdzenne&nbsp;aplikacje musiały przejść odpowiedni <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=144435466928286&amp;w=2">lifting<&#47;a>. Nie obeszło się bez&nbsp;błęd&oacute;w, na szczęście szybko wykrytych i <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=144435826829012&amp;w=2">naprawionych<&#47;a>.</p>
+<p>To nie pierwsza poważna zmiana w sposobie komunikowania się z nowym systemem&nbsp;łagodzenia konsekwencji błęd&oacute;w w aplikacjach pracujących pod kontrolą OpenBSD.</p>
+<p>Jakiś czas temu mechanizm wyliczania uprawnień zmieniono z prostej&nbsp;operacji na&nbsp;flagach, na parametr będący ciągiem znak&oacute;w. Rozwiązanie takie spotkało&nbsp;się z&nbsp;ostrą reakcją i sprowokowała Teda Unangsta do obrony takiego <a href="http:&#47;&#47;www.tedunangst.com&#47;flak&#47;post&#47;string-interfaces">rozwiązania<&#47;a>. Nie&nbsp;jest ono pozbawione sensu, a z uzasadnieniem dewelopera warto się zapoznać.</p>
+<p>Co dalej czeka tame&#47;pledge - ciężko wyrokować. Theo ma najwyraźniej bardzo ambitne&nbsp;plany&nbsp;związane z API, nie ujawnia ich jednak szerszemu gronu użytkownik&oacute;w&nbsp;systemu. Plany, jak zawsze w przypadku OpenBSD, dyskutowane są przede wszystkim z aktywnymi deweloperami.</p>
+<p><em>News nadesłał&nbsp;Dominik&nbsp;Dałek - serdecznie dziękujemy!<&#47;em></p>

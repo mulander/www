@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: OpenBSD na Digital Ocean
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "<a href=\"https:&#47;&#47;www.digitalocean.com&#47;\">DigitalOcean<&#47;a>&nbsp;staje
+  się jednym z najbardziej popularnych hosting&oacute;w wirtualnych serwer&oacute;w
+  prywatnych. Niskie ceny, dyski SSD i dość szeroko zakrojona akcja marketingowa sprawiają,
+  że serwis rośnie w zastraszającym tempie.&nbsp;Jest jednak mały problem - firma
+  nie pozwala na upload własnego ISO. Wprawdzie niedawno wprowadzono wsparcie dla
+  systemu FreeBSD, ale co pozostaje użytkownikom OpenBSD?\r\n\r\n"
+wordpress_id: 473
+wordpress_url: http://beastie.pl/?p=473
+date: '2015-04-23 11:42:23 -0400'
+date_gmt: '2015-04-23 09:42:23 -0400'
+categories:
+- Bez kategorii
+tags:
+- freebsd
+- openbsd
+- vps
+- digitalocean
+comments:
+- id: 60
+  author: kamil
+  author_email: krytarowski@gmail.com
+  author_url: ''
+  date: '2015-04-23 13:33:48 -0400'
+  date_gmt: '2015-04-23 11:33:48 -0400'
+  content: "Na OVH podobna historia, tym razem jak zainstalować NetBSD:\r\n\r\nhttp:&#47;&#47;maciejewski.org&#47;2014&#47;05&#47;05&#47;netbsd-w-ovh-na-dedykowanym-serwerze&#47;\r\n\r\nŚwietny
+    przewodnik Bartosza Maciejewskiego."
+---
+<p><a href="https:&#47;&#47;www.digitalocean.com&#47;">DigitalOcean<&#47;a>&nbsp;staje się jednym z najbardziej popularnych hosting&oacute;w wirtualnych serwer&oacute;w prywatnych. Niskie ceny, dyski SSD i dość szeroko zakrojona akcja marketingowa sprawiają, że serwis rośnie w zastraszającym tempie.&nbsp;Jest jednak mały problem - firma nie pozwala na upload własnego ISO. Wprawdzie niedawno wprowadzono wsparcie dla systemu FreeBSD, ale co pozostaje użytkownikom OpenBSD?</p>
+<p><a id="more"></a><a id="more-473"></a></p>
+<p>Jedną z opcji jest <a href="http:&#47;&#47;digitalocean.uservoice.com&#47;forums&#47;136585-digitalocean&#47;suggestions&#47;6963821-support-openbsd">grzecznie głosować<&#47;a>&nbsp;za dodaniem wsparcia przez firmę na ich listingu pożądanych przez użytkownik&oacute;w funkcjonalności. W ten spos&oacute;b wsparcia doczekało się FreeBSD.&nbsp;Niestety, nie przekłada się to na natychmiastowe dodanie wsparcia. Zatem mniej cierpliwi użytkownicy zaczynają sięgać do innych metod.</p>
+<p>Użytkownicy FreeBSD zapewne pamiętają projekt <a href="http:&#47;&#47;www.daemonology.net&#47;depenguinator&#47;">depenguinator<&#47;a>. Pozwalał on pozbyć się powszechnych instalacji Linuksa i zastąpić je systemem FreeBSD pomimo braku wsparcia u dostawcy hostingu. Zgadliście. <a href="http:&#47;&#47;www.tubsta.com&#47;2015&#47;04&#47;openbsd-on-digital-ocean&#47;">Ten ciekawy post<&#47;a>&nbsp;opisuje, w jaki spos&oacute;b można przeprowadzić egzorcyzmy na droplecie FreeBSD i zastąpić go instalacją OpenBSD.</p>
+<p>Proces jest dość prosty i polega na nadpisaniu systemu pobranym obrazem miniroot57.fs. Jedynym skomplikowanym krokiem jest konfiguracja dysk&oacute;w w trakcie instalacji. Autor posta wskazuje r&oacute;wnież, że&nbsp;tworzenie nowych instancji ze snapshotu systemu OpenBSD niestety nie działa.</p>
+<p>Jeżeli zdecydowaliście się poczekać na oficjalne wsparcie, to osobiście polecam serwis <a href="vultr.com">vultr.com<&#47;a>, kt&oacute;ry posiada strukturę cenową podobną do&nbsp;DigitalOcean. Oferuje także dyski SSD. Posiada też całkiem przyzwoity plan SATA, a&nbsp;przede wszystkim pozwala instalować własne obrazy ISO.</p>

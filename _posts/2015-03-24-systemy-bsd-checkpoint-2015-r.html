@@ -1,0 +1,53 @@
+---
+layout: post
+status: publish
+published: true
+title: Systemy BSD Checkpoint 2015 r.
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "W jakim jest stanie rodzina system&oacute;w BSD dzisiaj? Sp&oacute;jrzmy
+  na historię.\r\nW tym roku mija:\r\n<ul>\r\n\t<li>46 lat od powstania systemu UNICS
+  (1969 r.),<&#47;li>\r\n\t<li>44 lata od UNIX First Edition (V1) (1971 r.),<&#47;li>\r\n\t<li>37
+  lat od wydania 1BSD (Berkeley Software Distribution) (1978 r.),<&#47;li>\r\n\t<li>36
+  lat od 2BSD (1979 r.),<&#47;li>\r\n\t<li>35 lat od 3BSD i 4BSD (1980 r.)."
+wordpress_id: 140
+wordpress_url: http://beastie.pl/?p=140
+date: '2015-03-24 21:59:19 -0400'
+date_gmt: '2015-03-24 20:59:19 -0400'
+categories:
+- Bez kategorii
+tags:
+- checkpoint
+- netbsd
+- freebsd
+- openbsd
+comments: []
+---
+<p>W jakim jest stanie rodzina system&oacute;w BSD dzisiaj? Sp&oacute;jrzmy na historię.<br />
+W tym roku mija:</p>
+<ul>
+<li>46 lat od powstania systemu UNICS (1969 r.),<&#47;li>
+<li>44 lata od UNIX First Edition (V1) (1971 r.),<&#47;li>
+<li>37 lat od wydania 1BSD (Berkeley Software Distribution) (1978 r.),<&#47;li>
+<li>36 lat od 2BSD (1979 r.),<&#47;li>
+<li>35 lat od 3BSD i 4BSD (1980 r.).<a id="more"></a><a id="more-140"></a><&#47;li><br />
+<&#47;ul><br />
+<a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;bsdtimeline.gif"><img class=" size-medium wp-image-148 alignleft" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;bsdtimeline-230x300.gif" alt="bsdtimeline" width="230" height="300" &#47;><&#47;a>Lata 80. i 90. ubiegłego wieku uformowały bieżący stan system&oacute;w operacyjnych, większość z nich ukształtowała się w właśnie w tym okresie lub bazuje na przodku, kt&oacute;ry w tym okresie już istniał lub został powołany do życia. Do tych system&oacute;w należy r&oacute;wnież tr&oacute;jka system&oacute;w bazujących na 386BSD i BSD4.4, a mianowicie: NetBSD, FreeBSD, OpenBSD. Wszystkie pozostałe nadal utrzymywane systemy BSD są już forkami lub nadbud&oacute;wką&#47;remiksem tej tr&oacute;jki i powstały przeważnie w ciągu ostatnich 10 lat.</p>
+<p>Sp&oacute;jrzmy na stan obecny wspomnianej tr&oacute;jki.</p>
+<h1>FreeBSD<&#47;h1><br />
+<a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;freebsd.png"><img class="alignright size-full wp-image-116" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;freebsd.png" alt="freebsd" width="200" height="200" &#47;><&#47;a>Posiada największą rzeszę deweloper&oacute;w, a mianowicie <a href="https:&#47;&#47;www.freebsd.org&#47;doc&#47;en_US.ISO8859-1&#47;articles&#47;contributors&#47;staff-committers.html">391 os&oacute;b<&#47;a> (większość jest nieaktywna). Społeczność użytkownik&oacute;w FreeBSD jest r&oacute;wnież jest największa. System ten r&oacute;wnież przoduje r&oacute;wnież na rynku wydawniczym, gdyż najnowsza książki opisująca budowę i działanie systemu FreeBSD (<em>The Design and Implementation of the FreeBSD Operating System<&#47;em> wyd. II) została wydana w drugiej połowie 2014 r. Warto odnotować, że Fundacja FreeBSD w ubiegłym roku zebrała łącznie&nbsp;<a href="https:&#47;&#47;www.freebsd.org&#47;news&#47;status&#47;report-2014-10-2014-12.html">2.372.132,00 USD<&#47;a> i jest to rekordowa suma spośr&oacute;d wszystkich system&oacute;w BSD.</p>
+<p>Liczba port&oacute;w (paczek w systemie zarządzania oprogramowaniem) wynosi <a href="https:&#47;&#47;www.freebsd.org&#47;ports&#47;">24064 sztuk<&#47;a>, a narzędzie do zarządzania pakietami binarnymi pkgng zostało zaadaptowane przez system DragonflyBSD (wcześniej ten system korzystał domyślnie z pkgsrc).</p>
+<p>Liczba wspieranych platform sprzętowych jest ograniczona przez nowy kompilator BSD-owy -- Clang&#47;LLVM. Platformy niewspierane przez Clanga zostały usunięte, a wśr&oacute;d nich Alpha i Itanium. Obecnie wspieranymi platformami są: <a href="https:&#47;&#47;www.freebsd.org&#47;relnotes&#47;CURRENT&#47;hardware&#47;proc.html">Intel (i386 i amd64), PowerPC (Power ISA), SPARC64, MIPS, pc98<&#47;a> oraz <a href="https:&#47;&#47;wiki.freebsd.org&#47;FreeBSD&#47;arm">ARM<&#47;a>. Obecnie trwają prace nad wsparciem dla <a href="https:&#47;&#47;wiki.freebsd.org&#47;arm64">ARM64<&#47;a>. Aktualnie kod dla tego sprzętu trafia już do <a href="https:&#47;&#47;svnweb.freebsd.org&#47;base&#47;head&#47;sys&#47;arm64&#47;">centralnego repozytorium projektu<&#47;a>.</p>
+<h1>OpenBSD<&#47;h1><br />
+<a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;openbsd.png"><img class="alignright size-full wp-image-113" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;openbsd.png" alt="openbsd" width="128" height="128" &#47;><&#47;a>Być może jest to najsłynniejszy system uniksopodobny z rodziny BSD, z uwagi na presję jaką wywiera w światku opensource propagując rozwiązania bezpieczne i sprawdzone. To z niego wywodzi się popularne <a href="http:&#47;&#47;www.openssh.com&#47;">OpenSSH<&#47;a>, podstawowy element większości system&oacute;w Uniksowych oraz najsłynniejszy fork OpenSSL (powołany do życia po odkryciu błędu tzw. <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Heartbleed">Heartbleed<&#47;a>) <a href="http:&#47;&#47;www.libressl.org&#47;">LibreSSL<&#47;a>.</p>
+<p>Szwedzki serwis openports.se notuje w dniu dzisiejszym liczbę 7364 paczek w systemie OpenBSD.</p>
+<p>Z uwagi na autorskie rozwiązania w prowadzeniu projektu dużą część koszt&oacute;w działalności projektu zabierają <a href="https:&#47;&#47;marc.info&#47;?l=openbsd-misc&amp;m=138730448307723&amp;w=2">opłaty za prąd<&#47;a> -- wszystkie wspierane architektury zgodnie z filozofią OpenBSD muszą być budowane natywnie na danych maszynach, a nie kompilowane skrośnie. W roku 2014 Fundacja OpenBSD zebrała łącznie 397.000,00 CAD i wydała 129.000 CAD. Bilans dodatni pozwolił sfinansować na początku bieżącego roku aktywność deweloper&oacute;w OpenBSD (sprzęt, wyjazdy na konferencje) czy sfinansować nowe projekty. Jednym z tych projekt&oacute;w jest <a href="http:&#47;&#47;undeadly.org&#47;cgi?action=article&amp;sid=20150303075848">usprawnienie zabezpieczeń przeglądarki stron internetowych<&#47;a>.</p>
+<h1>NetBSD<&#47;h1><br />
+<a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;NetBSD-smaller.png"><img class="alignright size-full wp-image-110" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;NetBSD-smaller.png" alt="NetBSD-smaller" width="200" height="200" &#47;><&#47;a>Projekt ten notuje og&oacute;łem <a href="http:&#47;&#47;cvsweb.netbsd.org&#47;bsdweb.cgi&#47;~checkout~&#47;src&#47;distrib&#47;notes&#47;common&#47;main?rev=1.510.4.2&amp;content-type=text&#47;plain">328 deweloper&oacute;w<&#47;a> (większa część jest już nieaktywna). Ostatnia gł&oacute;wna wersja systemu 6.x wydana została 17 października 2012 r., najnowsza aktualizacja (6.1.5) 7 października ubiegłego roku. Następna gł&oacute;wna rewizja systemu <a href="http:&#47;&#47;mail-index.netbsd.org&#47;current-users&#47;2014&#47;08&#47;08&#47;msg025547.html">7.x<&#47;a> została zamrożona w pierwszej połowie sierpnia 2014 r., wraz z tą zmianą wersja ta weszła w fazę beta. <a href="http:&#47;&#47;releng.netbsd.org&#47;pr-list.html">Blokery wydania<&#47;a> dotyczą w większości wsparcia dla akceleracji graficznej DRMKMS, kt&oacute;re ukaże się wraz z wersją 7. Zgodnie z polityką NetBSD, nowa wersja zostanie wydana, gdy będzie gotowa, toteż brak jest zapowiedzi konkretnego terminu.</p>
+<p>Rodzimy system paczek pkgsrc zgodnie ze szwedzkim serwisem pkgsrc.se przekroczył barierę 14.000 sztuk, przy czym ponad <a href="http:&#47;&#47;mail-index.netbsd.org&#47;pkgsrc-users&#47;2015&#47;03&#47;11&#47;msg021169.html">13.000<&#47;a> buduje się dla otwartoźr&oacute;dłowych wariant&oacute;w Solarisa (SmartOS, Illuminos), a por&oacute;wnywalną liczbą r&oacute;wnież dla platformy Darwin (MacOSX), FreeBSD i GNU&#47;Linux.</p>
+<p>W roku 2014 Fundacja NetBSD zebrała 34.180,87 USD i 35,00 EUR, a koszty w tym samym roku wyniosły 36.113,99USD i 1,83 EUR -- w tym 16.000 USD przeznaczono na tzw. konsultacje (projekty finansowane przez projekt), a 7.521,30 USD wyniosły koszty sprzętu. Końcowy bilans wyni&oacute;sł <a href="http:&#47;&#47;netbsd.org&#47;foundation&#47;reports&#47;financial&#47;2014.html">250.742,72 USD i 33,17 EUR<&#47;a>. Zapasy na poziomie 200-250 tys. USD projekt utrzymuje od <a href="http:&#47;&#47;netbsd.org&#47;foundation&#47;">2009 r.<&#47;a>.</p>

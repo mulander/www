@@ -1,0 +1,173 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Ingo Schwarze'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nDrugim z kolei jest Ingo
+  Schwarze\r\n\r\n"
+wordpress_id: 1279
+wordpress_url: http://beastie.pl/?p=1279
+date: '2015-10-19 00:02:00 -0400'
+date_gmt: '2015-10-18 22:02:00 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Drugim z kolei jest Ingo Schwarze</p>
+<p><a id="more"></a><a id="more-1279"></a></p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our second interview - Ingo Schwarze.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you, can you shortly introduce yourself?<&#47;strong></p>
+<p><a href="https:&#47;&#47;2015.eurobsdcon.org&#47;speakers&#47;ingo-schwarze&#47;">https:&#47;&#47;2015.eurobsdcon.org&#47;speakers&#47;ingo-schwarze&#47;<&#47;a></p>
+<blockquote>
+<pre>Ingo Schwarze has been an OpenBSD user since 2001 and a developer since 2009.  He maintains the OpenBSD in-tree mandoc since making it the only documentation formatter in the base system in 2009&#47;2010.<br />
+He also maintains the portable mandoc distribution since 2013 and the OpenBSD groff(1) port since 2010 and has contributed to various parts of the OpenBSD userland, for example the Perl rewrite of the<br />
+security(8) script, as well as smaller contributions to the rc.d(8) framework, the yp(8) subsystem, the C library, and various other programs.</p>
+<p>Outside the free software world, he studied physics in Siegen&#47;Germany and worked as a researcher in elementary particle physics at CERN and at the University of Karlsruhe (KIT), and as a Perl programmer for Sophos UTM.<&#47;pre><br />
+<&#47;blockquote><br />
+<strong>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;strong></p>
+<p>Since 2001, so for almost three quarters of its history by now. Originally, it was pure chance.&nbsp; A coworker who used to run various Linux distributions repeatedly got his boxes rooted. Instead of properly securing them, he proposed to try OpenBSD.&nbsp; I said i didn't care much which system he used.&nbsp; At that time, i was used to working on many different Unix and Unix-like systems (DEC OSF&#47;1, Ultix, HP-UX, AIX, SuSE Linux, Debian GNU&#47;Linux ...) and OpenBSD looked like just another Unix-like system, so why not.</p>
+<p>Almost instantly, i fell in love with the system because i quickly realized how simple it was.&nbsp; Even with almost no OpenBSD experience, typical sysadmin tasks took me about a quarter of the time i would have spent on a bloated, clicki-bunti, deeply overengineered system like Debian.&nbsp; I never looked back.</p>
+<p><strong>3. For those readers that still haven't joined the OpenBSD community, why should they try OpenBSD?<&#47;strong></p>
+<p>Because it's so simple to use, much, much simpler than any other system i have ever seen, excepting only HP-proprietary systems on hp200 computers in the 1980s, but those were much less powerful than a modern Unix system, so no wonder they were even simpler.</p>
+<p>The main effect of the simplicity is that you spend less time learning how to do now matter what with the system (using nothing but the manual pages and the FAQ), and then again less time actually doing it, and you make fewer errors using it.&nbsp; A side-effect of the simplicity is that there are fewer bugs than in other systems, and a side effect of that is that there are fewer vulnerabilities.</p>
+<p><strong>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;strong></p>
+<p>Yes, for any kind of workstation, laptop, and server since about 2001&#47;2002, with exactly one exception:&nbsp; At one point, i needed to run a specific Windows-only bookkeeping software and maintained a dedicated Windows NT box for that (2003-2006).</p>
+<p>Even at work at Sophos, i chose to run OpenBSD on my desktop, defying the official company policy at the time that any kind of Linux was allowed on developer machines, but nothing else.&nbsp; It worked well even when doing lower-layer work.&nbsp; For example, i developed patches to the Perl interpreter (e.g. perl&#47;mg.c) for SLES on OpenBSD-current.</p>
+<p><strong>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;strong></p>
+<p>After lurking on the mailing lists for years, then sending a relatively low number of patches (about a dozen) during two years starting in February 2007, but to very different areas (libc, ksh, drivers, xenocara build system, ports, documentation, web site), i found a mail from Theo in my mailbox.&nbsp; That was in March 2009, so i have been a developer for slightly less than a third of the project's existence.&nbsp; After getting my account, i intensified my work from one patch every two months (2007-2009) to one commit a&nbsp;day on average (2009-2015).</p>
+<p>What is required?</p>
+<ol>
+<li>Independence.<br />
+In case you need to ask others what to do, it's hopeless.<&#47;li></p>
+<li>Team spirit.<br />
+In case you just want to work on your toy project, don't pay<br />
+attention to the current project needs at each point in time,<br />
+and don't ask others for their opinions where it matters, it's<br />
+hopeless.<&#47;li></p>
+<li>Mindful listening.<br />
+You must be able to extract useful information from technical<br />
+feedback even when it's worded tersely and bluntly.&nbsp; If you are<br />
+easily offended, it's hopeless.<&#47;li></p>
+<li>Realistic self-assessment.<br />
+If you repeatedly work on topics that are way above your head,<br />
+that's hopeless.&nbsp; Ideally, you work both on stuff you know well<br />
+(to get real work done) and on stuff that's challenging for you,<br />
+to improve your skills.<&#47;li></p>
+<li>Diligence.<br />
+If the results of your work are full of problems, it's hopeless.<br />
+The occasional bug or oversight, however, can be dealt with.<&#47;li></p>
+<li>Perseverance.<br />
+If you don't make sure your work (and that work you care about<br />
+done by others) gets properly reviewed, tested, committed, and<br />
+maintained, it's hopeless.&nbsp; Sometimes, that's harder than it<br />
+seems, everyone is busy and stuff is easily forgotten.<&#47;li><br />
+<&#47;ol><br />
+Obviously, being a good programmer helps.&nbsp; However, work needs to be done in all areas of the system, and the level of technical expertise required varies greatly.&nbsp; Some OpenBSD developers almost never write a line of code and yet commit regularly and are of critical importance to the group.&nbsp; Besides, much can be learnt on the job.</p>
+<p>If any of the above are missing, it is unlikely that you will keep your account for long.&nbsp; However, in a few cases, people lacking one or two of the above team up with a developer who reviews and commits their work.&nbsp; But getting that to work is usually harder than becoming a developer oneself.</p>
+<p><strong>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;strong></p>
+<p>Currently, mostly the documentation formatting toolbox, mandoc, see <a href="http:&#47;&#47;mdocml.bsd.lv&#47;press.html">http:&#47;&#47;mdocml.bsd.lv&#47;press.html<&#47;a> for details.</p>
+<p><strong>7. Do you have an idea of the time you spend working on the OpenBSD project?<&#47;strong></p>
+<p>That varies greatly.&nbsp; In some months, i hardly did anything.&nbsp; In some weeks, i worked on OpenBSD for 70 hours.&nbsp; Most of the time, it probably varies between 5 and 15 hours a week.&nbsp; But i never tried to measure anything in this respect.&nbsp; The grand total probably is between 1500 and 4000 hours so far.</p>
+<p><a href="http:&#47;&#47;www.oxide.org&#47;cvs&#47;schwarze.html">http:&#47;&#47;www.oxide.org&#47;cvs&#47;schwarze.html<&#47;a></p>
+<p><strong>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the outside world?<&#47;strong></p>
+<p>Tools get picked up when they are uselful, like <a href="http:&#47;&#47;lcamtuf.coredump.cx&#47;afl&#47;">afl<&#47;a>.</p>
+<p>The term "process improvement" sounds a bit like part of a meta discussion that OpenBSD developers tend to avoid.</p>
+<p>Regarding the process, it really boils down to this:</p>
+<ol>
+<li>Write a useful patch.<&#47;li>
+<li>Make sure the right people see it (those interested, those<br />
+knowledgeable, and those it might hurt).<&#47;li></p>
+<li>Collect the feedback, improve the patch as needed.<br />
+If required, repeat the steps 2 and 3, but not too often,<br />
+don't waste everybody's time.<&#47;li></p>
+<li>Commit it as soon as it is better than the existing code.<&#47;li>
+<li>Quickly fix any problems that were overlooked - or if you can't,<br />
+back it out immediately and go back to step 1.<&#47;li></p>
+<li>Maintain it.<&#47;li><br />
+<&#47;ol><br />
+<strong>9. It's been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;strong></p>
+<p>Above all, the fact that mandoc is now used by default not only in OpenBSD, but also in FreeBSD, NetBSD, and illumos, and even by two niche Linuxes (Alpine and Void).&nbsp; That we got semantic searching to the point where it is just taken for granted (in both OpenBSD-release and FreeBSD-current).&nbsp; The mandoc system of error and warning messages. Lots small things like my recent eqn(7) improvements.</p>
+<p>Most other contributions are relatively minor, so nothing to be particularly proud of.&nbsp; But some are nifty anyway:&nbsp; The fact that my work on daily(8)&#47;weekly(8) made sure you only get mail when anything looks suspicious, but not each and every day; the fact that due to an idea i implemented, you can still log into a properly configured box using YP even when the network is down; the improved security and maintainability of the security(8) script after my rewrite together with afresh1@; the groff and gpresent ports; the improvements to lots of HISTORY sections in manual pages.</p>
+<p>Using SQLite was a bad idea, it's too bloated, and the code is excessively obfuscated by portability goo and performance trickery. I'd definitely like to get rid of that heavy-weight component and throw it out of the base system.&nbsp; Ports is a better place for it to live.&nbsp; Not sure yet how to do that, though.</p>
+<p><strong>10. As a conclusion, can you tell us how you forecast OpenBSD's future? What's the next big challenge?<&#47;strong></p>
+<p>I have no idea.&nbsp; OpenBSD, as a matter of principle, does not make long-term or even medium-term plans.&nbsp; We work on the tasks at hand, and it takes the time it takes.&nbsp; The only planning that is required is to start very intrusive, potentially dangerous projects right after the tree is unlocked after cutting a release, such that there is as much time as possible for the new project to mature before it's first included in the next release.&nbsp; Six months later.&nbsp; But that's it, that's all.</p>
+<p>Right now, many people are working on reducing the global kernel lock such that the kernel can more efficiently use multiple CPUs, but i'm not involved in that work.</p>
+<p>The currently running pledge(2) project (formerly called tame(2)) is definitely important as the next step in exploit mitigation; i'm tangentially involved, but others do the real work in that area.</p>
+<p>Later this month in Berlin, we will have a look at our UTF-8 support. The challenge is to make the useful pieces work, cut all the bloaty and dangerous crap as much as possible, and consolidate the codebases to make them reviewable and maintainable.&nbsp; In particular, to carefully delete all code supporting any charsets except UTF-8 and US-ASCII.</p>
+<p>As far as i'm aware, the worst long-term problem is that not a single acceptable C compiler exists.&nbsp; Gcc is buggy, unstable, and not free software, Clang is bloated and lacks support for some architectures, Pcc is outdated, not portable enough, and lacks manpower, and writing a compiler from scratch is far beyond the manpower of the OpenBSD project.&nbsp; I have no idea how that will be solved, and i will almost certainly be unable to contribute in that area, but i expect temporary workarounds will be found that are good enough to keep going.</p>
+<p>In any case, OpenBSD seems vital and healthy and becomes better than it already is every day.&nbsp; That's all that really matters.</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<br />
+<&#47;strong></p>
+<p><a href="https:&#47;&#47;2015.eurobsdcon.org&#47;speakers&#47;ingo-schwarze&#47;">https:&#47;&#47;2015.eurobsdcon.org&#47;speakers&#47;ingo-schwarze&#47;<&#47;a></p>
+<blockquote><p>Ingo Schwarze jest użytkownikiem OpenBSD od 2001 roku, zaś deweloperem od 2009 r. Utrzymuje mandoc, jedyny program formatujący dokumentację w systemie bazowym od 2009&#47;2010r. Dodatkowo serwisuje&nbsp;jego przenośną wersję od 2013 r. oraz port OpenBSD groff(1) od 2010. Udzielał się także&nbsp;w r&oacute;żnych częściach użytkowych systemu OpenBSD, np. przepisując security(8) w Perlu oraz mniejsze dokładki do szablonu rc.d(8), podsystemu yp(8), biblioteki standardowej C czy&nbsp;r&oacute;żnych innych program&oacute;w.<&#47;blockquote><br />
+<strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Od 2001 roku, czyli 3&#47;4&nbsp;jego historii. Pierwotnie, przez przypadek. Wsp&oacute;łpracownik, kt&oacute;ry używał r&oacute;żnych dystrybucji Linuksa, miał regularnie rootowane&nbsp;maszyny. Zamiast je poprawnie zabezpieczyć, zaproponował nam użycie OpenBSD. Powiedziałem, że nie zależy mi zbytnio na tym, kt&oacute;rego&nbsp;systemu będziemy używać. W tamtych dniach byłem przyzwyczajony do r&oacute;żnych wersji Uniksa i jemu podobnych system&oacute;w (DEC OSF&#47;1, Ultix, HP-UX, AIX, SuSE Linux, Debian GNU&#47;Linux ...), tymczasem OpenBSD wyglądało, jak kolejny system oparty o Unix, zatem dlaczego nie?</p>
+<p>Prawie natychmiast zakochałem się w tym systemie, ponieważ zorientowałem się jaki jest prosty. Nawet bez żadnego doświadczenia z OpenBSD typowe zadania administratora zabierały 1&#47;4&nbsp;czasu, kt&oacute;ry był by wymagany na nadmuchanych, klik-buntowatych, głęboko prze-projektowanych systemach takich, jak Debian. Nigdy do nich&nbsp;nie wr&oacute;ciłem.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Ponieważ jest on prosty, dużo dużo łatwiejszy od innych system&oacute;w, kt&oacute;re do tej pory widziałem, za wyjątkiem komercyjnego systemu HP na komputerach hp200 w 1980 roku, ale systemy te&nbsp;były&nbsp;słabsze od&nbsp;wsp&oacute;łczesnych system&oacute;w Unix, nic dziwnego że były jeszcze łatwiejsze.</p>
+<p>Gł&oacute;wny skutek prostoty systemu to czas, jaki oszczędzasz na nauce, jak się nim posługiwać (używając nie więcej niż strony dokumentacji man oraz FAQ), a następnie czas wymagany do&nbsp;wykonywania na nim pracy okazuje się jeszcze kr&oacute;tszy,ty zaś zauważasz, że popełniasz przy tym mniej błęd&oacute;w. Efekt uboczny tego wszystkiego, to mniej pomyłek, niż w przypadku innych system&oacute;w, co przekłada się na mniej błęd&oacute;w związanych z bezpieczeństwem.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Tak, dla dowolnego rodzaju stacji roboczej, laptopa czy&nbsp;serwera od około 2001&#47;2002 roku, z dokładnie jednym wyjątkiem: Przez pewien czas miałem potrzebę uruchamiania specyficznej Windowsowej aplikacji księgowe. Na te potrzeby posiadałem dedykowany sprzęt z Windowsem NT (w latach 2003-2006).</p>
+<p>Nawet w pracy w Sophos wybierałem OpenBSD jako sw&oacute;j system na pulpit, sprzeciwiając się polityce firmy, kt&oacute;ra m&oacute;wiła, że dowolny rodzaj Linuksa na maszynie dewelopera jest dozwolony, nic innego. Przykładowo, rozwijałem patche dla interpretera Perla (np. perl&#47;mg.c) dla SLES pod OpenBSD-current.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Po czyhaniu na liście mailingowej przez kilka lat i wysłaniu kilku&nbsp;łatek (mniej niż tuzin) dotyczących bardzo r&oacute;żnych obszar&oacute;w (libc, ksh, sterownik&oacute;w, systemu budowania xenocara, port&oacute;w, dokumentacji, stroni) przez dwa lata w okresie od Lutego 2007, znalazłem emaila od Theo na swojej skrzynce pocztowej. To było w marcu 2009, więc&nbsp;jestem&nbsp;deweloperem od prawie 1&#47;3&nbsp;istnienia projektu. Po otrzymaniu konta zintensyfikowałem swoją pracę z jednego patcha na dwa miesiące (2007-2009) do średnio jednego commita dziennie (2009-2015).</p>
+<p>Co jest wymagane?</p>
+<ol>
+<li>Niezależność - Jeżeli musisz pytać innych&nbsp;co należy robić, to sytuacja jest beznadziejna.<&#47;li>
+<li>Duch zespołu - Jeżeli chcesz pracować nad swoim własnym projektem, bez zwracania uwagi na obecne potrzeby projektu na każdym kroku i nie pytając innych o opinie, to sytuacja jest beznadziejna.<&#47;li>
+<li>Świadome słuchanie - Musisz być w stanie wydobyć użyteczną informację z technicznych komentarzy dotyczących twojej pracy, nawet jeżeli jest przekazana&nbsp;bezpośrednio i bez ogr&oacute;dek. Jeżeli łatwo cię urazić, to sytuacja jest beznadziejna.<&#47;li>
+<li>Realistyczna samoocena - Jeżeli ciągle pracujesz nad tematami, kt&oacute;re są ponad twoje możliwości, to sytuacja jest beznadziejna. W idealnych warunkach poświęcasz czas na rzeczy, kt&oacute;re dobrze znasz (aby wykonać faktyczną pracę) i na rzeczach, kt&oacute;re są dla ciebie wyzwaniem, aby rozwijać twoje możliwości.<&#47;li>
+<li>Dbałość - Jeżeli wyniki twojej pracy są pełne problem&oacute;w, to sytuacja jest beznadziejna. Jednakże na&nbsp;drobne błędy da się przymknąć oko.<&#47;li>
+<li>Wytrwałość - Jeżeli nie upewniasz się, że twoja praca (i praca, na kt&oacute;rej tobie zależy) jest poprawnie przeglądnięta, przetestowana i zacommitowana, a następnie utrzymywana, to sytuacja jest beznadziejna. Czasami jest to znacznie trudniejsze niż się wydaje, każdy jest zajęty, zaś o pewnych sprawach bardzo łatwo zapomnieć.<&#47;li><br />
+<&#47;ol><br />
+Oczywiście bycie dobrym programistą pomaga, lecz pożądana jest praca w każdym obszarze systemu, a wymagany poziom technicznej wiedzy mocno zr&oacute;żnicowany. &nbsp;Niekt&oacute;rzy deweloperzy OpenBSD prawie nigdy nie piszą choćby&nbsp;jednej linijki kodu, a mimo wszystko regularnie commitują zmiany, kt&oacute;re są krytyczne z perspektywy całej grupy. Poza tym bardzo wiele można się nauczyć będąc już w zespole.</p>
+<p>Jeżeli brakuje ci dowolnego z powyższych element&oacute;w, to raczej nie utrzymasz swojego konta na długo, choć&nbsp;w nielicznych przypadkach ludziom, kt&oacute;rym brakowało jednej lub dw&oacute;ch z powyższych cech udawało się dogadać z obecnym&nbsp;deweloperem przeglądającym i commitującym ich pracę. Doprowadzenie&nbsp;do takiej sytuacji wymaga jednak często więcej pracy, niż zostanie samodzielnym deweloperem.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Obecnie gł&oacute;wnie nad narzędziami formatującymi dokumentację mandoc. Sp&oacute;jrz na&nbsp;<a href="http:&#47;&#47;mdocml.bsd.lv&#47;press.html">http:&#47;&#47;mdocml.bsd.lv&#47;press.html<&#47;a>, jeżeli chcesz dowiedzieć się więcej.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>To jest mocno zr&oacute;żnicowane. W niekt&oacute;rych miesiącach praktycznie nie robię nic, ale bywały&nbsp;tygodnie, kiedy&nbsp;pracowałem nad OpenBSD przez 70 godzin. Znaczna część czasu pewnie uśrednia się w okolicach 5 do 15 godzin tygodniowo, jednak nigdy nie starałem się tego mierzyć. Łączny czas spędzony klasyfikuje się pewnie gdzieś pomiędzy 1500 a 4000 godzin, jak do tej pory.</p>
+<p><a href="http:&#47;&#47;www.oxide.org&#47;cvs&#47;schwarze.html">http:&#47;&#47;www.oxide.org&#47;cvs&#47;schwarze.html<&#47;a></p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Narzędzia zaczynają być używane w momencie, gdy stają się użyteczne - jak <a href="http:&#47;&#47;lcamtuf.coredump.cx&#47;afl&#47;">afl<&#47;a>.</p>
+<p>Termin "najlepsze praktyki" brzmi jak meta-dyskusja, kt&oacute;rej deweloperzy OpenBSD starają się unikać.</p>
+<p>Odnośnie procesu, sprowadza się on do tego, co następuje:</p>
+<ol>
+<li>Pisz przydatne łatki.<&#47;li>
+<li>Upewnij się, że odpowiednie osoby je zobaczą (ci -&nbsp;kt&oacute;rych to interesuje, ci -&nbsp;kt&oacute;rzy coś o tym wiedzą,&nbsp;oraz&nbsp;ci -&nbsp;kt&oacute;rych to zaboli).<&#47;li>
+<li>Zbierz informacje zwrotne, popraw łątkę wedle konieczności, powt&oacute;rz kroki 2 i 3, ale niezbyt często - nie marnuj czasu wszystkich dookoła.<&#47;li>
+<li>Commituj zmianę, jeśli&nbsp;tylko jest lepsza&nbsp;od&nbsp;obecnego kodu.<&#47;li>
+<li>Szybko naprawiaj problemy, kt&oacute;re przeoczyłeś - jeżeli nie jest to możliwe, to jak najszybciej wycofaj swoją zmianę i wr&oacute;ć do kroku 1.<&#47;li>
+<li>Serwisuj swoją zmianę.<&#47;li><br />
+<&#47;ol><br />
+<strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Przede wszystkim fakt, że mandoc jest teraz używany domyślnie nie tylko w OpenBSD, ale i&nbsp;we FreeBSD, NetBSD, Illumos, jak też&nbsp;przez dwie niszowe dystrybucje Linuksa (<a href="http:&#47;&#47;alpinelinux.org&#47;">Alpine<&#47;a> i <a href="http:&#47;&#47;www.voidlinux.eu&#47;">Void Linux<&#47;a>).&nbsp;Ponadto fakt, że doprowadziliśmy semantyczne wyszukiwanie do poziomu, w kt&oacute;rym jest ono oczekiwaną funkcjonalnością (przynajmniej w OpenBSD-release i FreeBSD-current). Następnie system błęd&oacute;w i ostrzeżeń z mandoc. Oraz wiele małych ulepszeń ostatnio dodanych do eqn(7).</p>
+<p>Wiele pozostałych dodatk&oacute;w, to drobiazg w por&oacute;wnaniu do powyższych; nic, z czego m&oacute;głbym być bardziej dumny. Jednakże kilka z nich jest dość&nbsp;przydatnych mimo wszystko: Fakt, że moja praca nad daily(8)&#47;weekly(8) powoduje, że dostajesz maila <strong>tylko, gdy<&#47;strong> coś wygląda podejrzanie, a nie każdego dnia; Fakt, że dzięki pomysłowi, jaki zaimplementowałem możesz nadal zalogować się do poprawnie skonfigurowanego systemu używając YP nawet jeśli sieć leży; poprawione bezpieczeństwo i serwisowalność skryptu security(8) po moich wsp&oacute;lnym jego przepisaniu wraz z afresh1@; porty groff i gpresent; poprawki w wielu sekcjach HISTORY stron man.</p>
+<p>Użycie SQLite było&nbsp;złym pomysłem. Jest zbyt nadęte, a kod jest zbyt skomplikowany z powodu warstw wymaganych dla przenośności programu pomiędzy platformami i sztuczek związanych z wydajnością. Zdecydowanie chciałbym się pozbyć tego ociężałego elementu oraz&nbsp;wyrzucić go z bazowego systemu. Porty są dla niego&nbsp;znacznie lepszym miejscem, choć nie jestem pewien, jak to zrobić.</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>Nie mam pojęcia. OpenBSD z reguły nie przygotowuje, ani długo, ani średnio terminowych plan&oacute;w. Pracujemy nad bieżącymi sprawami i zajmują one tyle czasu, ile potrzebują. Jedyne planowanie jakie jest konieczne, to rozpoczęcie bardzo inwazyjnych, potencjalnie niebezpiecznych prac zaraz po odcięciu wydania tak, by nowy projekt miał jak najwięcej czasu, aby dojrzeć do&nbsp;jego zawarcia w kolejnym wydaniu systemu&nbsp;6&nbsp;miesięcy p&oacute;źniej, ale to wszystko.</p>
+<p>Obecnie wiele os&oacute;b pracuje nad zredukowaniem globalnego lockowania na kernelu, by m&oacute;gł on wykorzystać efektywnie wiele&nbsp;jednostek CPU, jednak ja nie jestem zaangażowany w te prace.</p>
+<p>W chwili obecnej&nbsp;rozwijany projekt pledge(2) (pierwotnie zwany tame(2)), zdecydowanie jest kolejnym&nbsp;dużym krokiem w zapobieganiu eksploatacji systemu; jestem przelotnie w to zaangażowany, lecz&nbsp;inne osoby wykonują faktyczną pracę w tym obszarze.</p>
+<p>P&oacute;źniej, w tym miesiącu, w Berlinie, zwr&oacute;cimy uwagę na nasze wsparcie dla UTF-8. Wyzwaniem jest dostarczenie&nbsp;użytecznych fragment&oacute;w kodu,&nbsp;wycinając przy tym jak najwięcej tłuszczu i niebezpiecznych element&oacute;w, konsolidując kod do formy możliwej do przeglądu i serwisowania. W szczeg&oacute;lności ostrożnie usuwając kod wspierający wszystkie kodowania opr&oacute;cz UTF-8 i US-ASCII.</p>
+<p>O ile mi wiadomo, najgorszym długofalowym problemem jest brak akceptowalnego kompilatora języka C. GCC jest pełne błęd&oacute;w, niestabilne&nbsp;i 'not free'. Clang jest nadęty,&nbsp;nie posiada&nbsp;wsparcia dla części&nbsp;architektur, PCC jest przedawnione, niezbyt przenośne i brakuje mu rąk do pracy, a napisanie kompilatora od podstaw jest poza możliwościami projektu OpenBSD, uwzględniając ilość os&oacute;b nad nim pracującą. Nie mam pojęcia, jak ten problem zostanie rozwiązany i raczej na pewno nie będę w stanie wesprzeć prac w tej części systemu, ale oczekuję tymczasowych rozwiązań, kt&oacute;re będą wystarczająco dobre, aby utrzymać nas na dalszym kursie.</p>
+<p>W każdym razie, OpenBSD wydaje się żywotne&nbsp;i zdrowe. Staje się coraz lepsze każdego dnia. Tylko to ma znaczenie.</p>

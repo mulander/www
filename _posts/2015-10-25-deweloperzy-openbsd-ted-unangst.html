@@ -1,0 +1,81 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Ted Unangst'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\n&Oacute;smy&nbsp;Ted Unangst\r\n\r\n"
+wordpress_id: 1327
+wordpress_url: http://beastie.pl/?p=1327
+date: '2015-10-25 21:09:55 -0400'
+date_gmt: '2015-10-25 20:09:55 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>&Oacute;smy&nbsp;Ted Unangst</p>
+<p><a id="more"></a><a id="more-1327"></a></p>
+<hr &#47;>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our eight&nbsp;interview - Ted Unangst.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><b>1. For the readers who don&rsquo;t know you, can you shortly introduce yourself?<&#47;b></p>
+<p>I'm not very good at autobiographies. I've been tedu@openbsd for about 12&nbsp;years. I work on OpenBSD as a hobby.</p>
+<p><b>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;b></p>
+<p>A friend introduced me to OpenBSD about 15 years ago. At first I was just&nbsp;fooling around with it, and dual booting as necessary, but once I started&nbsp;using it as a server, I didn't want the embarrassment of downtime whenever I&nbsp;had to reboot. Then I figured out I could write papers using WordPerfect (via&nbsp;Linux emulation) and stuck with OpenBSD full time.</p>
+<p><b>3. For those readers that still haven&rsquo;t joined the OpenBSD community, why should they try OpenBSD?<&#47;b></p>
+<p>Everybody is looking for something different, so that's hard to answer, but I&nbsp;like the simple approach the project takes. We move a little slower,&nbsp;sometimes, though the phrase we like to use is evolution, not revolution.&nbsp;Every release changes something (hopefully for the better), but it always&nbsp;feels like the same system.</p>
+<p><b>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;b></p>
+<p>Absolutely. Actually, I run some other systems as well to change it up, but I&nbsp;sometimes go weeks without touching a system that's not OpenBSD.</p>
+<p><b>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;b></p>
+<p>I was fooling around with null and union mounts (a way of overlaying one part&nbsp;of the filesystem on top of another) and encountered some bugs. I tried fixing&nbsp;them with a giant diff (mostly derived from NetBSD) but the other developers&nbsp;weren't too excited about it. I split it up into a few smaller diffs, and also&nbsp;sent some patches for a few other random issues I'd encountered. Or not even&nbsp;issues, just little code cleanups. Eventually I guess it was easier to have me&nbsp;commit the changes myself.</p>
+<p><b>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;b></p>
+<p>It's not really restricted to one area. I have an ongoing interest in memory&nbsp;management and filesystems, for example, but also did some work on little&nbsp;tools like grep. Recently I've been (re)writing some security critical tools&nbsp;to be simpler, both from a user perspective and for other developers. And of&nbsp;course, I have lots of opinions on the work others are doing, but I try to&nbsp;only meddle when it's important.</p>
+<p><b>7. Do you have an idea of the time you spend working on the OpenBSD project?<&#47;b></p>
+<p>It varies a lot. I only work on OpenBSD when I want to, so it depends mostly&nbsp;on whether there's something I want to work on. There's usually something fun&nbsp;happening, so probably a fair bit of time.</p>
+<p><b>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the oustide world?<&#47;b></p>
+<p>I don't think we're doing anything that hasn't been done before; just maybe&nbsp;other people don't seem to feel like doing it. I'm solidly convinced that&nbsp;regularly scheduled releases are the best way to ship software, and I've had&nbsp;some success convincing others to do the same. A lot of the time, though, it&nbsp;turns into a scramble to squeeze features in before the deadline. I think&nbsp;OpenBSD is pretty good at slipping features instead of compromising quality.</p>
+<p>Moving forward, I think we're learning to deal with long term maintenance of&nbsp;software. Lots of OpenBSD developers have come and gone over the years, but&nbsp;their code always remains. In a project where people only work on things they&nbsp;care about, this can leave some gaps in coverage. Hence the motivation to&nbsp;reduce and simplify code and features, so that in ten years time there is less&nbsp;maintenance necessary.</p>
+<p><b>9. It&rsquo;s been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;b></p>
+<p>Personally, I'm pretty happy with the way signify turned out. It was the kind&nbsp;of project where we would inevitably discover problems and shortcomings as we&nbsp;went, and what seemed workable to start would turn into a disaster just a day&nbsp;after we committed to using it. Fortunately, it's worked out pretty well.&nbsp;There's always something that could be better, but it's a good first effort.</p>
+<p>There's also the exploit mitigation work done in malloc(). Some of that work&nbsp;has been picked up and found useful by other projects, but I also think&nbsp;there's quite a bit more that we could be doing.</p>
+<p><b>10. As a conclusion, can you tell us how you forecast OpenBSD&rsquo;s future? What&rsquo;s the next big challenge?<&#47;b></p>
+<p>As I said before, OpenBSD prefers to move a little slow. This has saved us a&nbsp;lot of wasted effort chasing the latest fad, only to switch directions a year&nbsp;later. At the same time, in order to stay relevant and not fall too far&nbsp;behind, we have to guess what's a passing fad and what's an inevitable change.</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Nie jestem zbyt dobry w autobiografiach. tedu@openbsd jestem przez ponad 12 lat. Praca z&nbsp;OpenBSD to dla mnie hobby.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Znajomy&nbsp;wprowadził mnie w OpenBSD około 15 lat temu. Na początku tylko trochę się z nim wygłupiałem,&nbsp;dual boot był wtedy konieczny, ale jak tylko zacząłem używać OpenBSD jako serwer, nie chciałem już być zawstydzany jego niedostępnością &nbsp;za każdym razem, gdy odpalałem inny system.&nbsp;Odkryłem w&oacute;wczas, że mogę pisać&nbsp;dokumenty używając WordPerfect (poprzez emulacje Linuksa), a OpenBSD stało się moim gł&oacute;wnym systemem.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Każdy poszukuje czegoś innego, więc&nbsp;jest to pytanie wyjątkowo trudne Osobiście lubię proste rozwiązania, kt&oacute;re obiera projekt. Poruszamy się trochę wolniej, czasami zdarza nam się używać terminu ewolucja zamiast rewolucja. Każde wydanie coś zmienia (mamy nadzieję, że na lepsze), lecz&nbsp;zawsze efektem końcowym jest ten sam system.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Absolutnie. W gruncie rzeczy używam paru innych system&oacute;w, aby zr&oacute;żnicować sw&oacute;j dzień, ale bywają tygodnie, kiedy&nbsp;nie dotykam żadnego innego systemu poza OpenBSD.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Wygłupiałem się z union mount-ami (metoda nakładania jednej części systemu plik&oacute;w na drugą) i trafiłem na kilka błęd&oacute;w. Pr&oacute;bowałem je naprawić gigantyczną łatą (gł&oacute;wnie wyniesioną z NetBSD), ale innym deweloperom się to zbytnio nie spodobało. Podzieliłem&nbsp;ją zatem na kilka mniejszych łat i wysłałem kilka dodatkowych na inne przypadkowe problemy, kt&oacute;re napotkałem po drodze - nawet nie problemy, a drobne porządki w kodzie. Koniec końc&oacute;w chyba byłoby łatwiej, gdybym sam nanosił te zmiany.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Moja praca nie jest ograniczona do jednego obszaru. Przykładowo, na bieżąco interesuję się zarządzaniem pamięcią i systemami plik&oacute;w, a i tak&nbsp;wykonałem nieco&nbsp;pracy przy małych narzędziach, takich jak grep. Ostatnio (prze)pisywałem kilka krytycznych - z punktu widzenia bezpieczeństwa - narzędzi na bardziej proste, zar&oacute;wno z perspektywy użytkownika jak i innych deweloper&oacute;w. Oczywiście, mam r&oacute;wnież sporo opinii na temat pracy wykonywanej przez innych, ale staram się nie wtrącać,&nbsp;jeśli nie jest to istotne.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>Mocno się waha. Pracuję nad OpenBSD tylko wtedy, kiedy mam na to ochotę, czyli&nbsp;ilość poświęconego czasu zależy od tego, czy jest coś, nad czym mam ochotę pracować. Zwykle coś fajnego się dzieje, więc&nbsp;spędzam dość sporo czasu.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Nie uważam, że robimy&nbsp;coś, czego nikt wcześniej nie robił. Możliwe, że niekt&oacute;rym ludziom po prostu nie chce się tego robić. Jestem szczere przekonany, że regularne wydawania, to najlepszy spos&oacute;b na dostarczanie oprogramowania. Miałem nawet&nbsp;drobne sukcesy w przekonywaniu innych do takiego samego podejścia. Niestety w wielu przypadkach sprowadza się to do biegania w panice, aby wcisnąć ostatnie funkcjonalności tuż przed deadlinem. Uważam, że OpenBSD wykonuje tu dobrą robotę, rezygnując z&nbsp;funkcjonalności na korzyść&nbsp;jakości całego wydania.</p>
+<p>Patrząc w przyszłość myślę, że uczymy się radzić sobie z z długoterminowym serwisowaniem oprogramowania. Wielu deweloper&oacute;w OpenBSD pojawiało się i znikało wraz z upływem lat, ale ich kod pozostaje. W projekcie, gdzie każdy pracuje tylko nad rzeczami, na kt&oacute;rych mu zależy, pozostawia to sporo luk w serwisowanych funkcjonalnościach. Stąd motywacja, aby redukować i upraszczać kod oraz funkcjonalności tak, by za 10 lat kodu i potreby jego&nbsp;serwisowania było mniej.</p>
+<p><strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Osobiście jestem zadowolony z obecnego stanu rzeczy. To typ projektu, gdzie&nbsp;nieuniknione jest odkrywanie problem&oacute;w lub niedociągnięć w trakcie pracy, a to co wydawało się akceptowalne na początku mogą stać się&nbsp;katastrofą kilka dni po podjęciu decyzji o wdrożeniu wybranego rozwiązania. Na szczęście dla nas wszystko&nbsp;zywkle&nbsp;kończy&nbsp;się dobrze. Zawsze coś można zrobić lepiej, ale mamy niezły start.</p>
+<p>Jest jeszcze praca, kt&oacute;rą&nbsp;wykonaliśmy przy&nbsp;mechanizmamach prewencyjnych w malloc(). Część z tych prac została podjęta przez inne projekty jako użyteczna, uważam jednak, że możemy w tym obszarze zrobić jeszcze więcej.</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>Jak wspominałem wcześniej, OpenBSD lubi poruszać się powoli. Pozwoliło nam to zaoszczędzić sporo energii w&nbsp;pogoni za chwilowo popularnymi rozwiązaniami tylko po to, by kilka lat p&oacute;źniej p&oacute;jść w innnym kierunku. Jednośnie, aby pozostać nafali&nbsp;i pozostać w tyle, musimy zgadywać co jest chwilową a co nieuniknioną zmianą.</p>

@@ -1,0 +1,28 @@
+---
+layout: topic
+status: publish
+published: true
+title: Podglądanie zmian w źr&oacute;dłach
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 532
+wordpress_url: http://beastie.pl/forums/topic/podgladanie-zmian-w-zrodlach/
+date: '2015-04-26 15:28:14 -0400'
+date_gmt: '2015-04-26 13:28:14 -0400'
+categories: []
+tags: []
+comments: []
+---
+<p>Śledząc zmiany w kodzie <a href="https:&#47;&#47;mail-index.netbsd.org&#47;source-changes&#47;index.html">NetBSD<&#47;a> i <a href="https:&#47;&#47;mail-index.netbsd.org&#47;pkgsrc-changes&#47;index.html">pkgsrc<&#47;a> na listach mailingowych natrafiamy na informację jakie pliki zostały zmodyfikowane oraz opis co zostało wykonane.</p>
+<p>Często brakuje możliwości zajrzenia w kod, a nie zawsze mamy webcvs lub inne repozytorium pod ręką.</p>
+<p>Wtedy wystarczy przerobić linijkę</p>
+<p><code>cvs rdiff -u -r1.5 -r1.6 src&#47;sys&#47;arch&#47;amd64&#47;include&#47;frame_regs.h<&#47;code></p>
+<p>na</p>
+<p><code>cvs -danoncvs@anoncvs.NetBSD.org:&#47;cvsroot rdiff -u -r1.5 -r1.6 src&#47;sys&#47;arch&#47;amd64&#47;include&#47;frame_regs.h<&#47;code></p>
+<p>i otrzymujemy eleganckiego diffa.</p>
+<p>Do powyższego nie potrzeba lokalnej kopii repozytorium, wystarczy lokalna kopia programu cvs i podłączenie do internetu.</p>

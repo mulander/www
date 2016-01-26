@@ -1,0 +1,44 @@
+---
+layout: post
+status: publish
+published: true
+title: file(1) od podstaw w OpenBSD
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "OpenBSD zyskuje <a href=\"http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=142989267412968&amp;w=2\">nową<&#47;a>,
+  wsp&oacute;łczesną i bezpieczną&nbsp; implementację <a href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi?query=file&amp;apropos=0&amp;sec=0&amp;arch=default&amp;manpath=OpenBSD-current\">file(1)<&#47;a>.\r\n\r\nDlaczego
+  przepisywać tak bazowy program? Jeden rzut oka na bazę CVE wskazuje na <a href=\"http:&#47;&#47;www.cvedetails.com&#47;product-search.php?vendor_id=0&amp;search=file\">25
+  błęd&oacute;w związanych<&#47;a> z bezpieczeństwem w file(1). Co z tego, nikt nie
+  używa file(1) do poważnych rzeczy. Nieprawda. Większość aplikacji internetowych
+  korzysta z tego programu celem określenia typu uploadowanego pliku. Ponadto część
+  użytkownik&oacute;w odpala ten program na losowych binarkach pobranych z sieci,
+  nawet mając świadomość, że pobrany program jest wirusem. Przecież używam Linuksa&#47;BSD
+  - jestem bezpieczny...\r\n\r\n"
+wordpress_id: 533
+wordpress_url: http://beastie.pl/?p=533
+date: '2015-04-26 19:14:05 -0400'
+date_gmt: '2015-04-26 17:14:05 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- bezpieczeństwo
+- afl
+- file
+- strings
+- cve
+comments: []
+---
+<p>OpenBSD zyskuje <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=142989267412968&amp;w=2">nową<&#47;a>, wsp&oacute;łczesną i bezpieczną&nbsp; implementację <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi?query=file&amp;apropos=0&amp;sec=0&amp;arch=default&amp;manpath=OpenBSD-current">file(1)<&#47;a>.</p>
+<p>Dlaczego przepisywać tak bazowy program? Jeden rzut oka na bazę CVE wskazuje na <a href="http:&#47;&#47;www.cvedetails.com&#47;product-search.php?vendor_id=0&amp;search=file">25 błęd&oacute;w związanych<&#47;a> z bezpieczeństwem w file(1). Co z tego, nikt nie używa file(1) do poważnych rzeczy. Nieprawda. Większość aplikacji internetowych korzysta z tego programu celem określenia typu uploadowanego pliku. Ponadto część użytkownik&oacute;w odpala ten program na losowych binarkach pobranych z sieci, nawet mając świadomość, że pobrany program jest wirusem. Przecież używam Linuksa&#47;BSD - jestem bezpieczny...</p>
+<p><a id="more"></a><a id="more-533"></a></p>
+<p>Michał 'lcamtuf' Zalewski <a href="http:&#47;&#47;lcamtuf.blogspot.com&#47;2014&#47;10&#47;psa-dont-run-strings-on-untrusted-files.html">na swoim blogu<&#47;a> opisywał taki wektor ataku poprzez program <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man1&#47;strings.1?query=strings">strings(1)<&#47;a> wraz z błędami jakie wykrył jego fuzzer <a href="http:&#47;&#47;lcamtuf.coredump.cx&#47;afl&#47;">AFL<&#47;a>. Tych prostych narzędzi nikt nie przegląda. Odpalenie fuzzera nawet na dużej ilości bazowych program&oacute;w systemowych nie kosztuje wiele, a pozwala na wykrycie bardzo poważnych błęd&oacute;w. Jeżeli web aplikacja odpala taki program na uploadowanych plikach, to katastrofa, a zdalny dostęp do serwera jest tylko kwestią czasu.</p>
+<p>Informacja o nowej implementacji pojawiła się na liście <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=142989267412968&amp;w=2">openbsd-cvs@<&#47;a> w postaci commita, kt&oacute;rego autorem jest Nicholas Marriott. Informuje on w treści o mocno uproszczonym kodzie implementującym prawie w całości <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man5&#47;magic.5?query=magic">magic(5),<&#47;a> z pominięciem parsowania formatu ELF. Zmniejszono też ilość flag dostępnych w programie.</p>
+<p>Niedługo po publikacji tego commita, Bryan Steele stworzył przenośną wersję nowej implementacji file(1) informując o tym <a href="https:&#47;&#47;twitter.com&#47;canadianbryan">na twitterze<&#47;a>. Udostępnił r&oacute;wnież nowy manual dla programu w <a href="http:&#47;&#47;t.co&#47;Yrh2vWImji">formacie PDF<&#47;a>.</p>
+<p>Ogłoszenie, wywołało też dość głośną dyskusję na <a href="https:&#47;&#47;news.ycombinator.com&#47;item?id=9439778">hackernews<&#47;a>.</p>

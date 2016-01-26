@@ -1,0 +1,190 @@
+---
+layout: reply
+status: publish
+published: true
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 594
+wordpress_url: http://beastie.pl/forums/reply/594/
+date: '2015-05-05 21:59:35 -0400'
+date_gmt: '2015-05-05 19:59:35 -0400'
+categories: []
+tags: []
+comments: []
+---
+<p>Przechodziłem przez to samo.</p>
+<p>Oto m&oacute;j oryginalny poradnik.</p>
+<blockquote><p>Hello,</p>
+<p>I'm reposting my mail from 2013-08-24, the original message was rejected<br />
+by the mail-list server, and so hidden under the sands of time.</p>
+<p>Out of the original questions, the pdisk one is solved - it's already ported<br />
+against 64-bit systems and made Machine Independent. However, the wiki is<br />
+misguiding with an old unportable version. I haven't been touching the<br />
+bisect task so far, before getting some support from you - I was<br />
+developing my knowledge of the system with the amd64 and i386 port in<br />
+the meantime.</p>
+<p>Also, I'm a happy owner of an old Macintosh body of PowerPC 6100 (it<br />
+doesn't look to be cannibalized at all), I miss all the peripherals:<br />
+cables and external components (keyboard, mouse, monitor). I know this<br />
+is Nubus and it's unsupported with NetBSD, however I would like to give<br />
+it a try and try to run MKLinux, to verify the hardware is still working.<br />
+The *bay prices are unfortunately doubled or tripled for me, because the<br />
+shipping to Poland costs - and so, the collection may take a few months.<br />
+Another question: can I use standard-PC  power-supply-cable with<br />
+the PPC&#47;Nubus Macintosh?</p>
+<p>...</p>
+<p>Here is the original posting:</p>
+<p>I've just installed NetBSD on the macppc port. This was my first PowerPC<br />
+and Mac hardware ever and the first installation of any system onto it.</p>
+<p>The ultimate steps were presented on the blog by Julio Merino (jmmv) -<br />
+http:&#47;&#47;julipedia.meroh.net&#47;2010&#47;01&#47;installing-netbsdmacppc-on-mac-mini-g4.html</p>
+<p>I'm copying the verbatim copy of the original post at the bottom [1], in<br />
+case of future unknown events and lost the guide for others. And to have<br />
+the all resources in the same place.</p>
+<p>I'm writing here my steps (it took me two days!) for myself and others,<br />
+who will search the web for help. I'm writing everything from my memory<br />
+(so be prepared to see possible mistakes of the commands, however you will<br />
+get the big picture):<br />
+(1) I wasn't able to boot from CD (trying cd, dvd, different vendors).<br />
+At that time I hadn't succeeded in either booting from USB or CDROM drive<br />
+over USB. I wasn't trying out with PXE. The solution for me was to copy<br />
+ofwboot.xcf and the netbsd kernel onto the first partition from a<br />
+preinstalled MacOSX. There is a need to restart the computer and<br />
+immediately push 4 keys COMMAND (apple&#47;swedish) + ALT (OPTION?) + O +<br />
+F, until the load into OpenFirmware. Then to boot into NetBSD type (IIRC<br />
+it was the _MD kernel):<br />
+> boot hd:0,\ofwboot.xcf hd:0,\netbsd-GENERIC_MD.gz<br />
+(2) Then OF will boot into NetBSD. Jump to shell.<br />
+(3) Use pdisk to format your hard-drive. There is a need to read dmesg<br />
+(there is `more' to help to follow it). In my case my hard-disk was<br />
+under &#47;dev&#47;wd0c<br />
+# pdisk &#47;dev&#47;rwd0c<br />
+Remember to use the disk in the raw mode, not the block one!<br />
+Inside it, I had to recreate the partition-table (i) and delete all the<br />
+partitions that were present (d).<br />
+Add new partitions (C). The first one Apple_HFS for the netbsd<br />
+bootloader, for start point of the slice use magic '2p' (and later 3p,<br />
+4p) -- this will start from the empty space at partitions 2, 3, 4.<br />
+My size of the boot partition is '25m', and the partition type is<br />
+'Apple_HFS'.<br />
+Add swap and use partition type 'Apple_UNIX_SVR2' and choose 'swap'. The<br />
+same for the root partition, choose 'Apple_UNIX_SVR2'.</p>
+<p>(4) Now there is the tricky problem: mounting USB disks, network and internal</p>
+<p>CD device are broken! I've found another (bez "one") solution to transfer<br />
+datasets with the distribution... through external CD - and it worked<br />
+(unfortunately, I had to use a few disks, one of them was eaten by the<br />
+internal device -- and eject wasn't accessible)!<br />
+(5) Run installation<br />
+# sysinst<br />
+Use existing partitioning schema, install sets.<br />
+(6) BEFORE reboot go back to the shell<br />
+Mount the installed system and chroot. Fortunately, dhcpclient from<br />
+inside the chroot worked (before figuring out I used another one CD for<br />
+this task). Fetch pkgsrc and install sysutils&#47;hfsutils. With disklabel<br />
+keep track where your HFS partition is:<br />
+# disklabel &#47;dev&#47;wd0<br />
+and hformat it (IIRC for me it was wd0d):<br />
+# hformat &#47;dev&#47;rwd0d<br />
+Mount (I don't remember if we need the raw mode here):<br />
+# hmount &#47;dev&#47;rwd0d<br />
+Copy ofwboot.xcf onto HFS partition. ATTENTION OFWBOOT.XCF from NETBSD-6<br />
+IS BROKEN, USE 5.1 AS REPORTED ON THE PR DATABASE [2].<br />
+# hcopy .&#47;ofwboot.xcf :<br />
+Make sure it's there (other useful commands: hdel, hvol)<br />
+# hls<br />
+And umount it<br />
+# humount<br />
+(7) Reboot into Open Firmware (COMMAND + ALT + O + F)<br />
+Here, I made a mistake and I have got broken .&#47;ofwboot.xcf on the first<br />
+partition (the NetBSD-6+ issue is still valid in 6.1.1). I succeeded in<br />
+formatting (pdisk and hfsutils) a USB pendrive from another machine. Copy<br />
+there ofwboot.xcf and boot from OF.<br />
+I succeeded in booting from the USB bootloader of NetBSD-5.1 and the<br />
+installed system with the following command:<br />
+> boot usb1&#47;disk2:2,\ofwboot.xcf hd:4,&#47;netbsd</p>
+<p>Use 'dev &#47; ls' and 'devalias' commands to help figure out the devices.<br />
+(8) Boot into NetBSD and have fun :-)</p>
+<p>Other problems that I have seen so far:<br />
+A. pdisk as noted on the NetBSD site is accessible from here<br />
+^&#47;pub&#47;NetBSD&#47;arch&#47;macppc&#47;netbsd-pdisk&#47; It's not buildable anymore (the<br />
+build problem is easily solvable - remove a redundant, clashing with<br />
+system libraries function definition from the sources) and it's broken<br />
+on 64-bit architecture (tested with the current Mageia Cauldron x86_64<br />
+and NetBSD&#47;amd64 -- it worked with NetBSD&#47;i386).<br />
+B. pdisk isn't in ports or in the default installation (!) WHY ?<br />
+C. sysinst can't partition disk against Apple_HFS. Neither GPT<br />
+(different story, different architecture!)<br />
+D. hfsutils *must* be available in the installer (or reimplemented.<br />
+integrated into disklabel, fdisk, kernel) - am I missing something?</p>
+<p>There are still things to figure out:<br />
+I. auto-boot, I need to put current ofwboot.xcf onto the first partition<br />
+and research this 'hello screen'<br />
+II. After booting I can't switch TTY?</p>
+<p>I haven't tested X Window so far (I'm not sure I want to do it :-), as<br />
+it's not that well supported on other ports as well).</p>
+<p>Next time I would partition my pendrive, put there ofwboot.xcf, kernel,<br />
+pkgsrc.tar.xz, subset of distuitils (dependencies of hfsutils).. and<br />
+maybe dhcpcd just to try-fail.</p>
+<p>An open question: is mini-mac-ppc G4 a good solution as a home-server<br />
+(serving shell) and simple content through nginx? I'm focused mainly on<br />
+this if it doesn't die against long idle uptime. The current consumption<br />
+is acceptable.</p>
+<p>I'm open to suggestions (I know this is accessible on-line, but to help<br />
+me figure out quicker and the right way the things - now I need to rest and<br />
+to celebrate the success :) ):<br />
+a. How to research the ofwboot.xcf? I want to Take NetBSD-5.1 and<br />
+NetBSD-6.0 versions of ofwboot.xcf, and bisect the problem (before<br />
+squashing it out).<br />
+b. pdisk - where is it developed? I want to contribute fixes against<br />
+64-arch. Are we upstream of it?</p>
+<p>Regards,<br />
+Kamil Rytarowski</p>
+<p>[1] Julio Merino (jmmv) -<br />
+http:&#47;&#47;julipedia.meroh.net&#47;2010&#47;01&#47;installing-netbsdmacppc-on-mac-mini-g4.html<br />
+Monday, January 11, 2010<br />
+Installing NetBSD&#47;macppc on a Mac Mini G4<br />
+Yesterday, I spent a while installing NetBSD&#47;macppc 5.0.1 on a Mac Mini<br />
+G4. The process wasn't easy, as it involved the following steps. I'm<br />
+omitting many details, as they are "common knowledge" to Mac users (or<br />
+otherwise can be easily found on the net):</p>
+<p>After booting the installer from the CD image, drop into the shell.<br />
+Use pdisk to create an Apple_HFS partition for the boot loader and<br />
+two Apple_UNIX_SVR2 partitions, one for the root file system and another<br />
+for swap.<br />
+Run sysinst and install the system. When asked to repartition the<br />
+disk, just say Use existing partition sizes.<br />
+Once the system is installed, drop again into the shell before<br />
+rebooting.<br />
+Mount your hard disk into &#47;mnt and chroot into it.<br />
+Fetch a copy of pkgsrc.<br />
+Install the sysutils&#47;hfsutils package.<br />
+Use hformat to create a new HFS file system in the Apple_HFS<br />
+partition we created.<br />
+Mount the installation CD.<br />
+Copy, using hcopy, the ofwboot.xcf file from the CD to the boot<br />
+partition.<br />
+Reboot.<br />
+Drop into the OpenFirmware setup (Command+Option+P+R).<br />
+Set boot-device to hd:,\ofwboot.xcf.<br />
+Set boot-file to netbsd.<br />
+And here is the tricky thing to get the machine to auto-boot: Set<br />
+boot-command to ." hello" cr " screen" output boot, not mac-boot.</p>
+<p>I found the last command somewhere on the Internet (dunno where now),<br />
+but, supposedly, a regular mac-boot should have worked. In fact, it<br />
+works if you call this command from the prompt, but not during automatic<br />
+boot. (It turns out to be a problem with the version of OpenFirmware I<br />
+have.)</p>
+<p>Just writing down the steps in case I need them later on. Installing<br />
+Debian stable was much, much easier, but the installer for testing<br />
+crashes every day with a different error, so I gave up.</p>
+<p>(Oh, by the way, I did the same installation into an old PowerMac G3 and<br />
+that was really painful. The machine refused to boot from any of the CDs<br />
+I tried and the prebuilt kernels hang during initialization due to a<br />
+bogus driver. In the end: netbooting and using custom kernels.)</p>
+<p>[2] http:&#47;&#47;gnats.netbsd.org&#47;44895<&#47;blockquote></p>
+<p>https:&#47;&#47;mail-index.netbsd.org&#47;port-macppc&#47;2013&#47;09&#47;27&#47;msg002002.html</p>

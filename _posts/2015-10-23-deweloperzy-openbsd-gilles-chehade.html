@@ -1,0 +1,123 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Gilles Chehade'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nSz&oacute;sty&nbsp;Gilles
+  Chehade\r\n\r\n"
+wordpress_id: 1297
+wordpress_url: http://beastie.pl/?p=1297
+date: '2015-10-23 20:58:23 -0400'
+date_gmt: '2015-10-23 18:58:23 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Sz&oacute;sty&nbsp;Gilles Chehade</p>
+<p><a id="more"></a><a id="more-1297"></a></p>
+<hr &#47;>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our sixth&nbsp;interview - Gilles Chehade.</p>
+<hr &#47;>
+<p><b>1. For the readers who don&rsquo;t know you, can you shortly introduce yourself?<&#47;b></p>
+<p>I'm Gilles Chehade from Nantes, France.</p>
+<p>I studied CS at Epitech Paris until 2006, then worked mostly as an&nbsp;R&amp;D engineer for several industries.</p>
+<p>I currently work as a system engineer kind-of-a-devop on a project&nbsp;that involves distributed servers and mailing.<br />
+<b>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;b></p>
+<p>From 1996 to 1999, I had been running various Linux distributions and&nbsp;eventually settled with Redhat which was the most "popular" around me&nbsp;back then.</p>
+<p>Sometime in 1999, I started taking sysadmin jobs for a living and one&nbsp;of my customers was dealing with heavy load that caused his server to&nbsp;hang or panic frequently. He had heard about FreeBSD and wanted me to&nbsp;setup a new server so he could redirect the traffic to it. It made him&nbsp;very happy and gave me a first experience with BSD.</p>
+<p>A friend of mine told me that if I liked FreeBSD, I should give a try&nbsp;to OpenBSD which was supposedly cleaner and more secure but slower. I&nbsp;really enjoyed it from the first day, and progressively started using&nbsp;it everywhere for my own needs, never noticed it being slower for any&nbsp;of my needs.</p>
+<p>When I picked up school and started programming, it was running on my&nbsp;workstation and I loved how it would cause a lot of errors to trigger&nbsp;early, reducing the risk of a demo effect :-)</p>
+<p>We're now 16 years later, I've never looked back, I still use various&nbsp;systems including Linux and FreeBSD, but OpenBSD remains my #1 system&nbsp;for most tasks.<br />
+<b>3. For those readers that still haven&rsquo;t joined the OpenBSD community, why should they try OpenBSD?<&#47;b></p>
+<p>As a developer, because it provides a nice working environment.&nbsp;There is a very clean codebase from which to pick examples, there is&nbsp;a very good documentation with examples too, and the environment is&nbsp;not graceful, it has several mechanisms to trigger early crashes for&nbsp;misbehaving programs which allows spotting bugs that sometimes don't&nbsp;trigger on other systems.</p>
+<p>As a sysadmin, because it has a general feel of cleanness.&nbsp;There are not 20 ways to achieve the same thing, utilities just work&nbsp;and do not fail with cryptic errors, things are where they should be&nbsp;and the many mitigation techniques used in programs lowers my stress&nbsp;when I need to be away from computers for a while.<br />
+<b>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;b></p>
+<p>Yes, OpenBSD is my designated driver.</p>
+<p>My desktop is 100% OpenBSD, I use it for pretty much everything from&nbsp;development to watching Numberphile on youtube ;-)</p>
+<p>My laptop has a dual-boot between OpenBSD and Windows, just in case,&nbsp;but given that most of my use of computers is for programming, it is&nbsp;very rare that I actually make use of it.</p>
+<p>At work we use Linux mainly but as a remote worker I still do all of&nbsp;my work on OpenBSD, then run it on Linux.<br />
+<b>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;b></p>
+<p>When I started programming in 2001, I started using the OpenBSD tree&nbsp;as a source of examples and learnt a lot from there. I was active on&nbsp;the mailing-lists, trying to help people, asking help myself, trying&nbsp;to find where I could help and sending occasional diffs, though very&nbsp;passively.</p>
+<p>In 2006, I contributed a joke diff to a thread and one of the French&nbsp;hackers (Pierre-Yves Ritschard) contacted me to laugh about it.</p>
+<p>We discussed a bit and he asked me about my own projects, I shared a&nbsp;bit of code, he gave some advice, and eventually asked me if I knew&nbsp;about his project "hoststated" (now known as relayd) and if I'd like&nbsp;to contribute to it.</p>
+<p>I started sending diffs for that project daily, then started sending&nbsp;more and more against other parts of the tree, and finally was asked&nbsp;if I wanted to become a developer.</p>
+<p>What's required to become a developer is to actually contribute.</p>
+<p>I don't think becoming a developer is a goal in itself, I tried hard&nbsp;to become one when I began but my contributions were inconsistent. I&nbsp;stopped caring about becoming a developer and more about improving a&nbsp;system I was using daily. If you are motivated about it, then you're&nbsp;going to send enough contributions that a developer somewhere will be&nbsp;annoyed that he spends more time committing your code than his ;-)<br />
+<b>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;b></p>
+<p>I'm a userland&#47;daemon guy and work solely in this area in OpenBSD.</p>
+<p>These last few years, most of my work surrounded the smtpd daemon&nbsp;but I sometimes dive into other daemons because we share patterns&nbsp;of code, we share some API, and sometimes a good idea needs to be&nbsp;spread across the tree.<br />
+<b>7. Do you have an idea of the time you spend working on the OpenBSD project?<&#47;b></p>
+<p>I have no idea, it depends on the amount of free time I have really.</p>
+<p>Sometimes, I can spend hours daily for weeks, other times I can't even&nbsp;find an hour in weeks. These days, it's about an hour each day.</p>
+<p>A few years ago, I used to take days off regularly to work on OpenBSD,&nbsp;but I can't really do that anymore.<br />
+<b>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the oustide world?<&#47;b></p>
+<p>OpenBSD hackers often look at what others do and often discuss ideas&nbsp;to improve the project in various ways. I don't think the origins of&nbsp;an idea is relevant at all, sometimes they are brought, sometimes we&nbsp;adjust or build on top of them, the technical benefits of an idea is what matters really.</p>
+<p>The new pledge() system call is a perfect example of this to me.</p>
+<p>It brings some kind of processes sandboxing by restricting system&nbsp;calls. This is not new technology, several other API do this, and&nbsp;each and every of them was described to me as "THE" solution. But&nbsp;I never got convinced enough to actually implement them.</p>
+<p>Then deraadt@ and others discussed this new call, which basically&nbsp;does what others do, but which has very simple semantics, which I&nbsp;can understand the entire impact immediately, which is absolutely&nbsp;non-intrusive, and which has a very clear contract. This idea now&nbsp;becomes appealing to me, no matter where it originated from.<br />
+<b>9. It&rsquo;s been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;b></p>
+<p>I'm proud to be part of a team of people who are constantly working&nbsp;towards making a better system, because they genuinely want to give&nbsp;the best they can on a system they like. I don't recall ever seeing&nbsp;a feature rushed and hacked just so it fits a schedule, the quality&nbsp;has always driven things and I'm glad it's been that way all along.</p>
+<p>As far as OpenBSD is concerned, I wouldn't revisit anything.</p>
+<p>It is not a perfect system, none is, but it's very good, it evolves&nbsp;at its own pace, with its own innovations, and this has worked good&nbsp;for twenty years ;-)<br />
+<b>10. As a conclusion, can you tell us how you forecast OpenBSD&rsquo;s future? What&rsquo;s the next big challenge?<&#47;b></p>
+<p>A lesson I learnt: never forecast anything IT related ;-)</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Jestem&nbsp;Gilles Chehade z Nantes we Francji.</p>
+<p>Studiowałem informatykę na uczelni Epitech w Paryżu do roku 2006, p&oacute;źniej pracowałem przeważnie w obszarze R&amp;D dla r&oacute;żnych przedsiębiorstw jako inżynier.</p>
+<p>Obecnie pracuje jako inżynier systemowy a-la-devop przy projekcie powiązanym z rozproszoną architekturą serwer&oacute;w i poczty.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Pomiędzy 1996 a 1999 rokiem używałem wielu r&oacute;żnych dystrybucji Linuksa, aż w końcu zostałem przy RedHat, kt&oacute;ry był w&oacute;wczas "najpopularniejszą" dystrybucją w moim środowisku.</p>
+<p>W okolicach 1999 roku zacząłem pracować jako administrator systemowy. Jeden z moich klient&oacute;w zmagał się z dużym obciążeniem, co skutkowało zawieszaniem się serwera lub jego częstą paniką. Słyszał on o FreeBSD i poprosił mnie o konfigurację nowego serwera tak, by m&oacute;c do niego przekierować ruch. Był bardzo zadowolony z efektu końcowego, a ja zyskałem pierwsze doświadczenia z BSD.</p>
+<p>Znajomy powiedział, że jeżeli podoba mi się FreeBSD, to powinienem spr&oacute;bować OpenBSD, kt&oacute;re podobno jest bardziej klarowne i bezpieczne, ale&nbsp;mniej wydajne. Spodobało mi się już od pierwszego dnia, a z biegiem czasu zacząłem używać go wszędzie na własne potrzeby, nigdy nie zauważyłem wspomnianej mniejszej wydajności.</p>
+<p>Kiedy rozpocząłem&nbsp;studia i zacząłem programować, system ten towarzyszył mi na mojej własnej stacji roboczej. Byłem zachwycony tym, że ujawniał taką dużą ilość błęd&oacute;w wcześniej niż inne środowiska, co redukowało ryzyko efektu demo :)</p>
+<p>Minęło 16 lat, a ja nigdy nie żałowałem tej decyzji. Nadal używam r&oacute;żnych system&oacute;w operacyjnych z Linuksem i FreeBSD włącznie, OpenBSD pozostaje jednak moim systemem #1 dla większości zadań.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Developerzy - ze względu na przyjazne programiście środowisko. Bardzo czytelny zestaw kodu źr&oacute;dłowego, z kt&oacute;rego można czerpać przykłady. Świetna dokumentacja, także wzbogacona przykładami, a samo środowisko nie jest pobłażliwe. Istnieje wiele mechanizm&oacute;w wymuszających wczesne ubicie programu, kt&oacute;ry się niepoprawnie zachowuje. Pozwala to na wczesne wykrycie błęd&oacute;w, kt&oacute;re na innych systemach pozostają niezauważone.</p>
+<p>Administratorzy systemowi - ze względu na og&oacute;lną czystość systemu. Nie ma 20 r&oacute;żnych sposob&oacute;w na osiągnięcie tego samego celu. Narzędzia po prostu działają, zamiast&nbsp;zawodzić niejasnymi komunikatami błęd&oacute;w. Wszystko jest tam gdzie być powinno, a istniejące mechanizmy prewencyjne obniżają m&oacute;j poziom stresu, jeśli muszę spędzić trochę czasu z dala&nbsp;od komputer&oacute;w.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Tak, OpenBSD jest moim gł&oacute;wnym systemem.</p>
+<p>M&oacute;j desktop to w 100% OpenBSD. Używam go praktycznie do wszystkiego, od rozwoju oprogramowania aż po oglądanie&nbsp;Numberphile na youtube :)</p>
+<p>M&oacute;j laptop ma skonfigurowany dual-boot pomiędzy OpenBSD a Windowsem, tak tylko na wszelki wypadek. Jednakże biorąc pod uwagę, że moje gł&oacute;wne zajęcie z komputerem to programowanie, nie korzystam zbyt często z tej drugiej opcji.</p>
+<p>W pracy używamy gł&oacute;wnie Linuksa, choć jako zdalny pracownik, nadal wykonuję całą swoją pracę na OpenBSD, kt&oacute;ra na Linuksie jest potem jedynie uruchamiana.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>W 2001 roku, kiedy zaczynałem programować, używałem drzewa kodu OpenBSD jako źr&oacute;dła przykład&oacute;w, na podstawie kt&oacute;rych się uczyłem. &nbsp;Byłem aktywny na listach mailingowych, starałem się pomagać ludziom. Sam r&oacute;wnież prosiłem o pomoc, starając się pojąć, w jaki spos&oacute;b m&oacute;głbym się przydać. Okazyjnie wysyłałem też łatki, chociaż w bardzo pasywny spos&oacute;b.</p>
+<p>W 2006 roku wysłałem dla żartu łatkę, po czym jeden z francuskich hacker&oacute;w (Pierre-Yves Ritschard) skontaktował się ze mną, aby wsp&oacute;lnie się z tego żartu pośmiać.</p>
+<p>Porozmawialiśmy chwilę, zapytał mnie o moje projekty, a ja zademonstrowałem odrobinę kodu i otrzymałem garść porad. Koniec końc&oacute;w zapytał mnie, czy słyszałem o jego projekcie "hoststated" (teraz znanym jako relayd) oraz czy chciałbym pom&oacute;c w jego rozwoju.</p>
+<p>Zacząłem codziennie wysyłać łatki do tego projektu, potem coraz więcej łat dotykających innych części drzewa, aż pewnego dnia zostałem zapytany o to, czy nie chciałbym zostać deweloperem.</p>
+<p>To, co jest potrzebne by zostać deweloperem, to po prostu wspomaganie projektu własną pracą.</p>
+<p>Myślę, że zostanie deweloperem nie jest celem samym w sobie. Kiedy zaczynałem, bardzo starałem się nim zostać, lecz moja praca była bardzo nieregularna i niesp&oacute;jna. Przestało mi zależeć na zostaniu deweloperem, a bardziej na samym ulepszeniu systemu, kt&oacute;rego używałem codziennie. Jeżeli jesteś odpowiednio zmotywowany, to w pewnym momencie wyślesz ta wiele łat, że kt&oacute;ryś deweloper zirytuje się tym, że spędza więcej czasu na&nbsp;commitowaniu twoich rzeczy niż swoich własnych.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Zajmuję się przestrzenią użytkownika&nbsp;i demon&oacute;w, pracuje wyłącznie w tych obszarach OpenBSD.</p>
+<p>Przez ostatnie lata gro mojej pracy dotyczyło demona smtpd, choć czasami zaglądam do innych demon&oacute;w, skoro wsp&oacute;łdzielimy pewne wzorce kodu, API, czasami dobre pomysły muszą być propagowane wzdłuż drzewa.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>Nie mam pojęcia, wszystko zależy od tego, ile posiadam wolnego czasu.</p>
+<p>Czasami mogę spędzać po wiele godzin dziennie całymi tygodniami. W innych przypadkach nie potrafię znaleźć nawet jednej godziny w ciągu tygodni. Obecnie jest to około jednej godziny każdego dnia.</p>
+<p>Kilka lat temu regularnie brałem po całe dnie wolnego, aby pracować&nbsp;nad OpenBSD, ale nie mogę już tego robić.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Hackerzy OpenBSD często spoglądają na pracę wykonywaną w przez innych i omawiają sposoby pozwalające na ulepszenie projektu na r&oacute;żne sposoby. Uważam, że pochodzenie danego pomysłu nie ma w og&oacute;le znaczenia, czasami pochodzą one z zewnątrz, a my dopasowujemy się do nich i dobudowujemy własne na ich podstawie. Wartość techniczna danego pomysłu - to ma faktyczne znaczenie.</p>
+<p>Nowe wywołanie systemowe pledge() jest dla mnie świetnym tego przykładem.</p>
+<p>Zezwala na&nbsp;ograniczanie proces&oacute;w do piaskownic poprzez zmniejszenie dostępu do wywołań systemowych. To nie jest nowa technologia - Istnieje kilka r&oacute;żnych API wykonujących dokładnie to zadanie i każde z nich było mi podawane jako TO JEDYNE rozwiązanie. Jednak nigdy nie byłem na tyle przekonany by jakiekolwiek z nich zaimplementować.</p>
+<p>P&oacute;źniej deraadt@ i kilku innych dyskutowali o tym nowym wywołaniu, kt&oacute;re w praktyce robi tosamo, co pozostałe, ale ma tak prostą semantykę, że natychmiast zrozumiały jest jego cały wpływ, kt&oacute;ry jest kompletnie nieinwazyjny, o bardzo klarownym kontrakcie. Ten pomysł bardzo do mnie przemawia, niezależnie od tego, jakie było jego pochodzenie.</p>
+<p><strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Jestem dumny z bycia częścią zespołu, kt&oacute;ry wciąż pracuje nad stworzeniem lepszego systemu, ponieważ ludzie ci faktycznie chcą wykonać najlepszą pracę jaką potrafią na swoim ulubionym systemie. Nie pamiętam funkcjonalności byle jak zrobionej albo pociętej tylko po to, aby zmieściła się w harmonogramie wydań. Jakość zawsze sterowała rozwojem i jestem bardzo zadowolony, że tak jest od samego początku.</p>
+<p>Z punktu widzenia OpenBSD nie zmieniłbym nic.</p>
+<p>Nie jest to system doskonały, żaden nim nie jest. Natomiast ten system jest bardzo dobry,&nbsp;ewoluuje we własnym tempie, razem ze swoimi własnymi rozwiązaniami - Sprawdzało się to przez ostatnie dwadzieścia lat ;)</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>Lekcja, kt&oacute;rej się nauczyłem - Nigdy nie przewiduj niczego związanego z informatyką ;)</p>

@@ -1,0 +1,222 @@
+---
+layout: topic
+status: publish
+published: true
+title: Stos sieciowy i SMP
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 610
+wordpress_url: http://beastie.pl/forums/topic/stos-sieciowy-i-smp/
+date: '2015-05-06 02:05:10 -0400'
+date_gmt: '2015-05-06 00:05:10 -0400'
+categories: []
+tags: []
+comments: []
+---
+<p>Znalazłem ciekawy dokument w temacie.</p>
+<p>Część&nbsp;danych jest już nieaktualna. Autorem jest Matt Thomas.</p>
+<p><a href="https:&#47;&#47;www.netbsd.org&#47;~matt&#47;smpnet.html">https:&#47;&#47;www.netbsd.org&#47;~matt&#47;smpnet.html<&#47;a></p>
+<p>Pozwolę sobie zacytować.</p>
+<blockquote>
+<p>The future of NetBSD network infrastructure has to efficiently embrace two major design criteria, Symmetric Multi-Processing (SMP) and modularity. Other design considerations include not only supporting but taking advantage of the capability of newer network devices to do packet classification, payload splitting, and even full connection offload.<br />
+Symmetric Multi-Processing<br />
+NetBSD networking has evolved to work in a uniprocessor envionment. Switching it to use fine-grained locked is a hard and complex problem.</p>
+<p>You can divide the network infrastructure into 5 major components:</p>
+<p>    Interfaces (both real devices and pseudo-devices)<br />
+    Socket code<br />
+    Protocols<br />
+    Routing code<br />
+    mbuf code. </p>
+<p>Part of the complexity is that due to the monolithic nature of the kernel each layer currently feels free to call any other layer. This makes designing a lock hierarchy difficult and likely to fail.</p>
+<p>Part of the problem are asynchonous upcalls (among which include):</p>
+<p>    ifa->ifa_rtrequest for route changes<br />
+    pr_ctlinput for interface events </p>
+<p>Another source of complexity is the large number of global variables scattered throughout the source files. This makes putting locks around them difficult.</p>
+<p>The proposed solution presented here include (in no particular order):</p>
+<p>    Revamped struct protosw<br />
+    Lockless queues<br />
+    Kernel Continuations<br />
+    Separate nexthop cache; not part of the routing table.<br />
+    if_poll<br />
+    Fast protocol&#47;port demultiplexing<br />
+    Lazy Receive Processing<br />
+    Make TCP syncache optional<br />
+    Virtual Network Stacks </p>
+<p>Revamped struct protosw<br />
+To split out obvious PR*_xxx that should have never been dispatched through the pr_usrreq&#47;pr_ctloutput. Note that pr_ctloutput is replaced by pr_getopt&#47;pr_setopt.</p>
+<p>    PRU_CONTROL &rarr; pr_ioctl<br />
+    PRU_PURGEIF &rarr; pr_purgeif<br />
+    PRC0_GETOPT &rarr; pr_getopt<br />
+    PRC0_GETOPT &rarr; pr_setopt </p>
+<p>It's expected that pr_drain will just schedule a kernel continuation.</p>
+<p>pr_init &rarr; int pr_init(void *dsc);</p>
+<p>int pr_fini(void *dsc); has been added.<br />
+Lockless queues</p>
+<p>Producer&#47;Consumer Queue (PCQ)</p>
+<p>It allows multiple writers (producers) but only a single reader (consumer). Compare-And-Store operations are used to allow lockless updates. The consumer is expected to be protected by a mutex that covers the structure that the PCQ is embedded into (e.g. socket lock, ifnet hwlock). These queues operate in a First-In, First-Out (FIFO) manner. The act of inserting or removing an item from a PCQ does not modify the item in any way. A PCQ does not prevent an item being inserted multiple times into a single PCQ.</p>
+<p>Since this structure isn't specific to networking it will accessed via <sys&#47;pcq.h> and the code will live in kern&#47;subr_pcq.c.</p>
+<p>    bool pcq_put(pcq_t *pcq, void *item);</p>
+<p>    Places item at the end of the queue. If there is no room in the queue for the item, false is returned; otherwise true is returned. The item must not have the value of NULL.<br />
+    void *pcq_peek(pcq_t *pcq);</p>
+<p>    Returns the next item to be consumed from the queue but does not remove it from the queue. If the queue was empty, NULL is returned.<br />
+    void *pcq_get(pcq_t *pcq);</p>
+<p>    Removes the next item to be consumed from the queue and returns it. If the queue was empty, NULL is returned.<br />
+    size_t pcq_maxitems(pcq_t *pcq);</p>
+<p>    Returns the maximum number of items that the queue can store at any one time.<br />
+    pcq_t *pcq_create(size_t maxlen, km_flags_t kmflags);</p>
+<p>    void pcq_destroy(pcq_t *pcq);</p>
+<p>Atomic FIFO&#47;LIFO Queue</p>
+<p>These routines allow for commonly typed items to be locklessly inserted at either the head or tail of a queue for either last-in, first-out (LIFO) or first-in, first-out (FIFO) behavior, respectively. However, a queue is not instrinsicly LIFO or FIFO. Its behavior is determined solely by which method each item was pushed onto the queue.</p>
+<p>It is only possible for an item to removed from the head of queue. This removal is also performed in a lockless manner.</p>
+<p>All items in the queue must share a atomic_queue_link_t member at the same offset from the beginning of item. This offset is passed to atomic_qinit.</p>
+<p>    void atomic_qinit(atomic_queue_t *q, size_t offset);</p>
+<p>    Initialize the atomic_queue_t queue at q.</p>
+<p>    offset is the offset to the atomic_queue_link_t inside the data structure where the pointer to the next item in this queue will be placed. It should be obtained using offsetof.<br />
+    void *atomic_qpeek(atomic_queue_t *q);</p>
+<p>    Returns a pointer to the item at the head of the supplied queue q. If there was no item because the queue was empty, NULL is returned. No item is removed from the queue. Given this is an unlocked operation, it should only be used as a hint as whether the queue is empty or not.<br />
+    void *atomic_qpop(atomic_queue_t *q);</p>
+<p>    Removes the item (if present) at the head of the supplied queue q and returns a pointer to it. If there was no item to remove because the queue was empty, NULL is returned. Because this routine uses atomic Compare-And-Store operations, the returned item should stay accessible for some indeterminable time so that other interrupted or concurrent callers to this function with this q can continue to deference it without trapping.<br />
+    void atomic_qpush_fifo(atomic_queue_t *q, void *item);</p>
+<p>    Place item at the tail of the atomic_queue_t queue at q.<br />
+    void atomic_qpush_lifo(atomic_queue_t *q, void *item);</p>
+<p>    Place item at the head of the atomic_queue_t queue at q. </p>
+<p>Generic Radix &#47; PATRICIA Trees</p>
+<p>BSD systems have always used a radix tree for their routing tables. However, the radix tree implementation is showing its age. It's lack of flexibility (it's only suitable for use in a routing table) and overhead of use (requires memory allocation&#47;deallocation for insertions and removals) make replacing it with something better tuned to today's processors a necessity.</p>
+<p>Since a radix tree branches on bit differences, finding these bit differences efficiently is crucial to the speed of tree operations. This is most quickly done by XORing the key and the tree node's value together and then counting the number of leading zeroes in the result of the XOR. Many processors today (ARM, PowerPC) have instructions that can count the number of leading zeroes in a 32 bit word (and even a 64 bit word). Even those that don't can use a simple constant time routine to count them:</p>
+<p>    int<br />
+    clz(unsigned int bits)<br />
+    {<br />
+    	int zeroes = 0;<br />
+    	if (bits == 0)<br />
+    		return 32;<br />
+            if (bits & 0xffff0000) bits &= 0xffff0000; else zeroes += 16;<br />
+            if (bits & 0xff00ff00) bits &= 0xff00ff00; else zeroes += 8;<br />
+            if (bits & 0xf0f0f0f0) bits &= 0xf0f0f0f0; else zeroes += 4;<br />
+            if (bits & 0xcccccccc) bits &= 0xcccccccc; else zeroes += 2;<br />
+            if (bits & 0xaaaaaaaa) bits &= 0xaaaaaaaa; else zeroes += 1;<br />
+    	return zeroes;<br />
+    }</p>
+<p>The existing BSD radix tree implementation does not use this method but instead uses a far more expensive method of comparision. Adapting the existing implementation to do the above is actually more expensive than writing a new implementation.</p>
+<p>The primary requirements for the new radix tree are:</p>
+<p>    Be self-contained. It can't require additional memory other than what is used in its data structures.<br />
+    Be generic. A radix tree has uses outside networking. </p>
+<p>To make the radix tree flexible, all knowledge of how keys are represented have been encapsulated into a pt_tree_ops_t structure which contains 4 functions:</p>
+<p>    bool ptto_matchnode(const void *foo, const void *bar, pt_bitoff_t max_bitoff, pt_bitoff_t *bitoffp, pt_slot_t *slotp);</p>
+<p>    Returns true if both foo and bar objects have the identical string of bits starting at *bitoffp and ending before max_bitoff. In addition to returning true, *bitoffp should be set to the smaller of max_bitoff or the length, in bits, of the compared bit strings. Any bits before *bitoffp are to be ignored. If the string of bits are not identical, *bitoffp is set to the where the bit difference occured, *slotp is the value of that bit in foo, and false is returned. The foo and bar (if not NULL) arguments are pointers to a key member inside a tree object. If bar is NULL, then assume it points to a key consisting of entirely of zero bits.<br />
+    bool ptto_matchkey(const void *key, const void *node_key, pt_bitoff_t bitoff, pt_bitlen_t bitlen);</p>
+<p>    Returns true if both key and node_key objects have identical strings of bitlen bits starting at bitoff. The key argument is the same key argument supplied to ptree_find_filtered_node.<br />
+    pt_slot_t ptto_testnode(const void *node_key, pt_bitoff_t bitoff, pt_bitlen_t bitlen);</p>
+<p>    Returns bitlen bits starting at bitoff from node_key. The node_key argument is a pointer to the key members inside a tree object.<br />
+    pt_slot_t ptto_testkey(const void *key, pt_bitoff_t bitoff, pt_bitlen_t bitlen);</p>
+<p>    Returns bitlen bits starting at bitoff from key. The key argument is the same key argument supplied to ptree_find_filtered_node. </p>
+<p>All bit offsets are relative to the most significant bit of the key,</p>
+<p>The ptree programming interface contains just five routines:</p>
+<p>    void ptree_init(pt_tree_t *pt, const pt_tree_ops_t *ops, size_t ptnode_offset, size_t key_offset);</p>
+<p>    Iniitializes a ptree. If pt points at an existing ptree, all knowledge of that ptree will be lost.</p>
+<p>    The pt argument is a pointer to the pt_tree_t to be initialized.</p>
+<p>    The ops argument is a pointer to the pt_tree_ops_t used by the ptree. This has four members:</p>
+<p>    The ptnode_offset argument contains the offset from the beginning of an item to its pt_node_t member.</p>
+<p>    The key_offset argument contains the offset from the beginning of an item to its key data. This is used for If 0 is used, a pointer to the beginning of the item will be generated.<br />
+    void *ptree_find_filtered_node(pt_tree_t *pt, const void *key, pt_filter_t filter, void *filter_ctx);</p>
+<p>    A pt</p>
+<p>    The filter argument is either NULL or a function bool (*)(const void *, void *, int);<br />
+    bool ptree_insert_mask_node(pt_tree_t *pt, void *item, pt_bitlen_t masklen);</p>
+<p>    A pt</p>
+<p>    A item<br />
+    bool ptree_insert_node(pt_tree_t *pt, void *item);</p>
+<p>    A pt</p>
+<p>    A item<br />
+    void *ptree_iterate(pt_tree_t *pt, const void *node, pt_direction_t direction);</p>
+<p>    A pt</p>
+<p>    A node</p>
+<p>    A direction<br />
+    void ptree_remove_node(pt_tree_t *pt, const pt_tree_ops_t *ops, void *item);</p>
+<p>    A pt</p>
+<p>    A item </p>
+<p>Kernel Continuations<br />
+Combine callouts, softints, and workqueues into a single framework. Continuations are meant to cheap. Very cheap.</p>
+<p>    kcont_t *kcont_create(kcont_wq_t *wq, kmutex_t *lock, void (*func)(void *, kcont_t *), void *arg, int flags);</p>
+<p>    A wq must be supplied. It may be one returned by kcont_workqueue_acquire or a predefined workqueue such as (sorted from highest priority to lowest):<br />
+        wq_softserial, wq_softnet, wq_softbio, wq_softclock<br />
+        wq_prihigh, wq_primedhigh, wq_primedlow, wq_prilow </p>
+<p>    lock, if non-NULL, will be locked before calling func(arg) and released afterwards. However, if the lock will be released and&#47;or destroyed before the called function returns, then before returning kcont_set_mutex must be called with either a new mutex to be released or NULL. If acquiring lock would block, other pending kernel continuations which depend on other locks may be dispatched in the meantime. However, all continuations sharing the same set of { wq, lock, [ci] } will be processed in the order they are scheduled.</p>
+<p>    Currently, flags must be 0.<br />
+    int kcont_schedule(kcont_t *kc, struct cpu_info *ci, int nticks);</p>
+<p>    If the continuation is marked as INVOKING, an error of EBUSY will be returned. If nticks is 0, the continuation is marked as INVOKING while EXPIRED and PENDING are cleared, and the continuation is scheduled to be invoked without delay. Otherwise, the continuation is marked as PENDING while EXPIRED status is cleared, and the timer reset to nticks. Once the timer expires, the continuation is marked as EXPIRED and INVOKING, and the PENDING status is cleared.</p>
+<p>    If ci is non-NULL, the continuation will be invoked on the specified CPU if the continuations's workqueue has per-cpu queues. If that workqueue does not provide per-cpu queues, an error of ENOENT will be returned. Otherwise when ci is NULL, the continuation will be invoked on either the current CPU or the next available CPU depending on whether the continuation's workqueue has per-cpu queues or not, respectively.<br />
+    void kcont_destroy(kcont_t *kc);<br />
+    kmutex_t *kcont_getmutex(kcont_t *kc);</p>
+<p>    Return the lock currently associated with the continuation kc.</p>
+<p>    void kcont_setarg(kcont_t *kc, void *arg);</p>
+<p>    Update arg in the continuation kc. If no lock is associated with the continuation, then arg may be changed at any time though if the continuation is being invoked it may not pick up the change. Otherwise, kcont_setarg must only be called when the associated lock is locked.</p>
+<p>    kmutex_t *kcont_setmutex(kcont_t *kc, kmutex_t *lock);</p>
+<p>    Updates the lock associated with the continuation kc and returns the previous lock. If no lock is currently associated with the continuation, then calling this function with a lock other than NULL will trigger an assertion failure. Otherwise, kcont_setmutex must be called only when the existing lock (which will be replaced) is locked. If kcont_setmutex is called as a result of the invokation of func, then after kcont_setmutex has been called but before func returns, the replaced lock must have been released, and the replacement lock, if non-NULL, must be locked upon return.</p>
+<p>    void kcont_setfunc(kcont_t *kc, void (*func)(void *), void *arg);</p>
+<p>    Update func and arg in the continuation kc. If no lock is associated with the continuation, then only arg may be changed. Otherwise, kcont_setfunc must be called only when the associated lock is locked.</p>
+<p>    bool kcont_stop(kcont_t *kc);</p>
+<p>    The kcont_stop function stops the timer associated the continuation handle kc. The PENDING and EXPIRED status for the continuation handle is cleared. It is safe to call kcont_stop on a continuation handle that is not pending, so long as it is initialized. kcont_stop will return a non-zero value if the continuation was EXPIRED.</p>
+<p>    bool kcont_pending(kcont_t *kc);</p>
+<p>    The kcont_pending function tests the PENDING status of the continuation handle kc. A PENDING continuation is one who's timer has been started and has not expired. Note that it is possible for a continuation's timer to have expired without being invoked if the continuation's lock could not be acquired or there are higher priority threads preventing its invokation. Note that it is only safe to test PENDING status when holding the continuation's lock.</p>
+<p>    bool kcont_expired(kcont_t *kc);</p>
+<p>    The kcont_expired function tests to see if the continuation's function has been invoked since the last kcont_schedule.<br />
+    bool kcont_active(kcont_t *kc);<br />
+    bool kcont_invoking(kcont_t *kc);</p>
+<p>    The kcont_invoking function tests the INVOKING status of the kcont handle kc. This flag is set just before a continuation's function is being called. Since the scheduling of the worker threads may induce delays, other pending higher-priority code may run before the continuation function is allowed to run. This may create a race condition if this higher-priority code deallocates storage containing one or more continuation structures whose continuation functions are about to be run. In such cases, one technique to prevent references to deallocated storage would be to test whether any continuation functions are in the INVOKING state using kcont_invoking, and if so, to mark the data structure and defer storage deallocation until the continuation function is allowed to run. For this handshake protocol to work, the continuation function will have to use the kcont_ack function to clear this flag.<br />
+    bool kcont_ack(kcont_t *kc);</p>
+<p>    The kcont_ack function clears the INVOKING state in the continuation handle kc. This is used in situations where it is necessary to protect against the race condition described under kcont_invoking.</p>
+<p>    kcont_wq_t *kcont_workqueue_acquire(pri_t pri, int flags);</p>
+<p>    kcont_workqueue_acquire returns a workqueue that matches the specified criteria. Thus if multiple requesters ask for the same criteria, they will all be returned the same workqueue.</p>
+<p>    pri specifies the priority at which the kernel thread which empties the workqueue should run.</p>
+<p>    If flags is 0 then the standard operation is required. Hoever, the following flag(s) may be bitwise ORed together:<br />
+        WQ_PERCPU specific that the workqueue should have a separate queue for each CPU, this allowing continuations to invoked on specific CPUs. </p>
+<p>    int kcont_workqueue_release(kcont_wq_t *wq);</p>
+<p>    kcont_workqueue_release releases an acquired workqueue. On the last release, the workqueue's resources are freed and the workqueue is destroyed. </p>
+<p>The API is primarily derived from the callout(9) API and is a superset of the softint(9) API. The most significant change is that workqueue items are not tied to a specific kernel thread.<br />
+Separate nexthop cache; not part of the routing table.</p>
+<p>Remove ARP, AARP, ISO SNPA, and IPv6 Neighbors from the routing table. Instead, the ifnet structure will have a set of nexthop caches (usually implemented using patricia trees), one per address family. Each nexthop entry will contain the datalink header needed to reach the neighbor.</p>
+<p>This will remove cloneable routes from the routing table and remove the need to protocol-specific code in the common Ethernet, FDDI, PPP, etc. code and put it back where it belongs, in the protocol itself.<br />
+if_poll<br />
+When a network device gets an interrupt, it ill call <iftype>_defer(ifp) to schedule a kernel continuation for that interface which invokes <iftype>_poll. Whether the the interrupt source should be masked depends if the device is a DMA device or a PIO device. This routine will call (*ifp->if_poll)(ifp) to deal with the interrupt's servicing.</p>
+<p>During servicing any received packets will passed up via (*ifp->if_input)(ifp, m) which will be responsible for ALTQ or any other optional processing as well as protocol dispatch. Protocol dispatch in <iftype>_input will decode the datalink headers, if needed, via a table lookup and call the matching protocol's pr_input to process the packet. As such, interrupt queues (e.g. ipintrq) will no longer be needed. Any transmitted packets can be processed as can MII events. Either true or false will be returned by if_poll depending on whether another invokation of <iftype>_poll for this interface should be immediately scheduled or not, respectively.</p>
+<p>Memory allocation will be prohibited in the interrupt routines. The device's if_poll routine should pre-allocate enough mbufs to do any required buffering. For devices doing DMA, the buffers are placed into receive descripors to be filled via DMA.</p>
+<p>For devices doing PIO, pre-allocated mbufs are enqueued onto the softc of the device so when the interrupt routine needs one it simply dequeues one, fills in it in, and then enqueues it onto a completed queue, finally calls <iftype>_defer. If the number of pre-allocated mbufs drops below a threshold, the driver may decide to increase the number of mbufs that if_poll pre-allocates. If there are no mbufs left to receive the packet, the packets is dropped and the number of mbufs for if_poll to pre-allocate should be increased.</p>
+<p>When interrupts are unmasked depends a few things. If the device is interrupting "too" often, it might make sense for the device's interrupts to remain masked and just schedule the device's continuation for the next clock tick. This assumes the system has a high enough value set for HZ.</p>
+<p>Fast protocol&#47;port demultiplexing.</p>
+<p>When a packet is received and it's destined for a socket, simply place the packet in the socket's receive PCQ and wake the blocking socket. Then it's off to process the next packet.</p>
+<p>The typical packet flow from ip_input is to {rip,tcp,udp}_input which</p>
+<p>    does the lookup to locate the socket which takes a reader lock on the appropriate pcbtable's hash bucket<br />
+    if found and in the proper state<br />
+        Don't lock the socket since that would might block and therefore stop packet demultiplexing.<br />
+        pcq_put the packet to the pcb's pcq.<br />
+        kcont_schedule worker continuation with small delay (~100ms).<br />
+        lock the socket's cvmutex<br />
+        release the pcbtable lock<br />
+        if no waiters<br />
+        if tcp and in sequence then we if need to send an immediate ack<br />
+            try to lock the socket<br />
+            if successful, send an ack<br />
+        set a flag to process the p&#47;c queue<br />
+        cv_signal the socket's cv.<br />
+        release the cvmutex<br />
+    if not found or not in the proper state<br />
+        release the pcb hash table lock </p>
+<p>Lazy Receive Processing</p>
+<p>Instead of having a set of active workqueue lwps waiting to service sockets, use the kernel lwp that's blocked on the socket to service the workitem. It's not being productive being blocked and it has an interest in getting that workitme done, and maybe we can directly copy that data to user's address and avoid queuing in the socket at all.<br />
+Make TCP syncache optional</p>
+<p>For small systems, the syncache is complete overkill and should be made optional.<br />
+Virtual Network Stacks</p>
+<p>Collect all the global data for an instance of a network stack (excluding AF_LOCAL). This includes routing table, data for multiple domains and their protocols, and the mutexes needed for regulating access to it all. Indead, a brane is an instance of a networking stack.</p>
+<p>An interface belongs to a brane as do processes. This can be considered as chroot(2) for networking. A chbrane(2)<br />
+Radical Thought #1<br />
+LWPs in user space don't need a kernel stack<br />
+Those pages are only being used in case the an exception happens. Interrupts are probably going to their own dedicated stack. One could just keep a set of kernel stacks around. Each CPU has one, when a user exception happens, that stack is assigned to the current LWP and removed as the active CPU one. When that CPU next returns to user space, the kernel stack it was using is saved to be used for the next user exception. The idle lwp would just use the current kernel stack.<br />
+LWPs waiting for kernel condition shouldn't need a kernel stack<br />
+If a LWP is waiting on a kernel condition variable, it is expecting to be inactive for some time, possibly a long time. During this inactivity, it doesn't really need a kernel stack.</p>
+<p>When the exception handler get an usermode exeception, it sets LWP restartable flag that indicates that the exception is restartable, and then services the exception as normal. As routines are called, they can clear the LWP restartable flag as needed. When an LWP needs to block for a long time, instead of calling cv_wait, it calls cv_restart. If cv_restart returned false, the LWPs restartable flag was clear so cv_restart acted just like cv_wait. Otherwise, the LWP and CV have been tied together (big hand wave), the lock has been released and the routine should return ERESTART. cv_restart could also wait for a small amount of time like .5 second, and only if the timeout expires.</p>
+<p>As the stack unwinds, eventually, it will return to last the exception handler. The exception will see the LWP has a bound CV, save the LWP's user state into the PCB, set the LWP to sleeping, mark the lwp's stack as idle, and call the scheduler to find more work. When called, cpu_switchto will notice the stack is marked idle, and detach it from the LWP,</p>
+<p>When the condition times out or is signalled, the first lwp attached to the condition variable is mark runnable and detached from the CV. When the cpu_switchto routine is called, the it will notice the lack of a stack so it will grab one, restore the trapframe, and reinvoke the exception handler.<&#47;blockquote></p>

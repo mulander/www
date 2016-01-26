@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: httpd rozbudowane o przepisywanie adres&oacute;w
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Serwer httpd w bazowym systemie OpenBSD zastąpił nginx w błyskawicznym tempie.
+  Kod powstał na bazie relayd, jest aktywnie rozwijany i zasłynął z wprowadzenia taga
+  'featuritis', kt&oacute;rym autorzy projektu oznaczają funkcjonalności o jakie proszą
+  użytkownicy w sytuacji gdy wykraczają one poza zakres zaplanowany dla httpd.\r\n\r\nTakim
+  tagiem oznaczono <a href=\"https:&#47;&#47;github.com&#47;reyk&#47;httpd&#47;issues&#47;27\">issue
+  #27 Rewrites<&#47;a>. Wszystko jednak wskazuje na to, że doczekamy się tej funkcjonalności.\r\n\r\n"
+wordpress_id: 815
+wordpress_url: http://beastie.pl/?p=815
+date: '2015-06-23 13:42:55 -0400'
+date_gmt: '2015-06-23 11:42:55 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- lua
+- httpd
+comments: []
+---
+<p>Serwer httpd w bazowym systemie OpenBSD zastąpił nginx w błyskawicznym tempie. Kod powstał na bazie relayd, jest aktywnie rozwijany i zasłynął z wprowadzenia taga 'featuritis', kt&oacute;rym autorzy projektu oznaczają funkcjonalności o jakie proszą użytkownicy w sytuacji gdy wykraczają one poza zakres zaplanowany dla httpd.</p>
+<p>Takim tagiem oznaczono <a href="https:&#47;&#47;github.com&#47;reyk&#47;httpd&#47;issues&#47;27">issue #27 Rewrites<&#47;a>. Wszystko jednak wskazuje na to, że doczekamy się tej funkcjonalności.</p>
+<p><a id="more"></a><a id="more-815"></a></p>
+<p>Na listę mailingową tech@ Reyk Floeter wysłał <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=143480475721221&amp;w=2">patch<&#47;a> adaptujący kod dopasowującą wzorce z języka Lua na potrzeby httpd. Pierwotnie Reyk protestował przed wprowadzeniem wyrażeń regularnych między innymi ze względu na łatwe doprowadzenie do ataku odmowy świadczenia usługi przez zajęcie zasob&oacute;w przy rekursywnych dopasowaniach.</p>
+<p>Kod zaadaptowany z Lua ma tylko 700 linii i według autora jest przejrzysty, wystarczająco funkcjonalny, posiada stosowną licencję (MIT) oraz pozbawiony jest wspomnianych rekursywnych dopasowań.</p>
+<p>Na chwilę obecną patch czeka na testy, zapewne niedługo trafi do bazowego systemu. Możliwe, że kod zaadaptowany z Lua zostanie wprowadzony jako generalna biblioteka w systemie.</p>
+<p>Podczas BSDCan 2015 Reyk przedstawił r&oacute;wnież historię samego httpd, prezentacja została nagrana. Zainteresowanych odsyłam do jej <a href="https:&#47;&#47;www.youtube.com&#47;watch?v=DV1-EfdIp8I">pierwszej<&#47;a> oraz <a href="https:&#47;&#47;www.youtube.com&#47;watch?v=_v0lI6qDWFs">drugiej<&#47;a> części.</p>

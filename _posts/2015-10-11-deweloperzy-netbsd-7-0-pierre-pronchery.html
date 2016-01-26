@@ -1,0 +1,120 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy NetBSD-7.0: Pierre Pronchery'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Pierre Pronchery jest francuskim deweloperem mieszkającym w Niemczech, swoje
+  pierwsze kroki jako deweloper NetBSD stawiał już kilka lat temu, a w 2013 r. powołał
+  do życia projekt EdgeBSD.\r\n\r\n"
+wordpress_id: 1193
+wordpress_url: http://beastie.pl/?p=1193
+date: '2015-10-11 20:13:24 -0400'
+date_gmt: '2015-10-11 18:13:24 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- pkgsrc
+- edgebsd
+- wywiad
+- wydanie
+- deforaos
+comments: []
+---
+<p>Pierre Pronchery jest francuskim deweloperem mieszkającym w Niemczech, swoje pierwsze kroki jako deweloper NetBSD stawiał już kilka lat temu, a w 2013 r. powołał do życia projekt EdgeBSD.</p>
+<p><a id="more"></a><a id="more-1193"></a></p>
+<hr &#47;>
+<p>Pierre Pronchery is a French developer living in Germany. His first steps as a NetBSD developer were a few years ago. In 2013 he founded the new project EdgeBSD.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you yet, can you shortly introduce yourself?<&#47;strong></p>
+<p>Sure: a European citizen living in Germany, in my early thirties, I am&nbsp;passionate about Computer Science and Open Source in particular, with&nbsp;a strong interest in Operating System design and security; both of&nbsp;which I gladly exercise during freelance assignments as a consultant, or&nbsp;among my other few hobbies.</p>
+<p><strong>2. Why did you choose to run NetBSD? How long have you been using it? What are your ports (hardware platforms)?<&#47;strong></p>
+<p>It is a funny story, really. A good friend gave me my first Linux&nbsp;install discs back in 1999 (RedHat 5.2 and Debian 2.0 FWIW) and it was an experience which I quickly completed in different contexts with some&nbsp;FreeBSD, OpenBSD and Solaris uptime.</p>
+<p>So by the time I joined a sysadmin course in 2005, I was already very&nbsp;comfortable with UNIX, and my teacher considered it would give my&nbsp;group of like-minded students a harder time to have to use NetBSD&nbsp;instead of Linux like the others. Needless to say, I got hooked :)</p>
+<p><strong>3. For those readers that still haven't joined the NetBSD community, why should they try NetBSD?<&#47;strong></p>
+<p>In my perception NetBSD is as close as can be to the original UNIX&nbsp;philosophy: get together a number of tools that each do one simple&nbsp;task, and do it well. There is very particular care in the&nbsp;implementation of the system for consistency and clean design. This&nbsp;makes it a fantastic platform to study and understand the system.</p>
+<p><strong>4. In your professional environment, do you work with NetBSD?<&#47;strong></p>
+<p>My own computers run NetBSD, which has served me well so far for both&nbsp;research, auditing, and reporting. My situation is quite particular&nbsp;though, because I am also often restricted to the system my customers&nbsp;provide me on site - and so far none of them have been running NetBSD (that&nbsp;I could tell). Reading the user manual of my VoIP soft-phone, I&nbsp;learned that it runs NetBSD - so all my professional phone calls are&nbsp;issued with NetBSD.</p>
+<p>More seriously now, my current assignment requires a mix of&nbsp;development, sysadmin, and setting up production and development&nbsp;environments for a mid-size team; in some very specific cases it&nbsp;turned out that NetBSD was actually a better solution and was&nbsp;therefore deployed.</p>
+<p><strong>5. How did you become a NetBSD developer? What do you think is required in order to join the NetBSD project as a developer?<&#47;strong></p>
+<p>The typical way to enter the NetBSD project is as follows:</p>
+<ul>
+<li>submit patches and improvements regularly;<&#47;li>
+<li>use the feedback to progressively improve their quality and get them<br />
+good enough for direct integration;<&#47;li></p>
+<li>someone in the project will grow tired of acting as your proxy<br />
+eventually, look for mentors, ask for objections and send an invitation.<&#47;li><br />
+<&#47;ul><br />
+In my case it was a mix of fixes for hardware support, backports of a&nbsp;few drivers from OpenBSD and integration work for an x86-based tablet.&nbsp;But the most important aspect was probably to join the community both&nbsp;online (via IRC and mailing lists) and personally by going to&nbsp;conferences and hackathons.</p>
+<p>The latter made it much easier to get acquainted with existing&nbsp;developers and let them authenticate my PGP&#47;GPG key - which is the&nbsp;only actual requirement, together with adhering to the NetBSD&nbsp;Foundation, a US-based nonprofit organization.</p>
+<p><strong>6. Can you tell us about some NetBSD-related areas you work on?<&#47;strong></p>
+<p>I put myself in the shoes of a NetBSD vendor when starting the <a href="http:&#47;&#47;edgebsd.org&#47;">EdgeBSD<&#47;a>&nbsp;project a couple of years ago. It started as an experiment to work on&nbsp;NetBSD using Git instead of CVS, to facilitate collaborative review&nbsp;and integration in particular. The current direction involves a&nbsp;complete overhaul of the release process and focuses on delivering a&nbsp;stable distribution to the user:</p>
+<ul>
+<li>rolling release for the base system,<&#47;li>
+<li>long-term security support for packages,<&#47;li>
+<li>improved security for the distribution process and the system itself,<&#47;li>
+<li>reproducible audit trail,<&#47;li>
+<li>convenient update path.<&#47;li><br />
+<&#47;ul><br />
+If you ask me, I would rather work on Clean-Slate Internet (with&nbsp;NetBSD as a base system) and pursue my research project on seamless&nbsp;ubiquitous personal computing (DeforaOS), but I need a system that I&nbsp;can reasonably rely on this day and in this age in the first place. It is a&nbsp;hostile world out there and NetBSD has some means to defend itself&nbsp;already - but most are still not enabled by default for some reason.</p>
+<p><strong>7. Do you have an idea of the time you spend working on the NetBSD project?<&#47;strong></p>
+<p>Yes: no matter what, I always try to spend one hour on any of my&nbsp;Open Source projects every day. In practice, I would say that I spend&nbsp;somewhere between 5 to 10 hours on either DeforaOS or EdgeBSD&#47;NetBSD per week - with both projects completing one another.</p>
+<p><strong>8. Please tell us about the strongest points and features of the 7.0 release.<&#47;strong></p>
+<p>The first thing that comes to my mind is riastradh@'s work on&nbsp;supporting modern graphics cards. NetBSD was lagging behind on&nbsp;hardware support and the gap is closing now.</p>
+<p>Everything around the rump kernel is also fantastic research in&nbsp;Operating System design, and this release marks another step forward.&nbsp;It is a great example of achieving more by removing code and through&nbsp;simplification. I really need to spend time on this project.</p>
+<p><strong>9. Please tell us about some improvements for the NetBSD project that are worth picking up for newcomers?<&#47;strong></p>
+<p>The pkgsrc project, definitely: it is more and more complete, offering&nbsp;a very extensive list of polished packages for the system. There is a&nbsp;lot of work on desktop support, showing progress with XFCE in&nbsp;particular but also GNOME, MATE, KDE and the usual environments. This&nbsp;project is catching up too with some of the releases upstream - in&nbsp;spite of the madness we have seen recently around systemd, both&nbsp;politically and technically. This is refreshing, and is critical to&nbsp;help newcomers get started.</p>
+<p><strong>10. As a conclusion, can you tell us how you forecast NetBSD future?<&#47;strong></p>
+<p>To be honest, I have mixed feelings. The reasons leading me to start&nbsp;EdgeBSD are still there. I see NetBSD suffering from a lack of&nbsp;leadership, both politically and technically. The project has survived&nbsp;very well without it so far and still cares at least as much for&nbsp;quality as it did before.</p>
+<p>It is still a great research platform, but the shadow of suboptimal&nbsp;usability and irrelevance for daily use on modern hardware is not far&nbsp;behind. Given the amount of work and dedication to the project from&nbsp;its growing community, I have good hope that we can keep it out of&nbsp;this niche. And even if not, it may still be a perfectly acceptable&nbsp;direction for the project. I just want to run NetBSD everywhere :)</p>
+<p>Cheers,</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie dla czytelnik&oacute;w, kt&oacute;rzy jeszcze Cię nie znają?<&#47;strong></p>
+<p>Pewnie: Trzydziestoparoletni obywatel Europy, mieszkający w Niemczech, pasjonuję się informatyką a w szczeg&oacute;lności Otwartym Oprogramowaniem z naciskiem na projektowanie i bezpieczeństwo system&oacute;w operacyjnych; obydwa zagadnienia aktywnie praktykuję wykonując pracę jako konsultant oraz w ramach jednego z moich paru hobby.</p>
+<p><strong>2. Dlaczego wybrałeś NetBSD? Jak długo korzystasz z tego systemu? Z kt&oacute;rymi portami (platformami sprzętowymi) masz do czynienia?<&#47;strong></p>
+<p>To naprawdę śmieszna historia. Dobry przyjaciel dał mi m&oacute;j pierwszy zestaw płyt instalacyjnych Linuksa w 1999 roku (RedHat 5.2 oraz Debian 2.0 jeśli kogoś to interesuje) i było to doświadczenie, kt&oacute;re wkr&oacute;tce zakończyłem w zupełnie innym kontekście z FreeBSD, OpenBSD i Solarisem.</p>
+<p>Zatem, do momentu w kt&oacute;rym dołączyłem do kursu dla&nbsp;administrator&oacute;w w 2005 r., już byłem dość obeznany z systemem UNIX, a nasz nauczyciel stwierdził, że sprawi naszej grupie podobnie myślących kursant&oacute;w trochę więcej kłopotu zmuszając nas do używania NetBSD zamiast Linuksa, kt&oacute;rego używają inne grupy. Nie muszę chyba m&oacute;wić, że złapałem bakcyla :)</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności NetBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Z mojej perspektywy NetBSD jest najbliżej jak się da oryginalnej filozofii systemu UNIX: zbierz zestaw narzędzi, kt&oacute;re wykonują tylko jedno proste zadanie i wykonują je dobrze. Bardzo dużo uwagi przywiązuje się do sp&oacute;jności i czystości projektu systemu. W ten spos&oacute;b powstaje fantastyczna platforma do studiowania i zrozumienia systemu.</p>
+<p><strong>4. Czy w swoim środowisku zawodowym masz do czynienia z NetBSD?<&#47;strong></p>
+<p>Moje własne komputery pracują na NetBSD, kt&oacute;re dotąd dobrze mi służą zar&oacute;wno w badaniach naukowych, audytach oraz raportowaniu. Moja sytuacja jest jednak dość specyficzna, ponieważ często jestem ograniczony do systemu&nbsp;dostarczonego przez moich klient&oacute;w w miejscu pracy - jak dotąd żaden z nich nie używał NetBSD (w spos&oacute;b widoczny dla mnie). Czytając instrukcję&nbsp;mojego telefonu VoIP, dowiedziałem się, że jego systemem operacyjnym jest NetBSD - zatem wszystkie moje służbowe rozmowy są obsługiwane przez NetBSD.</p>
+<p>Tak bardziej na poważnie, moje obecne zadanie wymaga rozwoju, administracji i konfiguracji środowisk produkcyjnych i deweloperskich dla średniego rozmiaru zespołu; w niekt&oacute;rych bardzo specyficznych przypadkach NetBSD okazywało się faktycznie najlepszym rozwiązaniem, zatem zostawało wdrażane.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem NetBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Typowa droga do projektu NetBSD jest następująca:</p>
+<ul>
+<li>wysyłaj regularnie łatki i ulepszenia;<&#47;li>
+<li>ucz się na podstawie otrzymywanych odpowiedzi w celu doskonalenia jakości swojej pracy na tyle, by mogła być bezpośrednio&nbsp;integrowana&nbsp;z projektem;<&#47;li>
+<li>ktoś w projekcie znudzi się rolą pośrednika dla twoich zmian, poszuka mentora, zapyta o zastrzeżenia, a następnie wyśle zaproszenie.<&#47;li><br />
+<&#47;ul><br />
+W moim przypadku była to mieszkanka poprawek dla wsparcia sprzętu, backportowania sterownik&oacute;w z OpenBSD i praca integracyjna dla tabletu opartego&nbsp;na platformie x86. Jednak prawdopodobnie najważniejszym aspektem było dołączenie do społeczności zar&oacute;wno online (przez IRC i listy mailingowe) jak i osobiście poprzez uczestniczenie w konferencjach i hackathonach.</p>
+<p>Uczestniczenie w konferencjach i hackathonach znacznie ułatwiło zapoznanie się z obecnymi deweloperami oraz umożliwiło im podpisanie&nbsp;mojego klucza PGP&#47;GPG - co jest jedynym&nbsp;faktycznym wymaganiem wraz z dołączeniem do fundacji NetBSD, kt&oacute;ra jest organizacją nonprofit mającą siedzibę w USA.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w NetBSD?<&#47;strong></p>
+<p>Znalazłem się w sytuacji producenta oferującego NetBSD w momencie rozpoczęcia projektu <a href="http:&#47;&#47;edgebsd.org&#47;">EdgeBSD<&#47;a> kilka lat temu. Początkowo był to eksperyment polegający na pracy z NetBSD przy użyciu Git zamiast CVS, by ułatwić w szczeg&oacute;lności&nbsp;wsp&oacute;lne przeglądy kodu i jego integrację. Obecny kierunek to kompletne przerobienie procesu produkcji wydań systemu, skupia się to na dostarczaniu do użytkownika dystrybucji:</p>
+<ul>
+<li><em>rolling release<&#47;em> (aktualizowanej na bieżąco) dla systemu bazowego,<&#47;li>
+<li>z długoterminowym dostarczaniem łat bezpieczeństwa dla paczek,<&#47;li>
+<li>zwiększonym bezpieczeństwie dla procesu tworzenia dystrybucji i systemu samego w sobie,<&#47;li>
+<li>powtarzalnej ścieżce audytowej,<&#47;li>
+<li>wygodnej ścieżce aktualizacji.<&#47;li><br />
+<&#47;ul><br />
+Jeżeli o mnie chodzi, to wolałbym pracować nad&nbsp;&nbsp;projektowaniem internetu od zera&nbsp;(z NetBSD jako bazowym systemem) i dążyć w pracy badawczej do bezbłędnego wszechobecnego komputera osobistego (DeforaOS), ale przede wszystkim&nbsp;potrzebuję systemu, na kt&oacute;rym mogę polegać już teraz, w dzisiejszych czasach. Świat jest nieprzyjazny, a NetBSD już teraz posiada odpowiednie środki by się bronić - jednak większość jest wciąż domyślnie wyłączona z jakiegoś powodu.</p>
+<p><strong>7. Czy wiesz ile czasu zajmuje Ci praca w projekcie NetBSD?<&#47;strong></p>
+<p>Tak: niezależnie od wszystkiego, zawsze staram się spędzić przynajmniej godzinę nad dowolnym z moich projekt&oacute;w Open Source każdego dnia. W praktyce, powiedziałbym, że spędzam pomiędzy 5 a 10 godzin nad projektami DeforaOS oraz EdgeBSD&#47;NetBSD w tygodniu - gdzie oba te projekty uzupełniają siebie nawzajem.</p>
+<p><strong>8. Proszę przybliż nam najmocniejsze punkty i cechy charakterystyczne najbliższego wydania NetBSD-7.0.<&#47;strong></p>
+<p>Pierwszą rzeczą, jaka przychodzi na myśl to praca wykonana przez&nbsp;riastradh@'a, dotycząca wsparcia wsp&oacute;łczesnych kart graficznych. NetBSD było odrobinę w tyle jeżeli chodzi o wsparcie tego typu sprzętu, obecnie ta luka jest domykana.</p>
+<p>Wszystko dotyczące rump kerneli jest r&oacute;wnież fantastycznym obszarem badawczym w rozwoju system&oacute;w operacyjnych, to wydanie jest kolejnym kamieniem milowym. Jest to świetny przykład&nbsp;nowych osiągnięć poprzez usuwanie kodu oraz jego uproszczenie. Naprawdę muszę spędzić więcej czasu nad tym projektem.</p>
+<p><strong>9. Proszę przybliż nam r&oacute;wnież obszary systemu NetBSD, kt&oacute;re uznajesz za wartościowe do ulepszenia dla nowych deweloper&oacute;w?<&#47;strong></p>
+<p>Zdecydowanie projekt pkgsrc: jest coraz bardziej kompletny i oferuje długą listę doszlifowanych paczek dla systemu. Wykonujemy sporo&nbsp;pracy dotyczącej wsparcia na desktopie, w szczeg&oacute;lności pokazującej postępy z XFCE ale r&oacute;wnież z GNOME, MATE, KDE i typowymi środowiskami. Projekt powoli dogania wydania oferowane przez upstream - pomimo szaleństwa ostatnio spowodowanego przez systemd, zar&oacute;wno politycznego jak i technicznego. To&nbsp;jest krytyczny element, kt&oacute;ry pomaga nowym osobom rozpocząć pracę z systemem.</p>
+<p><strong>10. W ramach podsumowania, jaką kreślisz przyszłość dla NetBSD?<&#47;strong></p>
+<p>Szczerze m&oacute;wiąc, mam mieszane uczucia. Przyczyny, z powodu kt&oacute;rych rozpocząłem projekt EdgeBSD nadal są obecne. Widzę, że NetBSD cierpi z powodu braku przyw&oacute;dztwa zar&oacute;wno politycznego jak i technicznego. Projekt poradził sobie bez niego dotychczas bardzo dobrze i nadal dba o jakość jak&nbsp;w ubiegłych latach.</p>
+<p>Nadal jest to świetna platforma badawcza ale cień pozostawiającej wiele do życzenia wydajności&nbsp;i braku znaczenia na nowoczesnym sprzęcie jest tuż tuż. Biorąc jednak pod uwagę zaangażowanie w projekt rosnącej społeczności użytkownik&oacute;w - mam wielką nadzieję, że projektowi uda się wyjść ze swojej niszy. A nawet jeżeli nie, możliwe iż jest to nadal doskonale akceptowalny kierunek dla projektu. Ja po prostu chcę pracować na&nbsp;NetBSD wszędzie. :)</p>
+<p>Pozdrowienia,</p>

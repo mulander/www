@@ -1,0 +1,33 @@
+---
+layout: post
+status: publish
+published: true
+title: Pierwsze łatki NetBSD w projekcie lldb&#47;llvm
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 1091
+wordpress_url: http://beastie.pl/?p=1091
+date: '2015-09-03 11:41:51 -0400'
+date_gmt: '2015-09-03 09:41:51 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- freebsd
+- macosx
+- darwin
+- llvm
+- windows
+- lldb
+- paccept
+- accept4
+comments: []
+---
+<p>W lldb&#47;llvm zaczynaja się pojawiać pierwsze łatki dodające wsparcie dla systemu NetBSD. W chwili obecnej mamy w tym programie wsparcie dla FreeBSD, Linuksa, Darwina i Windowsa.</p>
+<p><a href="http:&#47;&#47;llvm.org&#47;viewvc&#47;llvm-project&#47;lldb&#47;trunk&#47;source&#47;Host&#47;common&#47;Socket.cpp?view=diff&amp;r1=246786&amp;r2=246787&amp;pathrev=246787">Pierwszą łatką<&#47;a>, nie licząc dawniejszych sprzed roku zostało wykorzystanie API paccept(2), w miejsce specyficznego dla Linuksa i zaadaptowanego przez FreeBSD accept4(2).</p>
+<p>Część łatek czeka na napisanie i dodanie do jądra NetBSD, w szczeg&oacute;lności poszerzenie interfejsu ptrace(2) oraz dodanie syscalla do zwracania absolutnej ścieżki pliku wykonywalnego wskazanego procesu, na bazie jego numeru PID.</p>

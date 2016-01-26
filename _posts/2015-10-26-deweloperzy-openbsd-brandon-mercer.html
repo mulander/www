@@ -1,0 +1,90 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Brandon Mercer'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nDziewiąty Brandon Mercer\r\n\r\n"
+wordpress_id: 1351
+wordpress_url: http://beastie.pl/?p=1351
+date: '2015-10-26 11:31:04 -0400'
+date_gmt: '2015-10-26 10:31:04 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Dziewiąty Brandon Mercer</p>
+<p><a id="more"></a><a id="more-1351"></a></p>
+<hr &#47;>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our ninth&nbsp;interview - Brandon Mercer.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><b>1. For the readers who don&rsquo;t know you, can you shortly introduce yourself?<&#47;b></p>
+<p>I'm a software developer by trade, mostly working in the backend&nbsp;application space though I have done a ton of web application development&nbsp;as well. I've been a part of the OpenBSD project for a few years now and I&nbsp;usually work on arm hardware support.</p>
+<p><b>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;b></p>
+<p>I really enjoyed the experience when I first tried OpenBSD. Someone&nbsp;suggested it to me because I said I was concerned about security. The&nbsp;installation was painless and what was being advertised in the&nbsp;documentation is what was there. I really have grown to appreciate accurate&nbsp;documentation. It's a very good indicator of a projects overall health. If&nbsp;their guides are wrong, you can imaging how terrible the rest is. My first&nbsp;install was around 1999 when I was in college. At the time I was studying&nbsp;engineering, but my roommate was a computer science major so I had a ton of&nbsp;exposure to other stuff.<br />
+<b>3. For those readers that still haven&rsquo;t joined the OpenBSD community, why should they try OpenBSD?<&#47;b></p>
+<p>OpenBSD is a great platform. Anyone not using it is doing themselves and&nbsp;injustice. I love that things just work as you'd expect and there aren't a&nbsp;bunch of crazy things that need to be configured to get a system up and&nbsp;running. The defaults work and they make sense.</p>
+<p><b>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;b></p>
+<p>Yes, OpenBSD is the only thing I use at home with the exception of some&nbsp;android and chromeos things. I use it for normal end user stuff like&nbsp;browsing the web, watching youtube, or playing games. And it also makes the&nbsp;absolute best development platform.</p>
+<p>At work we do use OpenBSD for some of our services, and I use it as my&nbsp;primary workstation. Oddly enough the other two developers have asked for&nbsp;shells on my workstation because they love the tools that are available to&nbsp;them that they don't have in windows.<br />
+<b>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;b></p>
+<p>I was working on making OpenBSD run on a pandaboard, which is a small arm&nbsp;platform. At the time there was work being done to bring some other arm&nbsp;architectures up, so I collaborated a bit with the folks who were doing&nbsp;that. I spent a lot of time reading code to understand how things worked,&nbsp;and eventually got the pandaboard to boot far enough to print the&nbsp;copyright. A while after that I was invited to come to a general hackathon.</p>
+<p>As far as becoming a developer, I think the biggest thing is that you need&nbsp;to listen to feedback carefully. Silence does not mean you've done&nbsp;something wrong, it just means people are very busy. Generally feedback&nbsp;will tell you if you're close, or if you are way off the mark. Find&nbsp;something that interests you and work on it. It is also important to remain&nbsp;objective about things during communication. If someone challenges your&nbsp;idea, it's not an attack. You need to defend your standpoint on the issue.&nbsp;Change for the sake of change is silly, but change that improves something&nbsp;is often worthwhile.</p>
+<p><b>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;b></p>
+<p>Most of what I've done has been in the kernel for arm hardware support. The&nbsp;hardware for arm is very splintered in that you cannot build one single&nbsp;platform that supports "arm." At the very best you might be able to support&nbsp;a single SoC family, and at the very least it might be a chip per port.&nbsp;Obviously this doesn't scale well and it's one of the reasons our arm&nbsp;support is lacking.</p>
+<p>There are a few ports that I enjoy making use of that I try to maintain.&nbsp;Some teensy flashing tools and a font that allows my eyes to be at ease&nbsp;while I'm doing development.</p>
+<p><b>7. Do you have an idea of the time you spend working on the OpenBSD project?<&#47;b></p>
+<p>Not nearly enough. I might have an hour a night that I can spend testing&nbsp;something, or taking a look at a new thing. At work very little of my time&nbsp;can be spent on OpenBSD related work because the workload is high.&nbsp;Generally when I do sit down to write code or get something working it&nbsp;happens in a small 2 hour window.<br />
+<b>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the oustide world?<&#47;b></p>
+<p>I do think OpenBSD is a leader in software development. I don't see us&nbsp;doing anything revolutionary. It's just a matter of doing what is right.&nbsp;There isn't a scrum master, lounging underneath the waterfall however there&nbsp;are rules and guidelines that are adhered to. Sticking to the rules is&nbsp;important. Shooting from the hip gets too many people in trouble. The&nbsp;shortcut is the process.</p>
+<p><b>9. It&rsquo;s been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;b></p>
+<p>It's really hard to pin down just a single thing that I'm most proud of.&nbsp;The project has a lot of strengths that I benefit from daily. Perhaps if I&nbsp;were to pick a few they would be (in no particular order) OpenSSH,&nbsp;Documentation, and libressl. As far as revisiting things I'm not sure what&nbsp;I would change. Hindsight is always 20&#47;20 so it's not really fair to go&nbsp;back and say you'd never do that again.</p>
+<p><b>10. As a conclusion, can you tell us how you forecast OpenBSD&rsquo;s future? What&rsquo;s the next big challenge?<&#47;b></p>
+<p>OpenBSD has a great future. It will continue to be useful and solve&nbsp;problems for those who are wise enough to download a release and give it a&nbsp;shot.</p>
+<p>As for the future, there are some really exciting things in the works for&nbsp;virtualization so that OpenBSD will have its own first class hypervisor.&nbsp;Generally I'm not too excited about virtualization from the standpoint of&nbsp;competing with commercial solutions. In this case the tools that are out&nbsp;there now are very complex. The amount of tooling around them is mind&nbsp;boggling. When you look at all the other things software vendors don't get&nbsp;right about an operating system, how you can they be trusted to build a&nbsp;virtualization layer on top of it? Anyhow, it will be really nice to be&nbsp;able to fire up some virtual machines on my laptop that I can test builds&nbsp;or experimental designs on, or setup a cluster of things to test some&nbsp;networking configuration.</p>
+<p>Speaking of networking, there are some other really exciting things in the&nbsp;works for the network stack. I'm excited to see what unfolds with pf, and&nbsp;with wireless. We've already seen some great benefits on various network&nbsp;drivers from getting fine grained locking.</p>
+<p>As for challenges, I think we all hope that funding for the project will&nbsp;continue to grow and be more predictable. We all need to be supporting&nbsp;OpenBSD financially on a recurring basis. The project needs money to keep&nbsp;working, and money helps fund big advancements.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Zawodowo&nbsp;rozwijam oprogramowanie. Pracuję gł&oacute;wnie w obszarze backendu, wykonawałem też sporo pracy przy&nbsp;tworzeniu stron internetowych. Jestem częścią projektu OpenBSD już od kilku lat, zasadniczo zajmuję się nad wsparciem dla platformy ARM.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Pierwsze doświadczenia z OpenBSD wspominam naprawdę&nbsp;dobrze. Ktoś polecił mi ten system, ponieważ powiedziałem, że&nbsp;martwię się o bezpieczeństwo. Instalacja była bezbolesna, a to co było reklamowane w dokumentacji faktycznie istniało w systemie. Naprawdę zacząłem doceniać dokładną dokumentację. Jest ona bardzo dobrym wskaźnikiem og&oacute;lnego stanu zdrowia danego projektu. Jeśli przewodnik jest błędny, to możesz sobie wyobrazić, jak okropna musi być reszta. Pierwszy raz zainstalowałem ten system w 1999 roku, jeszcze w college'u. Wtedy studiowałem inżynierię, ale m&oacute;j wsp&oacute;łlokator kończył informatykę, więc miałem sporo styczności z tymi tematami.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>OpenBSD jest świetną platformą. Każdy, kto jej&nbsp;nie używa, sam robi sobie krzywdę. Uwielbiam to, że wszystko działa zgodnie z oczekiwaniami i nie trzeba wykonywać jakiejś szalonej konfiguracji, aby system zwyczajnie&nbsp;działał. Domyślne ustawienia zdają egzamin&nbsp;i mają sens.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Tak. OpenBSD jest jedynym systemem, kt&oacute;rego&nbsp;używam w domu, za wyjątkiem urządzeń z Androidem i ChromeOS. Używam go&nbsp;do normalnych zadań, takich jak przeglądanie stron w sieci web, oglądanie YouTube lub granie w gry. Jest to także absolutnie najlepsza platforma do rozwoju oprogramowania.</p>
+<p>W pracy niekt&oacute;re z naszych usług używają&nbsp;OpenBSD, a ja używam go jako mojej stacji roboczej. Śmieszne, ale dw&oacute;ch&nbsp;innych deweloper&oacute;w poprosiło mnie o konta shell na mojej stacji, ponieważ uwielbiają dostępne na niej narzędzia, kt&oacute;rych oni nie mają na Windowsie.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Pracowałem nad uruchomieniem OpenBSD na pandaboard, takiej małej platformie ARM. Trwały w&oacute;wczas&nbsp;prace nad dodaniem wsparcia dla kilku innych architektur ARM,&nbsp;wsp&oacute;łpracowałem zatem z osobami, kt&oacute;re to robiły. Spędzałem sporo czasu przy&nbsp;czytaniu kodu celem zrozumienia jego działania i w końcu&nbsp;poprowadziłem wsparcie dla pandaboard na tyle, by system się uruchomił i wyświetlił informacje o licencji. Chwilę potem zostałem zaproszony na generalny hackathon.</p>
+<p>Jeżeli chodzi o samo zostanie deweloperem - myślę, że najważniejsze jest uważne wsłuchiwanie się w informację zwrotną. Cisza nie oznacza, że zrobiłeś coś źle; sygnalizuje tylko, że ludzie są&nbsp;mocno zajęci. Og&oacute;lnie -&nbsp;informacja zwrotna podpowie ci czy jesteś blisko celu czy&nbsp;daleko. Znajdź coś, co cię interesuje i popracuj nad tym. Ważne jest r&oacute;wnież, by pozostać obiektywnym w trakcie&nbsp;komunikacji. Jeżeli ktoś kwestionuje tw&oacute;j pomysł, to nie jest atak. Musisz nauczyć się argumentować swoje decyzje. Sama w sobie&nbsp;zmiana jest głupia, lecz&nbsp;zmiana, kt&oacute;ra cokolwiek poprawi - przeważnie jest warta zachodu.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Większość mojej pracy dotyczyła wsparcia dla sprzętu&nbsp;ARM w kernelu.&nbsp;Sprzęt dla ARM jest tak zr&oacute;żnicowany, że nie można zbudować w systemie jednej platformy, kt&oacute;ra wspiera wszystkie "ARM". W najlepszym wypadku, uda ci się wspierać jedną rodzinę SoC, co może dotyczyć r&oacute;wnież specyficznego czipu i portu. Taka sytuacja nie skaluje się zbyt dobrze, co&nbsp;sprawia, że nasze wsparcie dla ARM nie jest najlepsze.</p>
+<p>Jest kilka port&oacute;w, kt&oacute;rych lubię używać, więc staram się je serwisować. Kilka narzędzi do flashowania płytek teensy oraz&nbsp;czcionka, kt&oacute;ra pozwala moim oczom odpoczywać w trakcie programowania.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>Za mało.&nbsp;W nocy jestem w stanie&nbsp;znaleźć godzinę, kt&oacute;rą uda mi się spędzić na przetestowaniu czegoś lub zapoznania się z czymś nowym. W pracy niewiele mojego czasu mogę poświęcić OpenBSD, ponieważ jesteśmy dość zajęci. Generalnie, jeżeli siadam do pisania odrobiny kodu lub zachcę sprawić by cokolwiek zaczęło działać, to pracę tę wykonywanuję w małych 2 godzinnych okienkach.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Uważam, że OpenBSD wiedzie w rozwoju oprogramowania. Nie uważam, że robimy&nbsp;coś rewolucyjnego. To po prostu kwestia wykonywania tego, co słuszne. Nie mamy scrum mastera wypoczywającego nad&nbsp;wodospadem, jednak są zasady i wskaz&oacute;wki, kt&oacute;rych się mocno trzymamy. Postępowanie według tych zasad jest bardzo ważne. Strzelanie z biodra wpędza zbyt wiele os&oacute;b w tarapaty. Skr&oacute;t jest procesem.</p>
+<p><strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Ciężko wskazać dokładnie jedną rzecz, z kt&oacute;rej jestem najbardziej dumny. Projekt ma wiele silnych stron, a ja czerpię z tego korzyści każdego dnia. Jeżeli miałbym wybrać kilka, to (w losowej kolejności) OpenSSH, dokumentacja i LibreSSL.&nbsp;Trudno powiedzieć, co chciałbym ponownie odwiedzić lub zmienić. Znając przyszłość nie fair jest m&oacute;wić, że nie zrobiło by się czegoś w ten&nbsp;sam spos&oacute;b.</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>OpenBSD ma wspaniałą przyszłość. Pozostanie użytecznym systemem do rozwiązywania problem&oacute;w, dla tych na tyle mądrych, aby pobrać wydanie i go spr&oacute;bować.</p>
+<p>Jeśli&nbsp;chodzi o przyszłość, obecnie jestw toku kilka bardzo ekscytujących rzeczy&nbsp;związanych z wirtualizacją, OpenBSD też będzie miał niedługo swojego własnego hipernadrządzcę pierwszej klasy. Generalnie nie jestem zbyt podeksctowany wirtualizacją jako sposobem&nbsp;konkurowania z komercjalnymi rozwiązaniami. W tym zakresie, narzędzia dostępne&nbsp;obecnie na rynku są bardzo złożone. Ilość narzędzi zbudowanych wok&oacute;ł tych rozwiązań jest powalająca. Jeżeli popatrzymy na ilość problem&oacute;w, kt&oacute;re&nbsp;są niepoprawnie rozwiązywane przez dostawc&oacute;w oprogramowania, czy&nbsp;można ślepo ufać warstwie&nbsp;wirtualizacji zbudowanej na nim? W każdym razie, przyjemnie będzie odpalić kilka wirtualnych maszyn na moim laptopie, gdy&nbsp;będę chciał przetestować kilka&nbsp;kompilacji lub eksperymentalnych zmian, albo skonfigurować klaster sieciowy, aby testować r&oacute;żne konfiguracje sieciowe.</p>
+<p>Skoro już m&oacute;wimy o sieciach, jest kilka innych bardzo interesujących&nbsp;zmian w stosie sieciowym. Jestem podekscytowany tym, co pokaże się w pf oraz &nbsp;w sieciach&nbsp;bezprzewodowych, już zanotowaliśmy spore zyski z drobiazgowego blokowania zasob&oacute;w w r&oacute;żnych sterownikach sieciowych.</p>
+<p>Skoro&nbsp;m&oacute;wimy o wyzwaniach - myślę, że każdy z nas ma nadzieję na stały wzrost finans&oacute;w projektu oraz na to, że staną się one bardziej przewidywalne. Potrzebujemy regularnego wsparcia finansowego dla projektu OpenBSD. Projekt potrzebuje pieniędzy, aby funkcjonować, a pieniądze pomagają osiągać wyższe&nbsp;cele.</p>

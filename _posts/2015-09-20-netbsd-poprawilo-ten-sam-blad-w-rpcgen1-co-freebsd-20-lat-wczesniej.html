@@ -1,0 +1,32 @@
+---
+layout: post
+status: publish
+published: true
+title: NetBSD poprawiło ten sam błąd w rpcgen(1) co FreeBSD 20 lat wcześniej
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 1139
+wordpress_url: http://beastie.pl/?p=1139
+date: '2015-09-20 19:27:38 -0400'
+date_gmt: '2015-09-20 17:27:38 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- freebsd
+- rpc
+- rpcgen
+comments: []
+---
+<p>Podczas prac nad portowaniem System XVI na platformę NetBSD poprawiono trzy błędy rpcgen(1), kt&oacute;re były wcześniej niezauważone:</p>
+<ul>
+<li><a href="http:&#47;&#47;mail-index.netbsd.org&#47;source-changes&#47;2015&#47;09&#47;20&#47;msg068979.html">dereferencja wskaźnika NULL<&#47;a>,<&#47;li>
+<li><a href="http:&#47;&#47;mail-index.netbsd.org&#47;source-changes&#47;2015&#47;09&#47;20&#47;msg068980.html">błędne generowanie kodu w starszym stylu dla nowego stylu<&#47;a>,<&#47;li>
+<li><a href="http:&#47;&#47;mail-index.netbsd.org&#47;source-changes&#47;2015&#47;09&#47;20&#47;msg068981.html">naprawienie generowania obrony plik&oacute;w nagł&oacute;wkowych przed wielokrotnym zagnieżdżaniem<&#47;a>.<&#47;li><br />
+<&#47;ul><br />
+Ciekawostką jest fakt, że drugi z powyższych błęd&oacute;w został już naprawiony we FreeBSD <a href="https:&#47;&#47;github.com&#47;freebsd&#47;freebsd&#47;commit&#47;15a1e09c3d41cb01afc70a2ea4d20c5a0d09348a">13 grudnia 1995 r.<&#47;a>, przez dewelopera wpaul@. Poprawka została wzięta razem z aktualizacją rpcgen z paczki TI-RPC 2.3.</p>

@@ -1,0 +1,85 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Bryan Steele'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "18&nbsp;października,&nbsp;20&nbsp;lat temu, pierwszy commit wylądował w
+  repozytorium CVS projektu OpenBSD. Dzisiaj, w dzień 20 rocznicy, zesp&oacute;ł beastie.pl
+  zaprasza wszystkich czytelnik&oacute;w na&nbsp;serię wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nJako pierwszy&nbsp;Bryan
+  Steel\r\n\r\n"
+wordpress_id: 1252
+wordpress_url: http://beastie.pl/?p=1252
+date: '2015-10-18 00:10:28 -0400'
+date_gmt: '2015-10-17 22:10:28 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>18&nbsp;października,&nbsp;20&nbsp;lat temu, pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. Dzisiaj, w dzień 20 rocznicy, zesp&oacute;ł beastie.pl zaprasza wszystkich czytelnik&oacute;w na&nbsp;serię wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Jako pierwszy&nbsp;Bryan Steel</p>
+<p><a id="more"></a><a id="more-1252"></a></p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. Today on the anniversary the beastie.pl team invites all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We start off with Bryan Steele.</p>
+<p>&nbsp;</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you, can you shortly introduce yourself?<&#47;strong></p>
+<p>I'm Bryan Steele (<a href="http:&#47;&#47;brynet.biz.tm&#47;">brynet@<&#47;a>), I post silly stuff under the twitter account <a href="https:&#47;&#47;twitter.com&#47;canadianbryan&#47;">@canadianbryan<&#47;a> and mostly just waste time on irc &amp; reddit.</p>
+<p><strong>2. Why did you choose to run OpenBSD? How long have you been using it? &nbsp;<&#47;strong></p>
+<p>I chose OpenBSD after running a few different Unixen, I originally was a DOS&#47;Win user like many kids born in the 80's raised in the 90's. I discovered QNX at school on the Unisys&#47;Burroughs ICON computers, but all I remeber is playing adventure games and LOGO.</p>
+<p>For awhile I played with Unix on my 486 and later P1 &amp; AMD K6 computers at home, first getting a copy of Coherent UNIX and then eventually Slackware Linux when I finally had Internet access. I somehow landed on OpenBSD around 3.7 and have been using it ever since.</p>
+<p><strong>3. For those readers that still haven't joined the OpenBSD community, why should they try OpenBSD?<&#47;strong></p>
+<p>It's a good community to be a part of, even if your not comfortable taking an active role at first.. there's a lot of smart people working on cool things and just watching and using it can teach you a lot.</p>
+<p>My first time using OpenBSD was to setup an IRC server so I could extend a friends network to Canada. I switched over systems one by one and over the years found it well suited for a wide variety of different roles, be it a flexible router&#47;server or desktop.</p>
+<p><strong>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;strong></p>
+<p><a href="http:&#47;&#47;brynet.biz.tm&#47;pub&#47;slacker.png">http:&#47;&#47;brynet.biz.tm&#47;pub&#47;slacker.png<&#47;a></p>
+<p>:-)</p>
+<p>Yes. I run OpenBSD on both my laptops and desktops, the work being done by jsg@, kettenis@ and matthieu@ mean X works great on my hardware, and the porters do an amazing job keeping all the upper stacks updated and working, given so few developers and hours in the day.</p>
+<p><strong>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;strong></p>
+<p>I started sending patches in 2009&#47;2010 or so for a bunch of small things, and then in 2010 I got a fancy new dual-core AMD laptop that "just worked" except for a lack of CPU frequency scaling. I started learning about the newer AMD hardware and reading fancy docs like the BKDG (BIOS Kernel Developer Guides) and finally had something that worked, I then emailed tech@ and developers that worked on similar parts of the tree and eventually it was committed by claudio@.</p>
+<p>Lately? I've been working on my own things, but occasionally find time between slacking (..so much TV) to write mail or send a diff or two.</p>
+<p><strong>5. How did you become an OpenBSD developer? What do you think is required in order to join the OpenBSD project as a developer?<&#47;strong></p>
+<p>I got a mail from deraadt@ one day asking for a master.passwd line almost out of the blue. I think showing both an interest at working on something individually and together with a team is important.</p>
+<p><strong>8. OpenBSD tends to lead in development best practices does it work the other way around? Is there a process improvement the project started or aims to adapt from the oustide world?<&#47;strong></p>
+<p>I think the work on tame^Wpledge will be interesting, reviewing the diffs and commits has been a fascinating look at how programs are designed, but also where improvements can be made.</p>
+<p>I also think that nicm@'s privsep&#47;sandbox file(1) deserves some more attention, file is a utility that people run against anything, often as root, indiscriminately. It also shouldn't be able to open sockets or write to files.</p>
+<p><strong>9. It's been a long 20 years of amazing releases. What are you most proud of and what would you like to revisit&#47;redo?<&#47;strong></p>
+<p>To be a part of it, even in a minimal role, for some 10 of those years, and now almost 4 as a developer.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Jestem Bryan Steele (<a href="http:&#47;&#47;brynet.biz.tm&#47;">brynet@<&#47;a>), publikuję na twitterze pod nickiem&nbsp;<a href="https:&#47;&#47;twitter.com&#47;canadianbryan&#47;">@canadianbryan<&#47;a>&nbsp;oraz gł&oacute;wnie marnuję czas na ircu i reddicie.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Wybrałem OpenBSD po wypr&oacute;bowaniu kilku r&oacute;żnych system&oacute;w z rodziny Unix. Pierwotnie byłem użytkownikiem DOSa&#47;Windowsa, tak jak wiele dzieciak&oacute;w urodzonych w latach 80tych, a wychowanych w 90tych. Odkryłem istnienie QNX w szkole na komputerach Unisys&#47;Burroughs ICON, acz&nbsp;jedyne, co pamiętam, to granie w gry przygodowe i LOGO.</p>
+<p>Przez pewien czas bawiłem się w domu systemem Unix na swoim 486, a p&oacute;źniej na komputerach P1 i AMD K6. Najpierw zdobyłem kopię Coherent UNIX. a następnie Slackware Linux, gdy w końcu uzyskałem dostęp do Internetu. Jakimś&nbsp;sposobem wylądowałem na OpenBSD w okolicach wersji 3.7. Używam go do dzisiaj.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>To dobra społeczność, do kt&oacute;rej warto dołączyć, nawet jeśli nie czujesz się swobodnie przybierając na starcie jakąś aktywną rolę. Jest bardzo wiele bystrych os&oacute;b pracujących nad fajnymi rzeczami. Sama ich obserwacja pozwala nauczyć się bardzo dużo.</p>
+<p>Pierwszy raz używałem OpenBSD celem&nbsp;konfiguracji serwera IRC, aby rozszerzyć sieć znajomych do Kanady. Konwertowałem serwer po serwerze, gdyż stale okazywało się, że OpenBSD pasuje świetnie do szerokiego zakresu r&oacute;l - od elastycznego routera&#47;serwera, aż po desktop.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p><a href="http:&#47;&#47;brynet.biz.tm&#47;pub&#47;slacker.png">http:&#47;&#47;brynet.biz.tm&#47;pub&#47;slacker.png<&#47;a></p>
+<p>:)</p>
+<p>Tak. Używam OpenBSD na swoich laptopach i desktopach. Praca wykonana przez jsg@, kettenis@ oraz matthieu@ sprawia, że X działa świetnie na moim sprzęcie, a fantastyczna praca porter&oacute;w utrzymuje wszystkie wyższe warstwy oprogramowania zaktualizowane i sprawia, że działają. Jest to niesamowite, biorąc pod uwagę ilość deweloper&oacute;w oraz ilość godzin w ciągu każdego dnia.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Rozpocząłem wysyłanie łatek dotyczących drobiazg&oacute;w&nbsp;w okolicach 2009&#47;2010 r. W&nbsp;2010 nabyłem nowy, fajny&nbsp;dwurdzeniowy laptop AMD, kt&oacute;ry 'po prostu działał' za wyjątkiem wsparcia dla dynamicznego skalowania częstotliwości CPU. Zacząłem uczyć się o nowym sprzęcie AMD i czytać fajne&nbsp;dokumenty jak BKDG (BIOS Kernel Developer Guides). W ostateczności otrzymałem coś, co faktycznie działało. Wysłałem maila na listę tech@ oraz do deweloper&oacute;w zajmujących się tą częścią systemu. Koniec końc&oacute;w moją zmianę zacommitował claudio@.</p>
+<p>Ostatnio? Pracowałem nad swoimi projektami. Okazjonalnie znajduję trochę czasu pomiędzy obijaniem się (..tyle telewizji), by napisać drobnego&nbsp;maila lub wysłać jednego diffa lub dwa.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Pewnego dnia, niczym grom z jasnego nieba, dostałem maila od deraadt@, w kt&oacute;rym to mailu zostałem poproszony o linię z master.passwd. Myślę, że okazanie zainteresowania zar&oacute;wno samodzielną pracą, jak i pracą w grupie, jest bardzo ważne.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Uważam, że praca nad tame^Wpledge będzie bardzo interesująca. Przeglądanie diff&oacute;w i commit&oacute;w było dotąd fascynującym podglądem tego, w jaki spos&oacute;b programy są one projektowane, jak&nbsp;r&oacute;wnież gdzie można dokonać ulepszeń.</p>
+<p>Uważam ponadto.&nbsp;że zaimplementowany w file(1) przez nicm@ privsep&#47;sandbox zasługuje na dużo więcej uwagi. File jest narzędziem, kt&oacute;re ludzie uruchamiają na wszystkim, często jako root, nieroztropnie. Takie narzędzie nie powinno posiadać możliwości&nbsp;otwierania gniazd sieciowych czy zapisywania&#47;nadpisywania plik&oacute;w.</p>
+<p><strong>9. To już długie 20 lat wspaniałych wydań. Z czego jesteś najbardziej dumny oraz do czego chciałbyś ponownie zajrzeć&#47;zrobić inaczej?<&#47;strong></p>
+<p>Z bycia jego częścią, nawet w minimalnej roli, przez jakieś 10 z tych lat, a teraz prawie 4 jako deweloper.</p>

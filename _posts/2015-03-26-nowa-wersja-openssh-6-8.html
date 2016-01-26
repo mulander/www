@@ -1,0 +1,37 @@
+---
+layout: post
+status: publish
+published: true
+title: Nowa wersja OpenSSH 6.8
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: Dnia 18 marca wyszła nowa wersja zestawu narzędzi do szyfrowanej komunikacji
+  sieciowej, pakiet <a href="http:&#47;&#47;www.openssh.com&#47;txt&#47;release-6.8">OpenSSH
+  6.8<&#47;a>. Jest to kolejna gł&oacute;wna rewizja, kt&oacute;ra niesie ze sobą
+  szereg zmian w zakresie domyślnej konfiguracji, nowych funkcjonalności, zgodności
+  z OpenSSL oraz zawiera zestaw poprawek znalezionych błęd&oacute;w. Kod przeszedł
+  w tym wydaniu poważny refaktoring niewidoczny dla zwykłego użytkownika, a zwiększający
+  wewnętrzną przejrzystość źr&oacute;deł i ich weryfikowalność testami.
+wordpress_id: 202
+wordpress_url: http://beastie.pl/?p=202
+date: '2015-03-26 23:48:06 -0400'
+date_gmt: '2015-03-26 22:48:06 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- openssh
+- bezpieczeństwo
+- openssl
+- libressl
+comments: []
+---
+<p>Dnia 18 marca wyszła nowa wersja zestawu narzędzi do szyfrowanej komunikacji sieciowej, pakiet <a href="http:&#47;&#47;www.openssh.com&#47;txt&#47;release-6.8">OpenSSH 6.8<&#47;a>. Jest to kolejna gł&oacute;wna rewizja, kt&oacute;ra niesie ze sobą szereg zmian w zakresie domyślnej konfiguracji, nowych funkcjonalności, zgodności z OpenSSL oraz zawiera zestaw poprawek znalezionych błęd&oacute;w. Kod przeszedł w tym wydaniu poważny refaktoring niewidoczny dla zwykłego użytkownika, a zwiększający wewnętrzną przejrzystość źr&oacute;deł i ich weryfikowalność testami.<a id="more"></a><a id="more-202"></a></p>
+<p>Środowisko to implementuje protok&oacute;ł SSH (ang. <em>Secure Shell<&#47;em>), jako alternatywę dla tradycyjnych narzędzi takich jak <code>telnet<&#47;code>, <code>rlogin<&#47;code> czy <code>ftp<&#47;code>, zapewniając szyfrowanie całego pasma transmisji, włącznie z samym loginem i hasłem użytkownika. Projekt ten jest prowadzony przez zesp&oacute;ł <a href="http:&#47;&#47;www.openssh.com&#47;history.html">OpenBSD<&#47;a> oraz jest wydawany w edycji międzyplatformowej, zgodnej z większością wsp&oacute;łczesnych system&oacute;w operacyjnych.</p>
+<p>W ramach zmian w domyślnej konfiguracji opcja <code>UseDNS<&#47;code> w <code>sshd(8)<&#47;code> została ustawiona na <code>no<&#47;code>. Ustawienie to wskazuje czy OpenSSH ma korzystać z dodatkowego zabezpieczenia korelując adres IP z nazwą hosta. W praktyce funkcjonalność wymaga konkretnego przypadku użycia w kt&oacute;rym zabezpieczenie ma sens, a kosztem włączenia tej warstwy jest narzut na <a href="http:&#47;&#47;blog.ayaz.pk&#47;2008&#47;02&#47;03&#47;usedns-resolution-and-openssh&#47;">wydajność nawiązywania połączeń sieciowych<&#47;a>.</p>
+<p>OpenBSD konsekwentnie rugując OpenSSL -- implementację protokoł&oacute;w SSL i TLS -- usunęło zależności od tej biblioteki w <code>ssh-keygen(1)<&#47;code> oraz dodało eksperymentalny przełącznik w etapie budowania <code>--without-openssl<&#47;code>. Na chwilę obecną niesie to za sobą konsekwencje w postaci wyłączenia obsługi protokołu SSH-1, części funkcji kryptograficznych oraz wymagania platformy z natywną obsługą <code>arc4random(3)<&#47;code> lub <code>&#47;dev&#47;urandom<&#47;code>. Zmiany te są przygotowaniem gruntu pod dodanie wsparcia dla LibreSSL -- rodzimego forka OpenSSL -- z pominięciem funkcjonalności uznanych za przestarzałe.</p>

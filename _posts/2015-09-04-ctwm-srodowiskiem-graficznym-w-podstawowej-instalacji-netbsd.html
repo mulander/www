@@ -1,0 +1,74 @@
+---
+layout: post
+status: publish
+published: true
+title: CTWM środowiskiem graficznym w podstawowej instalacji NetBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "W czasach NetBSD 6.1 <a href=\"http:&#47;&#47;web.zephyrite.net&#47;NetBSD&#47;wm&#47;index.html\">powstał
+  zamysł<&#47;a> wśr&oacute;d użytkownik&oacute;w i deweloper&oacute;w by zaktualizować
+  lub zamienić wysłużone już twm, kt&oacute;re jest oferowane wraz z domyślną instalacją
+  NetBSD w paczce xsrc od jego początk&oacute;w.\r\n\r\nWśr&oacute;d rozważanych alternatyw
+  wysuwano: CWM, CTWM i Golem.&nbsp; Kt&oacute;re można kr&oacute;tko podsumować jako:\r\n<ul>\r\n\t<li>CTW
+  - wygodne do pracy bez myszki środowisko domyślnie instalowne wraz z OpenBSD,<&#47;li>\r\n\t<li>CTWM
+  - fork z 1992 rozszerzający oryginalne twm, w szczeg&oacute;lności oferując do 32
+  wirtualnych pulpit&oacute;w.<&#47;li>\r\n\t<li>Golem - atrakcyjne środowisko dostosowane
+  do pracy z myszką.<&#47;li>\r\n<&#47;ul>\r\n"
+wordpress_id: 1094
+wordpress_url: http://beastie.pl/?p=1094
+date: '2015-09-04 12:52:05 -0400'
+date_gmt: '2015-09-04 10:52:05 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- ctwm
+- cwm
+- golem
+- twm
+comments:
+- id: 125
+  author: Tom4hawk
+  author_email: tom4hawk@tom4hawk.com
+  author_url: ''
+  date: '2015-09-05 13:20:44 -0400'
+  date_gmt: '2015-09-05 11:20:44 -0400'
+  content: Czy jest na świecie ktoś kto po świadomej instalacji xorga używa window
+    managera "bo był domyślnie"?:D
+- id: 126
+  author: kamil
+  author_email: krytarowski@gmail.com
+  author_url: ''
+  date: '2015-09-05 14:17:27 -0400'
+  date_gmt: '2015-09-05 12:17:27 -0400'
+  content: "Tak, są.\r\n\r\nTutaj jednak chodzi o coś&nbsp;innego. Dodając zbiory
+    oprogramowania do systemu bazowego pracuje się nad tym, by każdy port potrafił
+    go poprawnie obsłużyć - tworząc takie minimalistyczne minimum oczekiwań. Portu
+    nie uzna się za skończonego p&oacute;ki wszystko w nim nie będzie działać.\r\n\r\nW
+    praktyce nie każdy port udźwignie xorg... ale to jest do poprawy dla deweloper&oacute;w
+    :-)"
+- id: 127
+  author: mulander
+  author_email: adam.wolk@koparo.com
+  author_url: http://homing-on-code.blogspot.com/
+  date: '2015-09-05 18:28:35 -0400'
+  date_gmt: '2015-09-05 16:28:35 -0400'
+  content: Jest jeden bardzo dobry pow&oacute;d w postaci r&oacute;wnoległego rozwoju
+    wraz z bazowym systemem. Przykładowo po aktualizacji do najnowszego snapshota
+    w OpenBSD, część port&oacute;w może po prostu nie działać bez dodatkowego przebudowania
+    paczek. Elementy bazowego system dużo rzadziej odczuwają taki problem.
+---
+<p>W czasach NetBSD 6.1 <a href="http:&#47;&#47;web.zephyrite.net&#47;NetBSD&#47;wm&#47;index.html">powstał zamysł<&#47;a> wśr&oacute;d użytkownik&oacute;w i deweloper&oacute;w by zaktualizować lub zamienić wysłużone już twm, kt&oacute;re jest oferowane wraz z domyślną instalacją NetBSD w paczce xsrc od jego początk&oacute;w.</p>
+<p>Wśr&oacute;d rozważanych alternatyw wysuwano: CWM, CTWM i Golem.&nbsp; Kt&oacute;re można kr&oacute;tko podsumować jako:</p>
+<ul>
+<li>CTW - wygodne do pracy bez myszki środowisko domyślnie instalowne wraz z OpenBSD,<&#47;li>
+<li>CTWM - fork z 1992 rozszerzający oryginalne twm, w szczeg&oacute;lności oferując do 32 wirtualnych pulpit&oacute;w.<&#47;li>
+<li>Golem - atrakcyjne środowisko dostosowane do pracy z myszką.<&#47;li><br />
+<&#47;ul><br />
+<a id="more"></a><a id="more-1094"></a></p>
+<p>Ostatecznie do drzewa NetBSD trafiło <a href="http:&#47;&#47;www.ctwm.org&#47;">CTWM<&#47;a>, a większość pracy została wykonana przez Youriego Moutona. Należy odnotować, że w chwili bieżącej twm jest nadal oferowane obok CTWM.</p>

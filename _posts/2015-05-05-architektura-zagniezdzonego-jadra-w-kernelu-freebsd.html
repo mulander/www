@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: Architektura zagnieżdżonego jądra w kernelu FreeBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Powoli powstaje projekt badawczy w świecie FreeBSD, mający zmienić architekturę
+  kernela z monolitycznej na zagnieżdżalną&nbsp; -- tzw. <em>Nested Kernel<&#47;em>.
+  Projekt jest prowadzony przez zesp&oacute;ł z Uniwersytetu Illinois w składzie:
+  Nathan Dautenhahn, Theodoros Kasampalis i Will Dietz. Całość jest elementem pracy
+  doktoranckiej Nathana.\r\n\r\n"
+wordpress_id: 598
+wordpress_url: http://beastie.pl/?p=598
+date: '2015-05-05 23:58:26 -0400'
+date_gmt: '2015-05-05 21:58:26 -0400'
+categories:
+- Bez kategorii
+tags:
+- freebsd
+- bezpieczeństwo
+- architektura jądra
+- nested kernel
+- kernel
+- mmu
+- illinois
+comments: []
+---
+<p>Powoli powstaje projekt badawczy w świecie FreeBSD, mający zmienić architekturę kernela z monolitycznej na zagnieżdżalną&nbsp; -- tzw. <em>Nested Kernel<&#47;em>. Projekt jest prowadzony przez zesp&oacute;ł z Uniwersytetu Illinois w składzie: Nathan Dautenhahn, Theodoros Kasampalis i Will Dietz. Całość jest elementem pracy doktoranckiej Nathana.</p>
+<p><a id="more"></a><a id="more-598"></a></p>
+<p>W zamierzeniach przedsięwzięcia nowa architektura ma polegać na zagnieżdżaniu miniaturowego kernela w obrębie monolitycznego jądra, wraz z warstwą izolacji. Docelowo przestrzeń adresowa między jądrem macierzystym i wewnętrznym ma być sprzętowo chroniona przez translator pamięci (MMU), co znacząco utrudni dostęp do niepowołanych fragment&oacute;w reszty pamięci.</p>
+<p>Op&oacute;źnienia w działaniu aplikacji w przestrzeni użytkownika są nieznaczne, na poziomie 1% dla Apache, 3,7% dla OpenSSH i 2,7% dla kompilacji kernela.</p>
+<p>Więcej szczeg&oacute;ł&oacute;w znajduje się na <a href="http:&#47;&#47;nestedkernel.org&#47;">stronie projektu<&#47;a> oraz na <a href="https:&#47;&#47;www.freebsd.org&#47;news&#47;status&#47;report-2015-01-2015-03.html#Nested-Kernel">kwartalnym podsumowaniu Fundacji FreeBSD<&#47;a>.</p>

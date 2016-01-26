@@ -1,0 +1,39 @@
+---
+layout: post
+status: publish
+published: true
+title: OpenSSH 7.0
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+wordpress_id: 1009
+wordpress_url: http://beastie.pl/?p=1009
+date: '2015-08-12 11:33:12 -0400'
+date_gmt: '2015-08-12 09:33:12 -0400'
+categories:
+- Bez kategorii
+tags:
+- openssh
+comments: []
+---
+<p>11 sierpnia wydano kolejną wersję <a href="http:&#47;&#47;www.openssh.com&#47;">OpenSSH<&#47;a>. Wśr&oacute;d zmian wprowadzonych w ramach wersji 7.0 znajdziemy szereg ciekawych modyfikacji:</p>
+<ul>
+<li>domyślne
+<ul>
+<li>odrzucanie kluczy RSA o rozmiarze mniejszym niż 1024 bity (dotychczas odrzucane były klucze poniżej 768 bit&oacute;w);<&#47;li>
+<li>wyłączenie szyfr&oacute;w: blowfish-cbc, cast128-cbc, wszystkie warianty arcfour oraz ailasy rijndael-cbc dla AE;<&#47;li>
+<li>wyłączenie wszystkich algorytm&oacute;w HMAC bazujących na MD5;<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>poprawki czterech błęd&oacute;w związanych z bezpieczeństwem, dwa z nich dotyczą wyłącznie wersji przenośnej (portable) zatem nie mają wpływu na bazowy system OpenBSD.<&#47;li>
+<li>wsparcie dla protok&oacute;łu SSH w wersji 1 jest wyłączone na etapie kompilacji;<&#47;li>
+<li>opcja konfiguracyjna <strong>without-password<&#47;strong> w polu <strong>PermitRootLogin, <&#47;strong>całkowicie wyłączająca wszystkie interaktywne formy autentykacji, z wyjątkiem kluczy pubicznych i GSSAPI;<&#47;li>
+<li>pole <strong>PermitRootLogin<&#47;strong>, kt&oacute;re poza dotychczas kontrowersyjnym ustawieniem (w nazwie) <strong>without-password<&#47;strong> przyjmuje r&oacute;wnież <strong>prohibit-password<&#47;strong>. Zmiana ma na celu uniknięcie nieporozumień wynikających z niefortunnego brzmienia poprzedniej wartości - obie wersje funkcjonują identycznie;<&#47;li>
+<li>opcja <strong>PermitRootLogin<&#47;strong> otrzymuje nową domyślną wartość <strong>prohibit-password <&#47;strong>zamiast dotychczasowej <strong>yes<&#47;strong>.<&#47;li><br />
+<&#47;ul><br />
+Zachęcamy do lektury <a href="http:&#47;&#47;www.openssh.com&#47;txt&#47;release-7.0">pełnej listy<&#47;a> zmian.</p>

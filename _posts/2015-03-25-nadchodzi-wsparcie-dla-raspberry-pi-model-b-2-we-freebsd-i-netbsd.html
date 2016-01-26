@@ -1,0 +1,35 @@
+---
+layout: post
+status: publish
+published: true
+title: Nadchodzi wsparcie dla Raspberry Pi Model B 2 we FreeBSD i NetBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: Fundacja Raspberry Pi wypuściła na rynek swoje pierwsze urządzenie Raspberry
+  Pi Model A 29 lutego 2012 r. w cenie 25 USD. Od samego powołania do życia idei,
+  układ ten zyskał liczne grono entuzjast&oacute;w w światku Wolnego Oprogramowania,
+  w tym r&oacute;wnież wśr&oacute;d sympatyk&oacute;w system&oacute;w BSD.
+wordpress_id: 176
+wordpress_url: http://beastie.pl/?p=176
+date: '2015-03-25 23:15:46 -0400'
+date_gmt: '2015-03-25 22:15:46 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- freebsd
+- raspberry pi
+- embedded
+comments: []
+---
+<p>Fundacja Raspberry Pi wypuściła na rynek swoje pierwsze urządzenie Raspberry Pi Model A 29 lutego 2012 r. w cenie 25 USD. Od samego powołania do życia idei, układ ten zyskał liczne grono entuzjast&oacute;w w światku Wolnego Oprogramowania, w tym r&oacute;wnież wśr&oacute;d sympatyk&oacute;w system&oacute;w BSD.<a id="more"></a><a id="more-176"></a></p>
+<p>Czym jest Raspberry Pi? Jest to odpowiednik miniaturowego komputera, do kt&oacute;rego wystarczy podpiąć monitor, klawiaturę, myszkę, przew&oacute;d sieciowy i zasilacz. Domyślnie system plik&oacute;w może znajdować się na karcie SD. Nie wliczając peryferi&oacute;w całość ma wymiary&nbsp;85,60&nbsp;mm &times;&nbsp;56,5&nbsp;mm, waży poniżej 50 gram&oacute;w, a zużycie energii jest na poziomie kilku wat&oacute;w.</p>
+<p>Raspberry Pi 2 Model B jest już kolejnym urządzeniem po edycjach Model A+, Model B i Model B+. Jest ono rozprowadzane w cenie 35 USD i charakteryzuje się nowym układem scalonym (ang. <em>System-on-Chip<&#47;em>) BCM2836. czterordzeniowym procesorem ARM Cortex-A7 o częstotliwości 900 MHz i 1 GB pamięci RAM.</p>
+<p><a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;freebsd.png"><img class="alignleft size-full wp-image-116" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;freebsd.png" alt="freebsd" width="200" height="200" &#47;><&#47;a>W chwili obecnej z systemem <a href="https:&#47;&#47;wiki.freebsd.org&#47;FreeBSD&#47;arm&#47;Raspberry%20Pi">FreeBSD<&#47;a> zgodna jest większość podzespoł&oacute;w na platformie Raspberry Pi, wśr&oacute;d nich: audio, sieć, USB, HDMI, czytnik SD i USB 2.0.</p>
+<p>W dniu 25 marca br. zostało dodane wsparcie dla nowego chipa znajdującego się w Raspberry Pi 2 Model B (BCM2836), a większość podstawowych podzespoł&oacute;w wspieranych dotychczas w Raspberry Pi działa r&oacute;wnież w nowej rewizji płyty.&nbsp; Zgodnie z <a href="https:&#47;&#47;svnweb.freebsd.org&#47;base?view=revision&amp;revision=280558">historią kodu FreeBSD<&#47;a> deweloperem kt&oacute;ry dodał obsługę dla RPI2 jest Andrew Turner, kt&oacute;ry to zawarł w swoich zmianach informacje o podstawowych problemach obecnych na nowej platformie. Wśr&oacute;d niedogodności, kt&oacute;re muszą zostać rozwiązane jest poprawna funkcjonalność czytnika SD, urządzenia audio i bootloadera. Zgodnie z informacjami zamieszczonymi przez Andrew Turnera sponsorem pracy nad tym projektem była firma ABT Systems Ltd.</p>
+<p><a href="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;NetBSD-smaller.png"><img class="alignright size-full wp-image-110" src="http:&#47;&#47;beastie.pl&#47;wp-content&#47;uploads&#47;2015&#47;03&#47;NetBSD-smaller.png" alt="NetBSD-smaller" width="200" height="200" &#47;><&#47;a>FreeBSD jest kolejnym systemem po <a href="https:&#47;&#47;wiki.netbsd.org&#47;ports&#47;evbarm&#47;raspberry_pi&#47;">NetBSD<&#47;a> w kt&oacute;rym trwa praca nad pełną obsługą rozwiązań pochodzących z Fundacji Raspberry Pi [3]. Deweloperem NetBSD jest Nick Hudson, a swoją pracę wykonał prawdopodobnie w prywatnym czasie, dodając RPI2 do wspieranych platform już <a href="http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;raspberry_pi_2_support_added">na początku marca<&#47;a> br. [4].</p>

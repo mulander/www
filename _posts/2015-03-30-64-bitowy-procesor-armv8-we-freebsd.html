@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: 64-bitowy procesor ARMv8 we FreeBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: 'Zgodnie z ogłoszeniami <a href="https:&#47;&#47;www.freebsdfoundation.org&#47;projects&#47;#ARMv8">Fundacji
+  FreeBSD<&#47;a> trwają obecnie prace nad wsparciem dla procesora AArch64 (znanego
+  r&oacute;wnież jako ARMv8 lub ARM64) w systemie operacyjnym FreeBSD. Projekt ten
+  planuje docelowo uczynić z&nbsp; FreeBSD&#47;arm64 platformę <em>Tier 1<&#47;em>,
+  tzn. platformą strategiczną, wsp&oacute;łdzieląc to miejsce z Intelem x86 i x86_64.
+  <a href="http:&#47;&#47;www.prnewswire.com&#47;news-releases&#47;cavium-to-sponsor-freebsd-armv8-based-implementation-277724361.html">Ogłoszenia
+  prasowe<&#47;a> wskazują r&oacute;wnież, że jednym ze sponsor&oacute;w przedsięwzięcia
+  jest firma <a href="http:&#47;&#47;www.cavium.com&#47;">Cavium<&#47;a> z USA, dotychczas
+  czołowy producent rozwiązań opartych o technologię MIPS. '
+wordpress_id: 271
+wordpress_url: https://beastie.pl/?p=271
+date: '2015-03-30 23:26:39 -0400'
+date_gmt: '2015-03-30 21:26:39 -0400'
+categories:
+- Bez kategorii
+tags:
+- freebsd
+- embedded
+- arm64
+- semihalf
+- arm
+- cavium
+comments: []
+---
+<p>Zgodnie z ogłoszeniami <a href="https:&#47;&#47;www.freebsdfoundation.org&#47;projects&#47;#ARMv8">Fundacji FreeBSD<&#47;a> trwają obecnie prace nad wsparciem dla procesora AArch64 (znanego r&oacute;wnież jako ARMv8 lub ARM64) w systemie operacyjnym FreeBSD. Projekt ten planuje docelowo uczynić z&nbsp; FreeBSD&#47;arm64 platformę <em>Tier 1<&#47;em>, tzn. platformą strategiczną, wsp&oacute;łdzieląc to miejsce z Intelem x86 i x86_64. <a href="http:&#47;&#47;www.prnewswire.com&#47;news-releases&#47;cavium-to-sponsor-freebsd-armv8-based-implementation-277724361.html">Ogłoszenia prasowe<&#47;a> wskazują r&oacute;wnież, że jednym ze sponsor&oacute;w przedsięwzięcia jest firma <a href="http:&#47;&#47;www.cavium.com&#47;">Cavium<&#47;a> z USA, dotychczas czołowy producent rozwiązań opartych o technologię MIPS. <a id="more"></a><a id="more-271"></a></p>
+<p>Mikroprocesory ARM charakteryzują się tradycyjnie niskim poborem energii, prostotą implementacji (czyt. zawierają mało krzemu), co wpływa na ich relatywnie niewielką cenę. Nowa architektura została ogłoszona światu w październiku 2011 r. i charakteryzuje się szeregiem udoskonaleń, a wśr&oacute;d nich 64-bitową, dwukrotnie dłuższą adresacją pamięci -- dzięki czemu bez dodatkowych rozszerzeń sprzętowych można przekroczyć granicę 4GB pamięci RAM. Zmiany te mają pozwolić zaistnieć nowym energooszczędnym procesorom na wysokowydajnym rynku serwerowym i konkurować z rozwiązaniami opartymi o tradycyjne procesory Intela.</p>
+<p>Ciekawostką jest to, że część prac jest prowadzona przez Nowozelandczyka <a href="https:&#47;&#47;github.com&#47;zxombie">Andrew Turnera<&#47;a> i krakowską firmę <a href="http:&#47;&#47;www.semihalf.com&#47;">Semihalf<&#47;a>. Zgodnie z notatką prasową fundacji, firma Cavium pomaga w projekcie oferując ekspertyzę i sprzęt dla deweloper&oacute;w. Warto odnotować, że pojedynczy procesor <a href="http:&#47;&#47;www.cavium.com&#47;ThunderX_ARM_Processors.html">ThunderX<&#47;a> tejże firmy jest w stanie obsłużyć do 48 rdzeni (domowe komputery klasy PC są zwykle ograniczone do tylko 2-4-8 rdzeni).</p>
+<p>Tradycyjnie notatki techniczne na temat dewelopmentu znajdują się na <a href="https:&#47;&#47;wiki.freebsd.org&#47;arm64">FreeBSD Wiki<&#47;a>, a kod znajduje się w <a href="https:&#47;&#47;github.com&#47;FreeBSDFoundation&#47;freebsd&#47;tree&#47;arm64-dev">publicznym repozytorium FreeBSD<&#47;a> w serwisie GitHub. Tak jak o tym już pisaliśmy w <a title="Systemy BSD Checkpoint 2015 r." href="http:&#47;&#47;beastie.pl&#47;systemy-bsd-checkpoint-2015-r&#47;">Checkpoincie BSD<&#47;a>, pierwszy kod już powoli wędruje do centralnego repozytorium.</p>

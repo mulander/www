@@ -1,0 +1,52 @@
+---
+layout: post
+status: publish
+published: true
+title: tame(2) ląduje w drzewie OpenBSD
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Theo de Raadt, założyciel OpenBSD <a href=\"http:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=143725996614627\">wysłał<&#47;a>
+  na listę mailingową tech@ opis nowego podsystemu ograniczającego uprawnienia uruchamianych
+  proces&oacute;w tame(2). Szczeg&oacute;łowemu opisowi podsystemu towarzyszy spory
+  patch, kt&oacute;ry już <a href=\"http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=143727335416513&amp;w=2\">trafił
+  do źr&oacute;deł<&#47;a>. Przed wprowadzeniem tame(2) jedynymi mechanizmami ograniczającym
+  uprawnienia program&oacute;w były <a href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man2&#47;chroot.2?query=chroot\">chroot(2)<&#47;a>
+  oraz <a href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man1&#47;systrace.1?query=systrace\">systrace(1)<&#47;a>,
+  z kt&oacute;rego deweloperzy nie byli nigdy do końca zadowoleni.\r\n\r\n"
+wordpress_id: 923
+wordpress_url: http://beastie.pl/?p=923
+date: '2015-07-19 15:27:40 -0400'
+date_gmt: '2015-07-19 13:27:40 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- bezpieczeństwo
+- tame
+- capsicum
+comments: []
+---
+<p>Theo de Raadt, założyciel OpenBSD <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-tech&amp;m=143725996614627">wysłał<&#47;a> na listę mailingową tech@ opis nowego podsystemu ograniczającego uprawnienia uruchamianych proces&oacute;w tame(2). Szczeg&oacute;łowemu opisowi podsystemu towarzyszy spory patch, kt&oacute;ry już <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-cvs&amp;m=143727335416513&amp;w=2">trafił do źr&oacute;deł<&#47;a>. Przed wprowadzeniem tame(2) jedynymi mechanizmami ograniczającym uprawnienia program&oacute;w były <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man2&#47;chroot.2?query=chroot">chroot(2)<&#47;a> oraz <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man1&#47;systrace.1?query=systrace">systrace(1)<&#47;a>, z kt&oacute;rego deweloperzy nie byli nigdy do końca zadowoleni.</p>
+<p><a id="more"></a><a id="more-923"></a></p>
+<p>Na chwilę obecną, tame(2) ujarzmia już 29 aplikacji bazowych systemu:</p>
+<p>cat pax ps dmesg ping ping6 dc diff finger from id kdump<br />
+logger script sed signify uniq w wc whois arp authpf bgpd<br />
+httpd ntpd relayd syslogd tcpdump traceroute</p>
+<p>Theo zwraca uwagę na dwa gł&oacute;wne podejścia przy projektowaniu podsystem&oacute;w kontrolujących uprawnienia proces&oacute;w:</p>
+<ol>
+<li>Spos&oacute;b wymagający przepisywania&#47;dostosowywania aplikacji w szerokim zakresie poprzez dostarczanie API, kt&oacute;re na bardzo niskim poziomie pozwala wybierać jakie operacje mogą być wykonywane w każdej chwili na dowolnym zasobie. Takie podejście stosuje <a href="https:&#47;&#47;www.freebsd.org&#47;cgi&#47;man.cgi?query=capsicum&amp;sektion=4">capsicum(4)<&#47;a> z FreeBSD.<&#47;li>
+<li>Określenie uprawnienia na czas życia całej aplikacji, takie podejście nie pozwala na wybi&oacute;rcze stosowanie ograniczeń w czasie życia programu. Sporo aplikacji potrzebuje wysokich uprawnień w momencie inicjalizacji a następnie w trakcie normalnej pracy znaczną ich część można uciąć. Ten model był stosowany przez systrace(1), brak kontroli uprawnień w cyklu pracy aplikacji był jednym z gł&oacute;wnych powod&oacute;w, dla kt&oacute;rych nie był do końca lubiany.<&#47;li><br />
+<&#47;ol><br />
+Wspomniano ponadto o rozwiązaniach w stylu BPF, polegających na tworzeniu programu monitorującego proces celem wymuszania polityki bezpieczeństwa. Theo skwitował to kr&oacute;tko jako "szaleństwo".</p>
+<p>Podejście, jakie przyjęto w OpenBSD jest mieszanką modelu pierwszego i drugiego. Aplikacje będą wymagać modyfikacji, lecz całe API podsystemu tame(2) to jedna funkcja, przyjmująca flagi określające kt&oacute;rej grupy uprawnień od tego momentu aplikacja ma prawo używać. Uprawnienia można wyłącznie zawężać, nie ma opcji przywr&oacute;cenia szerszego ich zakresu.</p>
+<p>Na przykładzie łatki dla ntpd(8) widzimy wstępnie szeroki zakres uprawnień (trzy grupy wywołań systemowych)</p>
+<p>tame(TAME_STDIO | TAME_UNIX | TAME_PROC);</p>
+<p>następnie zostaje on zawężony do jednej:</p>
+<p>tame(TAME_STDIO);</p>
+<p>Prostota API zdecydowanie ułatwia modyfikacje aplikacji. W przeciwieństwie do capsicum(4) ilość modyfikacji, kt&oacute;re należy wykonać jest zdecydowanie mniejsza, co powinno pozwolić na nakładanie takich łat r&oacute;wnież na oprogramowanie z katalogu port&oacute;w przy znacznie mniejszym nakładzie pracy.</p>

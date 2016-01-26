@@ -1,0 +1,123 @@
+---
+layout: post
+status: publish
+published: true
+title: Co nasz czeka w NetBSD 7.0 i 8.0?
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Podczas tegorocznego AsiaBSDCon&nbsp; Taylor Campbell&nbsp;(riastradh@)
+  <a href=\"https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;riastradh&#47;asiabsdcon2015&#47;netbsd-wip.pdf\">zaprezentował<&#47;a>
+  stan prac nad NetBSD. O tym zlocie użytkownik&oacute;w i deweloper&oacute;w BSD
+  pisaliśmy już w <a title=\"Zapiski NetBSD z AsiaBSDCon 2015\" href=\"http:&#47;&#47;beastie.pl&#47;zapiski-netbsd-z-asiabsdcon-2015&#47;\">zapiskach<&#47;a>
+  Justina Cormacka z Wielkiej Brytanii, pokazywaliśmy <a title=\"AsiaBSDCon 2015 NetBSD
+  galeria zdjęć wystawionych urządzeń\" href=\"http:&#47;&#47;beastie.pl&#47;asiabsdcon-2015-netbsd-galeria-zdjec-wystawionych-urzadzen&#47;\">galerię
+  wystawionych urządzeń<&#47;a> i zapowiadaliśmy <a title=\"Przygotowania do EuroBSDcon
+  2015\" href=\"http:&#47;&#47;beastie.pl&#47;przygotowania-do-eurobsdcon-2015&#47;\">europejską
+  edycję konferencji<&#47;a> w Szwecji.\r\n\r\n"
+wordpress_id: 452
+wordpress_url: http://beastie.pl/?p=452
+date: '2015-04-21 09:53:28 -0400'
+date_gmt: '2015-04-21 07:53:28 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- raspberry pi
+- bezpieczeństwo
+- arm64
+- arm
+- powerpc
+- gcc
+- sieci komputerowe
+- usb
+- wieloprocesorowość
+- npf
+- drmkms
+- radeon
+- nouveau
+- nvidia
+- clang
+- llvm
+- just-in-time
+- epoc32
+- c++
+- x86
+- dtrace
+- stos sieciowy
+- linux
+comments: []
+---
+<p>Podczas tegorocznego AsiaBSDCon&nbsp; Taylor Campbell&nbsp;(riastradh@) <a href="https:&#47;&#47;www.netbsd.org&#47;gallery&#47;presentations&#47;riastradh&#47;asiabsdcon2015&#47;netbsd-wip.pdf">zaprezentował<&#47;a> stan prac nad NetBSD. O tym zlocie użytkownik&oacute;w i deweloper&oacute;w BSD pisaliśmy już w <a title="Zapiski NetBSD z AsiaBSDCon 2015" href="http:&#47;&#47;beastie.pl&#47;zapiski-netbsd-z-asiabsdcon-2015&#47;">zapiskach<&#47;a> Justina Cormacka z Wielkiej Brytanii, pokazywaliśmy <a title="AsiaBSDCon 2015 NetBSD galeria zdjęć wystawionych urządzeń" href="http:&#47;&#47;beastie.pl&#47;asiabsdcon-2015-netbsd-galeria-zdjec-wystawionych-urzadzen&#47;">galerię wystawionych urządzeń<&#47;a> i zapowiadaliśmy <a title="Przygotowania do EuroBSDcon 2015" href="http:&#47;&#47;beastie.pl&#47;przygotowania-do-eurobsdcon-2015&#47;">europejską edycję konferencji<&#47;a> w Szwecji.</p>
+<p><a id="more"></a><a id="more-452"></a></p>
+<p>Oto co warto wynotować dla wersji 7, kt&oacute;ra może ukazać się w najbliższych miesiącach:</p>
+<ul>
+<li>wsparcie dla akceleracji grafiki -- DRMKMS z Linuksa 3.15,
+<ul>
+<li>Intel aż do Haswell,<&#47;li>
+<li>Radeon,<&#47;li>
+<li>zalążki wsparcia Nouveau,<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>szereg obsłużonych urządzeń SoC ARM,
+<ul>
+<li>w tym wieloprocesorowość ARM,<&#47;li>
+<li>obsługa:
+<ul>
+<li>Raspberry Pi,<&#47;li>
+<li>Raspberry Pi 2,<&#47;li>
+<li>TI OMAP, Sitara: Beaglebone, Beagleboard, BB Black,<&#47;li>
+<li>Allwinner A10, A20, A32: Cubieboard, Cubietruck<&#47;li>
+<li>Marvell Armada 370: Mirabox,<&#47;li>
+<li>Freescale i.MX50, i.MX51, i.MX6: KOBO, Netwalker,<&#47;li>
+<li>Xilinx Zynq: Parallella, ZEDBOARD,<&#47;li>
+<li>...<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>EABI obok OABI,<&#47;li>
+<li>Hard-float z VFP i NEONem<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>zastąpienie algorytmu RC4 przez ChaCha20,<&#47;li>
+<li>GCC 4.8, ze wsparciem C++11,<&#47;li>
+<li>Clang&#47;LLVM na x86, PowerPC, ARM,<&#47;li>
+<li>na licencji BSD C&#47;C++ runtime z compiler_rt, libc++, libcxxrt,<&#47;li>
+<li>bpf kompilator natywnego kodu just-in-time,<&#47;li>
+<li>usprawniona skalowalność filtra pakiet&oacute;w (npf),<&#47;li>
+<li>npf wykorzystuje programy bpf skompilowane techniką JIT do podejmowania decyzji filtrowania,<&#47;li>
+<li>wieloprocesorowy stos USB,<&#47;li>
+<li>nowe porty:
+<ul>
+<li>epoc32 (autor nie wymienia kolejnych takich jak RISCV, Cold Fire, OpenRISK, ARM64...)<&#47;li>
+<li>funkcje do wykorzystania w kryptografii: consttime_memequal(3), explicit_memzero(3),<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>DTrace na ARM,<&#47;li>
+<li>szereg pozostałych nowości o kt&oacute;rych autor prezentacji zapomniał.<&#47;li><br />
+<&#47;ul><br />
+Co nas czeka w 8.0 i być może w 7.1?</p>
+<ul>
+<li>DTrace w domyślnej konfiguracji kernela,<&#47;li>
+<li>wieloprocesorowość w stosie sieciowym,
+<ul>
+<li>w warstwie drugiej sieci bezpieczne dla wieloprocesorowości już są już:
+<ul>
+<li>bridge(4),<&#47;li>
+<li>wm(4),<&#47;li>
+<li>vioif(4),<&#47;li>
+<li>vmxnet3(4).<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>wielokolejkowa dystrybucja pakiet&oacute;w na warstwie drugiej sieci,<&#47;li>
+<li>skalowalne trasowanie na warstwie trzeciej sieci,<&#47;li><br />
+<&#47;ul><br />
+<&#47;li></p>
+<li>wsparcie dla grafiki NVIDIA,<&#47;li>
+<li>aktualizacja driver&oacute;w graficznych Intela z Linuksa 4.0 (Broadwell itd.),<&#47;li>
+<li>ARMv8 &#47; AArch64: 64-bitowy ARM.<&#47;li><br />
+<&#47;ul><br />
+Wyb&oacute;r jest oczywiście wyborem subiektywnym autora, gdyż powyższa lista nie wyczerpuje nadchodzących zmian.</p>

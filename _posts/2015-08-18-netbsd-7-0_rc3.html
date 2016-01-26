@@ -1,0 +1,115 @@
+---
+layout: post
+status: publish
+published: true
+title: NetBSD 7.0_RC3
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 1022
+wordpress_url: http://beastie.pl/?p=1022
+date: '2015-08-18 23:24:40 -0400'
+date_gmt: '2015-08-18 21:24:40 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- arm
+- smp
+- raspberry pi 2
+- beagleboard
+comments:
+- id: 117
+  author: G.P
+  author_email: example@example.com
+  author_url: ''
+  date: '2015-08-19 21:53:09 -0400'
+  date_gmt: '2015-08-19 19:53:09 -0400'
+  content: "Ciekaw jestem odpowiedzi Christosa (tudzież innych deweloper&oacute;w
+    NetBSD) na wpis Teda Unangsta dotyczacy reallocarray i strtonum ;)\r\nhttp:&#47;&#47;www.tedunangst.com&#47;flak&#47;post&#47;invented-by-openbsd\r\n\r\nA
+    tak z innej beczki to m&oacute;głby ktoś naprawić ntfs-3g (i zaimportować wersję
+    2015.3.14) pod NetBSD (na port exFAT też bym się nie obraził ;)"
+- id: 118
+  author: G.P
+  author_email: example@example.com
+  author_url: ''
+  date: '2015-08-19 22:15:00 -0400'
+  date_gmt: '2015-08-19 20:15:00 -0400'
+  content: Hmm, coś smile'iki się niepoprawnie wyświetlają...
+- id: 119
+  author: kamil
+  author_email: krytarowski@gmail.com
+  author_url: ''
+  date: '2015-08-19 22:25:59 -0400'
+  date_gmt: '2015-08-19 20:25:59 -0400'
+  content: "Nie jestem Christosem, ale jestem deweloperem NetBSD i to zaangażowanym
+    w reallocarray(3) i strtonum(3).\r\n\r\nTed zrobił małą burzę nt. kodu kt&oacute;ry
+    był w trakcie dewelopmentu w wersji -current. strtonum(3) i reallocarray(3) są
+    dostępne w NetBSD (-current) w przestrzeni _OPENBSD_SOURCE, dla potrzeb projektu
+    zaprojektowano nowe interfejsy strtoi(3) & strtou(3) i reallocarr(3), kt&oacute;re
+    miały usprawnić interfejsy z OpenBSD.\r\n\r\nBolączki kt&oacute;re rozwiązano
+    zastępując strtonum(3):\r\n- brak rozr&oacute;znienia pomiędzy częściową konwersją,
+    a brakiem konwersji;\r\n- zwracanie 0 w przypadku błędu, zamiast liczby w zadanym
+    zakresie;\r\n- narzucenie konwersji liczb w podstawie 10 (dziesiętnych);\r\n-
+    brak informacji na kt&oacute;rym znaku przerwano konwersję;\r\n- na sztywno używanie
+    typu 'long long', zamiast eleganckiego intmax_t &#47; uintmax_t.\r\n\r\nW reallocarr(3)
+    względem reallocarray(3) dodano funkcjonalność zapobiegania wyciekom pamięci w
+    przypadku nieudanej alokacji, a dla alokacji o wielkości 0 zwalniamy pamięć -
+    dzięki temu mamy wygodną funkcję&nbsp;dla pewnej klasy struktur danych, gdy realokujemy
+    wielkości np. stosu: 1 element, 2 elementy, 3 elementy, 2 elementy, 1 element,
+    0 element&oacute;w -> reallocarr(&stos, 1, sizeof(stos)); reallocarr(&stos, 2,
+    sizeof(stos)); reallocarr(&stos, 3, sizeof(stos)); reallocarr(&stos, 2, sizeof(stos));
+    reallocarr(&stos, 1, sizeof(stos)); reallocarr(&stos, 0, sizeof(stos));\r\n\r\nKorzystając
+    z gołego reallocarray(3) musielibyśmy mieć dodatkowy kod na sprawdzanie poprawności
+    realokowania pamięci (zabezpieczając przed wyciekiem), a na końcu wołać free(3)
+    - reallocarr(3) robi to za nas.\r\n\r\nW sprawie ntfs-3g i exFAT zgłoś&nbsp;proszę
+    PR."
+- id: 120
+  author: G.P
+  author_email: example@example.com
+  author_url: ''
+  date: '2015-08-21 22:31:12 -0400'
+  date_gmt: '2015-08-21 20:31:12 -0400'
+  content: "Ooo, fajnie pogadać z deweloperem NetBSD w rodzimym języku ;-)\r\nDzięki
+    za wyjaśnienie, ale nie jestem programistą, więc trochę to czarna magia dla mnie
+    jest...\r\nGeneralnie chodziło mi o takie og&oacute;lne odniesienie się do tego
+    wpisu na blogu Teda i czy ma racje w tym co napisał czy też nie - wychodzi na
+    to, że nie albo raczej, że pospieszył się z oceną.\r\n\r\nCo do ntfs-3g to mogę
+    spr&oacute;bować zgłosić PR (choć nigdy tego nie robiłem), ale widziałem, że ktoś
+    pr&oacute;bował jakiś czas temu podesłać łatkę i wygląda na to, że został olany
+    delikatnie m&oacute;wiąc: http:&#47;&#47;mail-index.netbsd.org&#47;pkgsrc-users&#47;2015&#47;06&#47;20&#47;msg021709.html\r\nMało
+    motywujące dla nowych, chcących coś wnieść do rozwoju pkgsrc...\r\n\r\nA jak zgłosić
+    problem, kt&oacute;ry został już kiedyś zgłoszony i wisi nierozwiązany?\r\nhttp:&#47;&#47;gnats.netbsd.org&#47;49323\r\nOg&oacute;lnie
+    mocno to utrudnia korzystanie z NetBSD na Hyper-V (np. na desktopowym Windows
+    8.1 Pro) - aktualnie da się używać tylko w trybie bez SMP i ACPI :-(\r\nFajnie
+    by było jakby się ktoś nad tym pochylił ;-)"
+- id: 121
+  author: kamil
+  author_email: krytarowski@gmail.com
+  author_url: ''
+  date: '2015-08-22 03:31:02 -0400'
+  date_gmt: '2015-08-22 01:31:02 -0400'
+  content: "Racja czy nie, fakty są&nbsp;takie, że odni&oacute;sł się do kodu kt&oacute;ry
+    był w trakcie dyskusji i rozwoju, ten kod rzeczywiście tymczasowo zawierał niekompatybilności,
+    kt&oacute;re zostały rozwiązane. Mogę powiedzieć, że owy wpis wyszedł dość mijająco
+    się z pogłębieniem tematu.\r\n\r\nW temacie ntfs-3g i Hyper-V, niestety ani do
+    pierwszego ani do drugiego nie posiadam instalacji Windowsa i NTFS by się nad
+    tym pochylić samodzielnie :) BSD ma og&oacute;lnie to do siebie, że liczba użytkownik&oacute;w
+    i deweloper&oacute;w jest o jakieś 3 rzędy wielkości mniejsza od owych w Linuksie....
+    sprawy mielą się powolniej.\r\n\r\nSpr&oacute;buj proszę zgłoscić PR i podlinkować
+    owy wpis na pkgsrc-users@. A w Hyper-V odpowiedzieć w temacie (klientem poczty),&nbsp;że
+    Ciebie r&oacute;wnież to stopuje.\r\n\r\nJeśli nie jesteś programistą, a sprawa
+    ma większy priorytet zawsze można spr&oacute;bować zasponsorować pracę&nbsp;dewelopera.
+    Niestety robiąc po godzinach ludzie mają ograniczone możliwości pomocy :-)"
+---
+<p>Zesp&oacute;ł NetBSD <a href="http:&#47;&#47;blog.netbsd.org&#47;tnf&#47;entry&#47;netbsd_7_0_rc3">wydał<&#47;a> trzecią i być może ostatnią rewizję wersji kandydackej systemu operacyjnego NetBSD w wersji 7.0_RC3.</p>
+<p>Wśr&oacute;d zmian względem poprzedniej wersji kandydackiej należy wymienić:</p>
+<ul>
+<li>Włączenie domyślnie SMP w Raspberry Pi 2.<&#47;li>
+<li>armv7.img wspiera od tej pory obok Raspberry Pi 2, ODROID-C1, Cubieboard2, Cubietruck, Hummingbird A31 i Banana Pi także BeagleBoard.<&#47;li>
+<li>Poprawki znalezionych błęd&oacute;w, drobne nowe funkcjonalności i aktualizacje oprogramowania w systemie bazowym.<&#47;li><br />
+<&#47;ul></p>

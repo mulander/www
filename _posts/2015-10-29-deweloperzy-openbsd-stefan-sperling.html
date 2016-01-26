@@ -1,0 +1,106 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy OpenBSD: Stefan Sperling'
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował
+  w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl
+  zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych
+  przez nasz zesp&oacute;ł z deweloperami projektu.\r\n\r\nDwunasty Stefan Sperling\r\n\r\n"
+wordpress_id: 1446
+wordpress_url: http://beastie.pl/?p=1446
+date: '2015-10-29 23:09:03 -0400'
+date_gmt: '2015-10-29 22:09:03 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- wywiad
+comments: []
+---
+<p>Osiemnastego października dwadzieścia lat temu pierwszy commit wylądował w repozytorium CVS projektu OpenBSD. W rocznicę tego wydarzenia zesp&oacute;ł beastie.pl zaprosił wszystkich czytelnik&oacute;w do serii wywiad&oacute;w przeprowadzonych przez nasz zesp&oacute;ł z deweloperami projektu.</p>
+<p>Dwunasty Stefan Sperling</p>
+<p><a id="more"></a><a id="more-1446"></a></p>
+<hr &#47;>
+<p>On October 18th 20 years ago the first commits to the OpenBSD project landed in the CVS repository. On the anniversary the beastie.pl team invited all readers to a series of interviews that our staff conducted with the project developers.</p>
+<p>We continue with our twelfth interview - Stefan Sperling.</p>
+<hr &#47;>
+<p><strong>1. For the readers who don&rsquo;t know you, can you shortly introduce&nbsp;yourself?<&#47;strong></p>
+<p>I'm a software developer from Berlin. I'm 33 years old.</p>
+<p>I'm currently self-employed, with a focus on open source development&nbsp;and consulting for companies interacting with open source projects.</p>
+<p>Besides OpenBSD, I have been contributing to Apache Subversion since 2007.&nbsp;One of my main jobs is to provide support, workshops, and consulting&nbsp;for Subversion, plus fixing bugs and working on new features.&nbsp;I am somewhat involved in the Apache Software Foundation as a whole,&nbsp;but at this point in time my contributions there are more symbolic&nbsp;in nature, mostly because of lack of time and focus.</p>
+<p><strong>2. Why did you choose to run OpenBSD? How long have you been using it?<&#47;strong></p>
+<p>Back when I was in high school, a friend of mine, Uwe Stuehler from Berlin&nbsp;(uwe@) was already an OpenBSD developer. He made me vaguely aware of&nbsp;what OpenBSD was. At that time I was not doing any software development.&nbsp;I was making music with computers running Linux and happy enough with&nbsp;what I had.</p>
+<p>Some years later an open culture conference (Wizard of OS) came to town.&nbsp;I volunteered to help out, and by chance got assigned to the cloak room&nbsp;together with someone who turned out to be Alexander von Gernler (grunk@).&nbsp;At the time grunk was running an official OpenBSD FTP mirror.&nbsp;While we were pushing coats and jackets of conference attendees around,&nbsp;grunk convinced me to give OpenBSD a try on my laptop, and walked&nbsp;me through my first install, using his FTP mirror.</p>
+<p>Some time later the 3.9 release came out, with the "no binary blobs" scheme.&nbsp;This clicked with me, as I had been using binary blobs in Linux and FreeBSD&nbsp;but never felt comfortable doing so.&nbsp;I chose to use open source software because of the ideals it represents,&nbsp;so a system which draws a clear line by refusing binary blobs was a logical&nbsp;choice.</p>
+<p><strong>3. For those readers that still haven&rsquo;t joined the OpenBSD community,&nbsp;why should they try OpenBSD?<&#47;strong></p>
+<p>If you're curious, try it. Otherwise don't.</p>
+<p>Being curious means that there is something about the project that&nbsp;attracts you. But a decision to use a particular OS is always about&nbsp;trade-offs, and as with any OS you might find aspects you don't like&nbsp;very much. In any case, you might learn something new, even if you&nbsp;don't end up using the system for a long time.</p>
+<p><strong>4. Is OpenBSD your daily driver at home &amp; at work?<&#47;strong></p>
+<p>Yes. I use OpenBSD on all my daily driver machines.&nbsp;Most of the professional work I do does not require me to use anything else.</p>
+<p>I do use Linux on some wireless routers that OpenBSD doesn't run on to&nbsp;provide public wireless access as part of Berlin's Freifunk project.&nbsp;But I don't trust them, and they're firewalled off like anything on the&nbsp;internet. My private wireless access points run OpenBSD, too.</p>
+<p><strong>5. How did you become an OpenBSD developer? What do you think is&nbsp;required in order to join the OpenBSD project as a developer?<&#47;strong></p>
+<p>The first patch of mine which got committed (by gwk@) added the&nbsp;piixpcb(4) driver for SpeedStep support with the Pentium 2 CPU in&nbsp;the Thinkpad X21. This was based on code from the same driver in&nbsp;NetBSD, and our own ichpcib(4) driver.</p>
+<p>Two years later,during my final year as a student in Cork, Ireland, we were&nbsp;asked to pick from a list of projects or come up with a project of our own.&nbsp;The course was about computer networking, so I mailed a few OpenBSD&nbsp;developers involved in this area and proposed a couple of project&nbsp;ideas that looked interesting to me.</p>
+<p>I ended up settling on ospf6d(8), which was already in the tree but not&nbsp;hooked to the build because it was in very early stages of development.&nbsp;claudio@ kindly agreed to mentor my work on this, and my professor&nbsp;Simon N. Foley (who was teaching IT security) liked the idea and gave&nbsp;me access to a lab full of old i386 and sparc machines.&nbsp;I built a test network out of those, studied OSPF RFCs, and spent a lot&nbsp;of time in the lab trying to get ospf6d working. During this time,&nbsp;Claudio asked Theo to give me an account so he would not have to commit&nbsp;many diffs for me. The project was a success, and ospfd6 was enabled&nbsp;in the OpenBSD 4.7 release.</p>
+<p><strong>6. Can you tell us about some OpenBSD-related areas you work on?<&#47;strong></p>
+<p>I've been involved in IPv6, locale support (especially UTF-8), and&nbsp;the wireless subsystem.</p>
+<p>I've added support for some devices that came in machines I use,&nbsp;for instance Elantech touchpads in pms(4), the Realtek card reader&nbsp;driver rtsx(4), and some wireless devices, most recently rtwn(4).&nbsp;I am happily using my devices without relying on binary blobs in the kernel!</p>
+<p>I also added the iwm(4) driver, based on code which was given to the&nbsp;OpenBSD project by the German company genua gmbh under a dual GPL&#47;ISC licence.&nbsp;genua had hired Antii Kantee of NetBSD to develop the initial version of&nbsp;this driver for a product using OpenBSD 5.4.&nbsp;This is a bit of a bizarre story, because Antii developed the driver on&nbsp;NetBSD based on the iwlwifi driver in Linux, then ported it to OpenBSD 5.4,&nbsp;and later ported our forward-ported version from OpenBSD-current to&nbsp;NetBSD-current. Sounds confusing? It's confusing me, too :)</p>
+<p><strong>7. Do you have an idea of the time you spend working on the OpenBSD&nbsp;project?<&#47;strong></p>
+<p>Not as much as I would like to. But then, there are only so many hours&nbsp;in a day, and I am also involved in other projects, with Subversion taking&nbsp;another huge chunk of my time. And I also have some hobbies that don't&nbsp;involve computers, some of which keep me healthy which is rather important.</p>
+<p><strong>8. OpenBSD tends to lead in development best practices does it work the&nbsp;other way around? Is there a process improvement the project&nbsp;started or aims to adapt from the oustide world?<&#47;strong></p>
+<p>I think OpenBSD is getting by just fine using email and CVS.&nbsp;Note that the real action happens in email, not in CVS.</p>
+<p>There are no development branches of the main line. Instead, the&nbsp;main line switches into release mode for a few weeks every 6 months.</p>
+<p>This works for us because we're a fairly small team and don't need to&nbsp;scale up to large numbers like Linux kernel development. I don't think a&nbsp;code base with a strong focus on consistency like OpenBSD's could be&nbsp;maintained at that scale. If you don't believe me, go read some Linux&nbsp;wireless drivers, and then some OpenBSD ones, and you will see what I mean.&nbsp;Linux accepts device driver code written by vendors in styles entirely&nbsp;inconsistent with the rest of the code base. It seems Linux developers&nbsp;either don't care about that, or they have given up on consistency in&nbsp;favour of a high rate of development.</p>
+<p>Some of our developers maintain private branches in git, and some&nbsp;of them would like better integration of their work flow with the&nbsp;project's main repository. Their needs could be supported much better,&nbsp;e.g. by having a canonical CVS to git conversion. But I don't&nbsp;believe it's a bad idea to force these developers to mail patches&nbsp;against the current CVS mainline just like everyone else does.</p>
+<p><strong>10. As a conclusion, can you tell us how you forecast OpenBSD&rsquo;s future?&nbsp;What&rsquo;s the next big challenge?<&#47;strong></p>
+<p>There's so many things going on it's hard to pin it all down to&nbsp;just one big challenge.</p>
+<p>We are going to try to improve UTF-8 support this week at the u2k15&nbsp;hackathon in Berlin. I'm excited to see how this will turn out.&nbsp;I expect that we'll be learning more about the problem rather than&nbsp;creating solutions, though. The details are tricky.</p>
+<p>Like everyone, I am excited by the hypervisor mlarkin@ is cooking.</p>
+<p>I also enjoy reading about all the work going into pledge(2) (formerly&nbsp;known as tame). But I did not have enough time yet to follow it in detail.</p>
+<p>I am currently working on another wireless project, which is supported by&nbsp;genua gmbh. If everything goes as planned, it might make wireless go faster...</p>
+<hr &#47;>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie czytelnikom, kt&oacute;rzy <&#47;strong><strong>jeszcze Cię nie znają?<&#47;strong></p>
+<p>Jestem deweloperem oprogramowania z Berlina. Mam 33 lata.</p>
+<p>Prowadzę swoją własną działalność nastawioną na rozw&oacute;j oprogramowania open source oraz konsulting dla firm wchodzących w interakcje z projektami open source.</p>
+<p>Poza OpenBSD pomagam w rozwijaniu Apache Subversion od 2007 roku. Moimi gł&oacute;wnymi zajęciami są warsztaty, wsparcie i konsulting dla Subversion, do tego naprawa błęd&oacute;w i implementacja nowych funkcjonalności. Jestem poniekąd zaangażowany w Apache Software Foundation, jednakże m&oacute;j dotychczasowy wkład był raczej symboliczny, gł&oacute;wnie ze powodu braku czasu i skupienia.</p>
+<p><strong>2. Dlaczego wybrałeś OpenBSD? Jak długo korzystasz z tego systemu?<&#47;strong></p>
+<p>Kiedy byłem jeszcze w liceum m&oacute;j kolega Uwe Stuehler z Berlina (uwe@) był już deweloperem OpenBSD.&nbsp;To on wstępnie zapoznał mnie z OpenBSD. W&oacute;wczas nie zajmowałem się programowaniem, tworzyłem muzykę przy użyciu komputer&oacute;w pracujących pod kontrolą Linuksa i byłem wystarczająco zadowolony z takiej konfiguracji.</p>
+<p>Kilka lat p&oacute;źniej konferencja dotycząca otwartej kultury (Wizard of OS) trafiła do mojego miasta. Zgłosiłem się na ochotnika, aby pom&oacute;c w organizacji, zostałem przydzielony do szatni razem z kimś, kim jak się p&oacute;źniej okazało był Alexander von Gernler (grunk@). W tamtym czasach grunk prowadził oficjalny mirror FTP projektu OpenBSD. W trakcie przerzucania kurtek i płaszczy grunk przekonał mnie do wypr&oacute;bowania OpenBSD na moim laptopie, po czym przeprowadził mnie przez pierwszą własną instalację używając jego mirrora FTP.</p>
+<p>Trochę czasu p&oacute;źniej pojawiło się wydanie 3.9 pozbawione "binarnych blob&oacute;w", co mi bardzo przypasowało, bo używałem binarnych blob&oacute;w na Linuksie i FreeBSD, choć nigdy nie czułem się z tym dobrze. Wybrałem oprogramowanie open source ze względu na reprezentowane idee, więc system stawiający jasną linię, odrzucający binarne bloby, był dla mnie oczywistym wyborem.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności OpenBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Jeżeli jesteś ciekaw, to go wypr&oacute;buj lub nie.</p>
+<p>Jeżeli cię to ciekawi, to znaczy, że coś cię do tego rojektu przyciąga. Decyzja o używaniu danego systemu operacyjnego zawsze wiąże się jednak z pewnymi stratami w niekt&oacute;rych obszarach, a zyskami w innych. Jak w każdym innym systemie znajdziesz tu aspekty, kt&oacute;re ci się zbytnio nie spodobają. W każdym razie, masz szansę nauczyć się czegoś nowego, nawet jeśli nie zostaniesz przy tym systemie na długo.</p>
+<p><strong>4. Czy używasz OpenBSD jako gł&oacute;wnego systemu w domu oraz w pracy?<&#47;strong></p>
+<p>Tak. Używam OpenBSD na wszystkich swoich maszynach. Większość mojej zawodowej pracy nie wymaga używania niczego więcej.</p>
+<p>Używam Linuksa na niekt&oacute;rych routerach, gdzie OpenBSD nie działa, do obsługi bezprzewodowych sieci udostępnianych w ramach projektu Freifunk w Berlinie. Jednak im nie ufam, są za ścianą ognia, jak wszystko w internecie. M&oacute;j prywatny access point wifi działa pod kontrolą OpenBSD.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem OpenBSD? Co &ndash; Twoim zdaniem &ndash; jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Pierwszą moją łatką, kt&oacute;ra została zacommitowana (przez gwk@) było dodanie&nbsp;sterownika piixpcb(4) potrzebnego do wsparcia SpeedStep w procesorach Pentium 2 używanych przez Thinkpad X21. Była to zmiana oparta o taki sam sterownik dla NetBSD oraz o nasz istniejący sterownik ichpcib(4).</p>
+<p>Dwa lata p&oacute;źniej, na ostatnim roku moich studi&oacute;w w Cork w Irlandii, poproszono nas o wybranie projektu z listy lub o opracowanie własnego. Studia dotyczyły sieci komputerowych, więc wysłałem maila do kilku deweloper&oacute;w OpenBSD z tego obszaru systemu i zaproponowałem kilka pomysł&oacute;w na projekt, kt&oacute;re wydawały mi się interesujące.</p>
+<p>Wybrałem w końcu ospf6d(8), kt&oacute;re już znalazło się w drzewie CVS, ale nie było jeszcze podpięte do budowania, ponieważ było w bardzo wczesnej fazie rozwoju. claudio@ był tak miły, ze zgodził się na mentorowanie tego projektu, a mojemu profesorowi Simonowi N. Foley'owi (kt&oacute;ry uczył bezpieczeństwa w informatyce) tak spodobał s ię ten pomysł, że udostępnił mi całe laboratorium pełne starszych komputer&oacute;w&nbsp;i386 i maszyn sparc. Zbudowałem sieć z udostępnionych maszyn, uczyłem się z OSPF RFC oraz spędziłem masę czasu w laboratorium pr&oacute;bując doprowadzić ospf6d do działającego stanu. W tym czasie Claudio poprosił Theo o utworzenie konta dla mnie, by nie musiał commitować tak wiele łatek&nbsp;za mnie. Projekt zakończył się sukcesem, a ospfd6 zostało włączone w wydaniu 4.7 projektu OpenBSD.</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w OpenBSD?<&#47;strong></p>
+<p>Byłem zaangażowany w IPv6, wsparcie dla locale (w szczeg&oacute;lności UTF-8) i podsystem sieci bezprzewodowej.</p>
+<p>Dodałem obsługę pewnych urządzeń, kt&oacute;re były zawarte w używanych przeze mnie maszynach. Przykładowo: touchpady Elantech w pms(4), sterownik rtsx(4) do czytnik&oacute;w kart Realtek i kilka sterownik&oacute;w do kart wifi, ostatnio rtwn(4). Na szczęście używam swoich urządzeń beż żadnych binarnych blob&oacute;w w kernelu!</p>
+<p>Dodałem ponadto sterownik iwm(4), oparty na kodzie, kt&oacute;ry został przekazany projektowi OpenBSD przez Niemiecką firmę genua gmbh na podw&oacute;jnej licencji GPL&#47;ISC. genua zatrudniła Antii Kantee z projektu NetBSD,&nbsp; żeby opracował wstępną wersję tego sterownika dla produktu korzystającego z OpenBSD 5.4. To trochę dziwaczna historia, ponieważ Antii opracował sterownik na NetBSD bazując na kodzie ze sterownika iwlwifi w Linuksie, potem przeportował go do OpenBSD 5.4, a następnie przeportował naszą przeportowaną wersję z OpenBSD-current do NetBSD-current. Brzmi zawile?&nbsp;Dla mnie nadal jest to zagmatwane :)</p>
+<p><strong>7. Ile czasu zajmuje Ci praca przy projekcie OpenBSD?<&#47;strong></p>
+<p>Mniej niż bym tego chciał. Niestety dzień ma tylko 24 godziny, a ja jestem zaangażowany w wiele projekt&oacute;w. Samo Subversion zabiera sporo mojego czasu. Mam też kilka hobby nie związanych z komputerami, niekt&oacute;re z nich utrzymują mnie w dobrej kondycji, co jest ważne.</p>
+<p><strong>8. OpenBSD zwykle przoduje w najlepszych praktykach deweloperskich. Czy działa to r&oacute;wnież w drugą stronę? Czy istnieją nowe praktyki, kt&oacute;re projekt właśnie rozpoczął lub planuje zaadaptować z innych zewnętrznych projekt&oacute;w?<&#47;strong></p>
+<p>Myślę, że OpenBSD radzi sobie świetnie, używając tylko poczty i CVS. Zwr&oacute;ć uwagę na to, że prawdziwa akcja dzieje się poprzez pocztę, a nie w CVS.</p>
+<p>Brakuje gałęzi rozwojowych, jest tylko gł&oacute;wny nurt. Gł&oacute;wny nurt przełącza się w tryb wydania raz na p&oacute;ł roku, to wszystko.</p>
+<p>Taki model u nas się sprawdza, ponieważ jesteśmy małym zespołem i nie musimy skalować się do rozmiar&oacute;w, jakich wymaga rozwijanie jądra systemu Linux. Nie wydaje mi się, by kod z tak silnym naciskiem na sp&oacute;jność, kt&oacute;ry kładzie OpenBSD, m&oacute;gł być rozwijany w takiej skali. Jeżeli mi nie wierzysz, przeczytaj kilka sterownik&oacute;w wifi dla Linuksa, a następnie kilka dla OpenBSD, a zrozumiesz, co mam na myśli. Linux akceptuje sterowniki pisane przez producent&oacute;w w stylu, kt&oacute;ry kompletnie odbiega od reszty kodu. Deweloperom Linuksa albo to nie przeszkadza, albo im na tym nie zależy, lub po prostu poddali się w zakresie sp&oacute;jności na rzecz szybszego tempa rozwoju.</p>
+<p>Niekt&oacute;rzy z naszych deweloper&oacute;w utrzymują prywatne gałęzie w git, część z nich preferowałaby lepszą integrację ich trybu pracy z gł&oacute;wnym repozytorium projektu. Ich wymagania byłyby znacznie lepiej wspierane, jeśli oferowalibyśmy kanoniczną konwersję CVS do git. W przeciwieństwie do większości os&oacute;b nie uważam za zły pomysł zmuszania deweloper&oacute;w do wysyłania łatek opartych o bieżące drzewo rozwojowe CVS.</p>
+<p><strong>10. W ramach podsumowania, jak kreślisz przyszłość dla OpenBSD? Co jest kolejnym największym wyzwaniem?<&#47;strong></p>
+<p>Tak wiele rzeczy jest w toku, że ciężko wybrać jeden temat jako największe wyzwanie.</p>
+<p>W trakcie hackathonu u2k15 w Berlinie będziemy starać się ulepszyć wsparcie dla UTF-8. Jestem podekscytowany oczekiwaniem na jego wyniki. Oczekuję, że więcej nauczymy się o samym problemie, niż utworzymy rozwiązań.&nbsp;Diabeł tkwi w szczeg&oacute;łach.</p>
+<p>Jak wszyscy, jestem też podekscytowany hipernadrządzcą, jakiego mlarkin@ obecnie gotuje.</p>
+<p>Lubię czytać o pracach wykonywanych przy nowym pledge(2) (wcześniej znanym jako tame), nie miałem jednak wystarczająco dużo czasu, by dokładnie śledzić te prace.</p>
+<p>Obecnie pracuję nad kolejnym projektem związanym z wifi, wspieranym przez genua gmbh. Jeżeli wszystko p&oacute;jdzie zgodnie z planem, to wifi będzie szybsze...</p>

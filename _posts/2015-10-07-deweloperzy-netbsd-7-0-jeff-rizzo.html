@@ -1,0 +1,87 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Deweloperzy NetBSD-7.0: Jeff Rizzo'
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Zesp&oacute;ł skupiony wok&oacute;ł NetBSD jest zaszczycony wydaniem już
+  piętnastej gł&oacute;wnej wersji swojego systemu operacyjnego, oznaczonego numerem
+  7.0. Jest to sytuacja niecodzienna, gdyż od pojawienia się poprzedniej gałęzi 6.0
+  minęły prawie trzy lata (opublikowanej 17 października 2012).\r\n\r\nZ tej okazji
+  zapraszamy do lektury serii wywiad&oacute;w z ludźmi bezpośrednio zaangażowanymi
+  w to wydanie, bez nich nie byłoby wykonanej takiej ilości świetnej roboty. Rozpoczynamy
+  serię od Jeffa Rizzo, zangażowanego w zespole administracji oraz - co warto wyszczeg&oacute;lnić
+  - przy projekcie DTrace&#47;NetBSD.\r\n\r\n"
+wordpress_id: 1179
+wordpress_url: http://beastie.pl/?p=1179
+date: '2015-10-07 23:28:37 -0400'
+date_gmt: '2015-10-07 21:28:37 -0400'
+categories:
+- Bez kategorii
+tags:
+- netbsd
+- arm
+- dtrace
+- wywiad
+- administracja
+comments: []
+---
+<p>Zesp&oacute;ł skupiony wok&oacute;ł NetBSD jest zaszczycony wydaniem już piętnastej gł&oacute;wnej wersji swojego systemu operacyjnego, oznaczonego numerem 7.0. Jest to sytuacja niecodzienna, gdyż od pojawienia się poprzedniej gałęzi 6.0 minęły prawie trzy lata (opublikowanej 17 października 2012).</p>
+<p>Z tej okazji zapraszamy do lektury serii wywiad&oacute;w z ludźmi bezpośrednio zaangażowanymi w to wydanie, bez nich nie byłoby wykonanej takiej ilości świetnej roboty. Rozpoczynamy serię od Jeffa Rizzo, zangażowanego w zespole administracji oraz - co warto wyszczeg&oacute;lnić - przy projekcie DTrace&#47;NetBSD.</p>
+<p><a id="more"></a><a id="more-1179"></a></p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p>The NetBSD has prepared the 15th major release of their operating system, with the 7.0 version. It's infrequent event, since the previous one (6.0) it has passed almost three years (since 17 Oct 2012).</p>
+<p>The beastie.pl team has prepared series of interviews with the authors. We started with Jeff Rizzo, a member of the admin team, who is known for his notable DTrace&#47;NetBSD improvements.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. For the readers who don't know you yet, can you shortly introduce yourself?<&#47;strong></p>
+<p>I'm Jeff Rizzo. I've been working with and on NetBSD as a hobbyist for longer than I care to remember.</p>
+<p><strong>2. Why did you choose to run NetBSD? How long have you been using it? What are your ports (hardware platforms)?<&#47;strong></p>
+<p>I originally chose NetBSD in 1993 because it ran on my Amiga with 68040 and 12MB of RAM. I've stayed with it because of the people, because of the flexibility of the build system, and because it's at home in both embedded environments and large servers.</p>
+<p>At one time or another, I've run just about all the current hardware platforms except Vax. These days I primarily use amd64 and arm hardware, with a smattering of powerpc and mips.</p>
+<p><strong>3. For those readers that still haven't joined the NetBSD community, why should they try NetBSD?<&#47;strong></p>
+<p>It's a great platform to learn how systems work. It's small enough (both kernel and userland) for a skilled, motivated individual to learn a lot about kernels, hardware, and build systems.</p>
+<p><strong>4. In your professional environment, do you work with NetBSD?<&#47;strong></p>
+<p>Not currently, no.</p>
+<p><strong>5. How did you become a NetBSD developer? What do you think is required in order to join the NetBSD project as a developer?<&#47;strong></p>
+<p>I was invited to become a developer in 2005 because I'd ported some hardware drivers for Asterisk from FreeBSD, and because I'd been active in the community helping people for a number of years. The main thing that's required is to do something useful for NetBSD - whether that's writing code, porting something to new hardware, or fixing documentation. People who help consistently over an extended period (months to years) generally get invited.</p>
+<p><strong>6. Can you tell us about some NetBSD-related areas you work on?<&#47;strong></p>
+<p>These days I put most of my effort into admin duties - I've done most of the hands-on work with NetBSD project servers on the West Coast of North America. (We're currently moving our servers out of ISC into a new location, which will be done by the end of the year). I also help out with Release Engineering (I handled the 6.0 release, but only helped out with 7.0), and I'm currently building a box based on the ARM platform to build binary packages for ARM.</p>
+<p><strong>7. Do you have an idea of the time you spend working on the NetBSD project?<&#47;strong></p>
+<p>These days it's between 2 and 8 hours a week.</p>
+<p><strong>8. Please tell us about the strongest points and features of the 7.0 release.<&#47;strong></p>
+<p>From my perspective, it's the greatly improved support for ARM platforms - particularly inexpensive boards like the Raspberry Pi and ODROID-C1.</p>
+<p><strong>9. Please tell us about some improvements for the NetBSD project that are worth picking up for newcomers?<&#47;strong></p>
+<p>I'm not sure I understand the question. If you're asking what newcomers can do to help improve things, it all depends what their skills and interest are. For a lot of people, pkgsrc is a great way to get started. Others may be interested in making improvements to drivers for hardware they own, or porting drivers for unsupported hardware from FreeBSD, OpenBSD (easier) or Linux (harder).</p>
+<p><strong>10. As a conclusion, can you tell us how you forecast NetBSD future?<&#47;strong></p>
+<p>It's hard to predict the future. Beyond NetBSD 7, there have been some dramatic improvements in (for example) DTrace support, which will be in 8.0 (or possibly 7.1!) when it's ready! NetBSD has a small but dedicated core of developers and users who will hopefully continue to evolve the system for years to come.</p>
+<hr &#47;>
+<p>&nbsp;</p>
+<p><strong>1. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o sobie dla czytelnik&oacute;w, kt&oacute;rzy jeszcze Cię nie znają?<&#47;strong></p>
+<p>Nazywam się Jeff Rizzo i pracuję przy oraz na NetBSD jako hobbysta dłużej niż sięgam pamięcią.</p>
+<p><strong>2. Dlaczego wybrałeś NetBSD? Jak długo korzystasz z tego systemu? Z kt&oacute;rymi portami (platformami sprzętowymi) masz do czynienia?<&#47;strong></p>
+<p>Początkowo wybrałem NetBSD w 1993 r., ponieważ działało ono na mojej Amidze z procesorem [Motorolli] 68040 i 12 MB pamięci RAM. Od tego czasu pozostałem przy tym projekcie z uwagi na społeczność, kt&oacute;rą on skupia przy sobie, elastyczność technologii budowania systemu i doskonałe dopasowanie do urządzeń wbudowanych i dużych serwer&oacute;w.</p>
+<p>Przy r&oacute;żnych okazjach miałem do czynienia z niemal wszystkimi bieżącymi [wspieranymi] plaformami, z wyjątkiem komputera VAX. Ostatnio korzystam gł&oacute;wnie z amd64 i urządzeń z procesorami ARM, a z rzadka r&oacute;wnież z PowerPC i MIPS.</p>
+<p><strong>3. Dlaczego czytelnicy, kt&oacute;rzy jeszcze nie przyłączyli się do społeczności NetBSD powinni tego spr&oacute;bować?<&#47;strong></p>
+<p>Ponieważ jest to doskonała platforma do nauki funkcjonowania system&oacute;w [operacyjnych]. Jest ona wystarczająco mała (zar&oacute;wno kernel jak i bazowe środowisko narzędzi użytkownika), aby umiejętny i zmotywowany programista m&oacute;gł się sporo nauczyć o kernelach, sprzęcie fizycznym oraz zarządzaniu budowaniem oprogramowania.</p>
+<p><strong>4. Czy w swoim środowisku zawodowym masz do czynienia z NetBSD?<&#47;strong></p>
+<p>Nie, aktualnie nie.</p>
+<p><strong>5. W jaki spos&oacute;b zostałeś deweloperem NetBSD? Co - Twoim zdaniem - jest potrzebne by zostać członkiem projektu w roli dewelopera?<&#47;strong></p>
+<p>Zostałem zaproszony do zostania deweloperem w 2005 r., ponieważ przeportowałem kilka sterownik&oacute;w sprzętowych dla Asteriska z FreeBSD, a także byłem aktywny w społeczności, pomagając innym przez wiele lat. Gł&oacute;wną rzeczą, kt&oacute;ra jest wymagana jest wykonanie czegoś użytecznego dla NetBSD - czy jest to pisanie kodu, portowanie czegoś na nowy sprzęt czy też poprawianie dokumentacji. Ludzie, kt&oacute;rzy stale pomagają na przestrzeni dłuższego okresu czasu (miesięcy lub lat) zazwyczaj są zapraszani [do projektu].</p>
+<p><strong>6. Czy m&oacute;głbyś powiedzieć parę sł&oacute;w o obszarach Twojego zaangażowania w NetBSD?<&#47;strong></p>
+<p>Ostatnimi czasy większość moich wysiłk&oacute;w koncentruje się w ramach obowiązk&oacute;w pracy administratora - wykonałem znaczną część praktycznej pracy przy serwerach NetBSD na Zachodnim Wybrzeżu Ameryki P&oacute;łnocnej. (W chwili bieżącej migrujemy serwery z ISC do nowej lokalizacji, kt&oacute;ra to operacja będzie skończona przed końcem bieżącego roku). Pomagam także z pracą nad wydaniami stabilnymi (ang. Release Engineering) -- byłem odpowiedzialny za wydanie 6.0, a przy 7.0 ograniczyłem się do pomagania. W chwili obecnej pracuję nad konfiguracją platformy opartej o procesory ARM do budowy paczek dedykowanych dla tego sprzętu.</p>
+<p><strong>7. Ile czasu zajmuje Ci praca w projekcie NetBSD?<&#47;strong></p>
+<p>Ostatnio od 2 do 8 godzin tygodniowo.</p>
+<p><strong>8. Proszę przybliż nam najmocniejsze punkty i cechy charakterystyczne najbliższego wydania NetBSD-7.0.<&#47;strong></p>
+<p>Z mojego punktu widzenia, jest nim znacznie usprawnione wsparcie platform ARM'owych - w szczeg&oacute;lności niedrogich płytek takich jak Raspberty Pi i ODROID-C1.</p>
+<p><strong>9. Proszę przybliż nam r&oacute;wnież obszary systemu NetBSD, kt&oacute;re uznajesz za wartościowe do ulepszenia dla nowych deweloper&oacute;w?<&#47;strong></p>
+<p>Nie jestem pewien, czy rozumiem to pytanie. Jeśli pytasz o to, co nowicjusze mogą zrobić, żeby pom&oacute;c w ulepszaniu bieżącego stanu, to wszystko to zależy od ich umiejętności i zainteresowań. Dla wielu os&oacute;b, pkgsrc jest doskonałym punktem startowym. Inni mogą być zainteresowani usprawnianiem sterownik&oacute;w dla sprzętu, kt&oacute;ry posiadają lub portowaniem driver&oacute;w dla niewspieranego sprzętu z FreeBSD, OpenBSD (prostsze zadanie) lub z Linuksa (trudniejsze zadanie).</p>
+<p><strong>10. W ramach podsumowania, jaką kreślisz przyszłość dla NetBSD?<&#47;strong></p>
+<p>Niełatwo przewidzieć przyszłość. Poza NetBSD 7.0, mieliśmy już gigantyczne usprawnienia w np. ulepszeniu wsparcia DTrace, kt&oacute;re pojawi się w 8.0 (lub być może nawet 7.1!), kiedy tylko będzie gotowe! NetBSD posada mały, ale zaangażowany zesp&oacute;ł deweloper&oacute;w i użytkownik&oacute;w, kt&oacute;rzy - miejmy nadzieję - będą kontynuować rozw&oacute;j systemu przez najbliższe lata.</p>

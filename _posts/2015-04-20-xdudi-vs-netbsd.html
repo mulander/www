@@ -1,0 +1,155 @@
+---
+layout: topic
+status: publish
+published: true
+title: xdudi vs NetBSD
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+wordpress_id: 448
+wordpress_url: http://beastie.pl/forums/topic/xdudi-vs-netbsd/
+date: '2015-04-20 21:35:00 -0400'
+date_gmt: '2015-04-20 19:35:00 -0400'
+categories: []
+tags: []
+comments: []
+---
+<blockquote>18:07 < ryoshu> xdudi: http:&#47;&#47;pkgsrc.se&#47;devel&#47;cgdb :)<br />
+18:17 < xdudi> ryoshu: zadziwiasz mnie :)<br />
+18:19 < xdudi> a libreadline? onegdaj z niej leciał segfault na styku z cgdb...<br />
+18:23 < ryoshu> a kiedy dokładniej?<br />
+18:24 < ryoshu> teraz działa :)<br />
+18:35 < xdudi> ryoshu: jestem ci niezmiernie wdzięczny :)<br />
+18:35 < xdudi> ryoshu: jeszcze tylko raid5&#47;6 na netbsd bez zfs, i w końcu będę go m&oacute;gł użyć na serwerach swoch :P<br />
+18:36 < ryoshu> hmm<br />
+18:43 < ryoshu> a inne BSD mają tego raida?<br />
+18:43 < xdudi> nie wiem, pewnie nie :P<br />
+18:44 < xdudi> to istotny problem bo wielkie zużycie ramu w zfs wymiernie podnosi koszty wynajmu serwera wirtualnego z data center<br />
+18:45 < ryoshu> aha<br />
+18:45 < xdudi> a potem wielkie zdziwienie, że wszystko stoi na ubuntu server, gdzie raid jest po 5 minutach konfiguracji, przy relatywnie niskich kosztach<br />
+               wynajmu i stabilnym działaniu całej infrastruktury<br />
+18:46 < xdudi> gdyby deweloperzy netbsd wsłuchiwali się w potrzeby rynku, mieli by większy % popularności ich systemu<br />
+18:46 < xdudi> puki co netbsd to taka miła ciekawostka (fajna zabawka i tylko zabawka), bo ani się nie nadaje na desktop, ani na serwer - a to przykre<br />
+18:47 < ryoshu> aha<br />
+18:47 < xdudi> bo ten system ma wielki potencjał, zrobił na mnie większe wrażenie niż freebsd<br />
+18:47 < ryoshu> myślę, że problemy ma te same co reszta BSD, o 2-3 rzędy wielkości mniej deweloper&oacute;w niż Linux<br />
+18:48 < xdudi> nie zgodzę się z tobą<br />
+18:48 < xdudi> moim zdaniem problemem jest brak rzetelnej informacji zwrotnej<br />
+18:48 < xdudi> i deweloperzy nie wiedzą czego potrzebują użytkownicy<br />
+18:48 < ryoshu> aha<br />
+18:49 < xdudi> nie ma baz pomysł&oacute;w i potrzeb<br />
+18:49 < xdudi> oni piszą to dla siebie z tego co widzę<br />
+18:49 < ryoshu> zwykle tak jest<br />
+18:49 < ryoshu> ja od kiedy jestem na NetBSD to naprawiam rzeczy pod siebie<br />
+18:49 < xdudi> linuksa napędzają użytkownicy, jest wielki spam tego co potrzebne<br />
+18:49 < ryoshu> paczkuję&nbsp;itp.<br />
+18:49 < xdudi> i deweloperzy to widzą<br />
+18:49 < ryoshu> aha, dobra uwaga<br />
+18:51 < ryoshu> xdudi: ja np. paczkuje MATE i LXQt nie pod siebie, ale by zwykły użytkownik m&oacute;gł posadzić przed komputerem swoją mamę z NetBSD na desktopie<br />
+                :)<br />
+18:51 < xdudi> potrzebuję raid&oacute;w (wszystkich) bez zfs, albo z zfs z bardzo niskim zużyciem ramu, potrzebuję opencl, grafiki 3d, i zaawansowanych routing&oacute;w<br />
+               (na kilka wan&oacute;w itp), i za chwilę okaże się, że tutaj można robić i farmę obliczeniową, i dewelopment 3d (gamedev), a dzięki tuningowi<br />
+               kern_lowlatency, będzie działał bez zacięć...<br />
+18:52 < xdudi> i za chwilę dla netbsd będzie mn&oacute;stwo zastosowań, inni będą mieli inne potrzeby<br />
+18:52 < xdudi> ryoshu: cieszę się że poświęcasz energię i sw&oacute;j czas na paczkowanie, szanuję to<br />
+18:53 < ryoshu> xdudi: mam prośbę małą, wpisz te potrzeby na forum beastie.pl i nie znikną :) właśnie czytam o raid5 w OpenBSD<br />
+                http:&#47;&#47;undeadly.org&#47;cgi?action=article&sid=20150413071009<br />
+18:53 < xdudi> chcę tylko pokazać głębszą istotę problemu niskiej popularności netbsd<br />
+18:54 < xdudi> albo deweloperzy zaczną słuchać potrzeb ludzi, albo netbsd pozostanie przyprawą na linuksie<br />
+18:54 < xdudi> tak to widzę<br />
+18:54 < ryoshu> mądrze m&oacute;wisz<br />
+18:55 < xdudi> ciężko mi zejść z ubuntu, wszystko mi tutaj działa, nawet lowlatency mi śmiga, nic mi nie tnie, istny mi&oacute;d...<br />
+18:55 < ryoshu> ja widzę to tak: zainwestować środki (po co 250 tys. dolar&oacute;w zapas&oacute;w) w DRMKMS, tak by śmigało wszystko na desktopie, a nie by ludzie<br />
+                dłubali w czasie wolnym przez 5 lat zanim dojdą do poziomu Linuksa sprzed 5 lat<br />
+18:55 < xdudi> a wolałbym netbsd, bo jest bardziej uporządkowany i nie ma tam wynaturzeń (systemd, pulseaudio, alsa, i inne rewolucje co p&oacute;ł roku)<br />
+18:56 < xdudi> prościej by było zrobić stronę łączącą jednych z drugimi<br />
+18:56 < xdudi> kategorie pomysł&oacute;w, głosowania co najpierw zaimplementować<br />
+18:56 < xdudi> problem tkwi nie w liczbie rąk a w komunikacji między ludzmi<br />
+18:57 < ryoshu> a skoro będzie desktop to pojawią się środowiska graficzne i ludzie zaczną dłubać paczki pod siebie, a to co na desktopie będą pchać w<br />
+                serwery -- tam gdzie nie ma desktopu tam nie będzie niczego<br />
+18:58 < ryoshu> xdudi: warto też nawiązać nić komunikacji z producentami<br />
+18:58 < ryoshu> sprzętu<br />
+18:58 < xdudi> ciekawi mnie dlaczego nie ma zaimplementowanych otwartych sterownik&oacute;w 3d - mam taki właśnie z ubuntu włączony (nie używam tych zamkniętych)<br />
+18:58 < xdudi> to by było już coś<br />
+18:58 < xdudi> ryoshu: producenci sprzętu cię kopną w d*pę, bo system jest za mało popularny<br />
+18:59 < xdudi> najpierw trzeba zrobić to co się da, a potem iść w gałąź embedded<br />
+18:59 < ryoshu> aha<br />
+18:59 < xdudi> desktop, paczki, responsywny kernel (konfigurowany dynamicznie), akceleracja 3d, raid, wirtualizacja...<br />
+19:00 < xdudi> i to wystarczy aby używać systemu na serwerze i desktopie<br />
+19:00 < xdudi> następnie tekstowa aktualizacja (pod maszyny wirtualne serwerowe), nie wiem czy to netbsd ma - puki co trzeba odpalić płytę i z niej robić<br />
+               upgrade<br />
+19:01 < xdudi> ryoshu: sam widzisz - że netbsd w obecnej formie nadaje się tylko na wirtualkę, aby się pobawić i wyłączyć<br />
+19:01 < ryoshu> aktualizacja może być prosto z set&oacute;w tar.gz lub źr&oacute;deł<br />
+19:01 < ryoshu>  .&#47;build.sh install=&#47;<br />
+19:01 < xdudi> może być... powinno być: jest...<br />
+19:01 < xdudi> :)<br />
+19:01 < ryoshu> i etcupdate<br />
+19:02 < ryoshu>  oraz .&#47;build.sh installmodules=&#47; + kopia kernela i konfiguracja &#47;boot.cfg<br />
+19:02 < xdudi> netbsd m&oacute;głby przegonić linuksa... ale aby tego dokonać muszą być mądrzy menadżerowie<br />
+19:03 < xdudi> a takich nie ma, nie dlatego że nie ma chętnych, tylko dlatego, że oni nawet nie wiedzą jak tym projektem kierować<br />
+19:03 < xdudi> bo mają za słaby feedback<br />
+19:03 < xdudi> i pętla się zamyka<br />
+19:03 < ryoshu> xdudi: wiesz co? ja niby śledzę NetBSD i mam parę z nim problem&oacute;w, nie mam pojęcia co się w środu dzieje, cieżko śledzić :) a jakichś<br />
+                plan&oacute;w, mileston&oacute;w itp. nie widzę<br />
+19:03 < ryoshu> tzn. są listy todo, listy projekt&oacute;w na netbsd.org itp.<br />
+19:03 < xdudi> netbsd to rewolucja przez ewolucję, a to potrwa miliony lat<br />
+19:03 < xdudi> nie ma tutaj sp&oacute;jnego zarządzania<br />
+19:04 < xdudi> ciężko jest zrobić jedną rzecz jeśli innych brakuje<br />
+19:04 < ryoshu> brakuje mi akcji, no to robimy zbi&oacute;rkę na raid5 -- tutaj konto<br />
+19:04 < xdudi> nie chodzi o raid5, istota problemu tkwi głębiej<br />
+19:04 < ryoshu> i zatrudniają na pełen wymiar czasowy parę deweloper&oacute;w :)<br />
+19:04 < xdudi> lecz sk&oacute;tki, nie objawy :P<br />
+19:05 < xdudi> sukces w każdej branży to feedback<br />
+19:05 < ryoshu> xdudi: jeśli wypełnimy te kilka luk to będzie dużo fajniej<br />
+19:05 < xdudi> tylko on gwarantuje sukces<br />
+19:05 < ryoshu> xdudi: aha<br />
+19:05 < xdudi> gdy go brak, to pozostaje tylko loteria<br />
+19:05 < xdudi> czy się uda czy nie<br />
+19:06 < xdudi> jakby na gł&oacute;wnej stronie powstała taka baza pomysł&oacute;w, to w miesiąć utonęli by w propozycjach zmian<br />
+19:06 < ryoshu> aha<br />
+19:06 < ryoshu> niby mamy PR problem report<br />
+19:06 < xdudi> nie chodzi o bugtracker, ale o rozkład potrzeb, na kategorie, ilość punkt&oacute;w itp<br />
+19:07 < ryoshu> rozumiem<br />
+19:08 < xdudi> linux zdobył popularność bo się nadaje do wszystkiego<br />
+19:08 < xdudi> desktop, serwer, urządzenia mobilne&#47;wbudowane<br />
+19:08 < ryoshu> racja<br />
+19:08 < xdudi> a netbsd do czego się nadaje? :)<br />
+19:08 < ryoshu> do wszystkiego po trochu, osobiście myślę że od desktopu musi się zaczynać<br />
+19:09 < ryoshu> Linuks nie startował od embedded czy serwer&oacute;w<br />
+19:09 < xdudi> właśnie<br />
+19:09 < xdudi> kluczem w każdej branży jest feedback, jak wiesz kto co potrzebuje, to możesz prowadzić analizy statystyczne<br />
+19:09 < xdudi> i wiesz co w kt&oacute;rej kolejności i jak podawać<br />
+19:09 < xdudi> by zgadzał się hajs<br />
+19:09 < ryoshu> :)<br />
+19:10 < xdudi> na netbsd można też świetnie zarabiać<br />
+19:10 < xdudi> np na supporcie<br />
+19:10 < xdudi> to może być samonapędzające się koło<br />
+19:10 < xdudi> za chwilę firmy będą go pchały jak linuxa obecnie pchają korporacje...<br />
+19:11 < ryoshu> :)<br />
+19:11 < xdudi> netbsd to lepszy system, chociażby ze względu na licencję, bardziej uporządkowany, bez wynaturzeń<br />
+19:11 < xdudi> ale i nie realizujący bardziej wyrafinowanych potrzeb :(<br />
+19:11 < ryoshu> :)<br />
+19:13 < xdudi> netbsd m&oacute;głby sterować superkomputerami, m&oacute;głby być używany w przemyśle - bo można go zamknąć (linuxa nie)<br />
+19:13 < xdudi> netbsd ma szanse go przegonić w wielu dziedzinach - i to jest realne<br />
+19:13 < xdudi> ale to nie możliwe przy takim zarządzaniu jak to ma miejsce obecnie<br />
+19:14 < ryoshu> wiesz, staram się angażować bez robienia rewolucji<br />
+19:14 < xdudi> linux jak i cały *GPL jest o dupę rozbić, nie można takiego np Qt zamknąć i wydać z produktem jako swoje<br />
+19:15 < xdudi> jakby bsd miał te same funkcjonalności co linux, już sama licencja by go wyniosła ponad linuxa<br />
+19:15 < ryoshu> racja<br />
+19:16 < xdudi> na open source można robić grubą kasę<br />
+19:17 < xdudi> tak więc netbsd ma ogromny potencjał, kt&oacute;ry jest marnotrawiony<br />
+19:17 < xdudi> ma to czego nie ma linux - solidny, uporządkowany i sp&oacute;jny fundament<br />
+19:17 < ryoshu> :)<br />
+19:18 < xdudi> ale puki co jest w kategorii: minix & haiku<br />
+19:18 < ryoshu> też fakt :)<br />
+19:19 < xdudi> świetny system kt&oacute;ry działa na wszystkim...<br />
+19:21 < xdudi> jakbyś miał bazę potrzeb i pomysł&oacute;w, czytałbyś ją i drapałbyś się po głowie - czemu na to wszystko nie wpadłeś...<br />
+19:22 < ryoshu> xdudi: zapraszam na beastie.pl :) fajnie zostawić pomysły w spos&oacute;b mniej ulotny na forum, a potem będzie można odkreślać to co już zrobione<br />
+19:22 < ryoshu> ja właśnie zabieram się na newsa na dziś<br />
+19:23 < xdudi> ryoshu: polecam technikę copy'ego-paste'a :)<br />
+19:24 < ryoshu> mogę przekleić naszą rozmowę, ok? :)<br />
+19:25 < xdudi> ryoshu: pozwalam :P<&#47;blockquote></p>

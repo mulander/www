@@ -1,0 +1,37 @@
+---
+layout: post
+status: publish
+published: true
+title: sudo(8) od podstaw w OpenBSD
+author:
+  display_name: mulander
+  login: mulander
+  email: adam.wolk@koparo.com
+  url: http://homing-on-code.blogspot.com/
+author_login: mulander
+author_email: adam.wolk@koparo.com
+author_url: http://homing-on-code.blogspot.com/
+excerpt: "Na liście mailingowej misc@ pojawił się <a href=\"http:&#47;&#47;marc.info&#47;?t=143466002900006&amp;r=1&amp;w=2\">email<&#47;a>
+  informujący o planowanym przeniesieniu <a href=\"http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-5.7&#47;man8&#47;sudo.8?query=sudo&amp;manpath=OpenBSD-5.7\">sudo(8)<&#47;a>
+  z systemu bazowego do drzewa port&oacute;w. Bazowy system OpenBSD dostarczał sudo
+  w wersji 1.7.2p8, kt&oacute;ra była wydana w 29 czerwca 2010 roku. Przeniesienie
+  sudo do port&oacute;w pozwoli osobom pragnącym nadal pracować z narzędziem wykorzystać
+  jego najnowszą wersji. Warto wspomnieć, że obecnym maintainerem sudo jest Todd C.
+  Miller, kt&oacute;ry jest także developerem OpenBSD. To on dostarczył świeży port
+  do test&oacute;w.\r\n\r\n"
+wordpress_id: 837
+wordpress_url: http://beastie.pl/?p=837
+date: '2015-06-25 16:22:10 -0400'
+date_gmt: '2015-06-25 14:22:10 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- sudo
+- doas
+comments: []
+---
+<p>Na liście mailingowej misc@ pojawił się <a href="http:&#47;&#47;marc.info&#47;?t=143466002900006&amp;r=1&amp;w=2">email<&#47;a> informujący o planowanym przeniesieniu <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-5.7&#47;man8&#47;sudo.8?query=sudo&amp;manpath=OpenBSD-5.7">sudo(8)<&#47;a> z systemu bazowego do drzewa port&oacute;w. Bazowy system OpenBSD dostarczał sudo w wersji 1.7.2p8, kt&oacute;ra była wydana w 29 czerwca 2010 roku. Przeniesienie sudo do port&oacute;w pozwoli osobom pragnącym nadal pracować z narzędziem wykorzystać jego najnowszą wersji. Warto wspomnieć, że obecnym maintainerem sudo jest Todd C. Miller, kt&oacute;ry jest także developerem OpenBSD. To on dostarczył świeży port do test&oacute;w.</p>
+<p><a id="more"></a><a id="more-837"></a></p>
+<p>Docelowo sudo ma być zastąpione narzędziem <em>doas<&#47;em> napisanym przez Ted Unangst. Na swoim blogu Ted <a href="http:&#47;&#47;www.tedunangst.com&#47;flak&#47;post&#47;out-with-the-old-in-with-the-less">przedstawia<&#47;a> całą filozofię wymiany i przepisywania r&oacute;żnych narzędzi w OpenBSD. Zachęcam do przeczytania.</p>
+<p>Czy <em>doas<&#47;em> przejmie rolę sudo(8) - nie jest jeszcze całkowicie rozstrzygnięte. Theo <a href="http:&#47;&#47;marc.info&#47;?l=openbsd-ports&amp;m=143481227122523&amp;w=2">wyraził wątpliwości<&#47;a> wynikające z początkowych problem&oacute;w w parsowaniu oraz braku privsep (rozdzielenie uprawnień) w <em>doas<&#47;em>. Rozważane jest r&oacute;wnież lekkie rozbudowanie <a href="http:&#47;&#47;www.openbsd.org&#47;cgi-bin&#47;man.cgi&#47;OpenBSD-current&#47;man1&#47;su.1?query=su">su(1)<&#47;a>, co pozwoliłoby deweloperom skupić się na jednym pliku binarnym z prawem <em>setuid<&#47;em> zamiast dw&oacute;ch.</p>

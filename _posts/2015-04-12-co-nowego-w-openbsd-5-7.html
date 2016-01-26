@@ -1,0 +1,43 @@
+---
+layout: post
+status: publish
+published: true
+title: Co nowego w OpenBSD 5.7?
+author:
+  display_name: kamil
+  login: kamil
+  email: krytarowski@gmail.com
+  url: ''
+author_login: kamil
+author_email: krytarowski@gmail.com
+excerpt: "Ted Unangst, deweloper OpenBSD&nbsp; zamieścił na <a href=\"http:&#47;&#47;www.tedunangst.com&#47;flak&#47;post&#47;OpenBSD-57-highlights\">swoim
+  blogu<&#47;a> skr&oacute;t nowości kt&oacute;re czekają nas w nadchodzącym wydaniu
+  5.7, zaplanowanym na 1 maja.\r\n\r\n"
+wordpress_id: 389
+wordpress_url: http://beastie.pl/?p=389
+date: '2015-04-12 23:34:22 -0400'
+date_gmt: '2015-04-12 21:34:22 -0400'
+categories:
+- Bez kategorii
+tags:
+- openbsd
+- bezpieczeństwo
+- usb
+- usb3.0
+- hash
+- pie
+- gpt
+- fdisk
+comments: []
+---
+<p>Ted Unangst, deweloper OpenBSD&nbsp; zamieścił na <a href="http:&#47;&#47;www.tedunangst.com&#47;flak&#47;post&#47;OpenBSD-57-highlights">swoim blogu<&#47;a> skr&oacute;t nowości kt&oacute;re czekają nas w nadchodzącym wydaniu 5.7, zaplanowanym na 1 maja.</p>
+<p><a id="more"></a><a id="more-389"></a></p>
+<p>Wśr&oacute;d tych zmian warto wymienić:</p>
+<ul>
+<li>wsparcie dla <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;USB_3.0">USB 3.0<&#47;a>,<&#47;li>
+<li>wykorzystanie silniejszych <a href="https:&#47;&#47;pl.wikipedia.org&#47;wiki&#47;Funkcja_skr%C3%B3tu">funkcji skr&oacute;tu<&#47;a> -- zastąpienie MD5 przez SHA512 oraz wprowadzenie SipHash w miejsce operacji na strukturach danych będących tablicami hash,<&#47;li>
+<li>weryfikację poprawnego użycia parametr&oacute;w wejściowych przez funkcja języka C memcpy(3) -- pozwoli to wyłapać błędy w programach korzystających z tego API w spos&oacute;b niewłaściwy,<&#47;li>
+<li>kontynuację prac nad randomizacją przestrzeni adresowej poprzez udoskonalenia w <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Position-independent_code">PIE<&#47;a> (ang. <em>position independent executables<&#47;em>) -- celem zabezpieczenia przed tzw. ROP (ang. <em>return oriented programming<&#47;em>),<&#47;li>
+<li>restrukturyzację pakiet&oacute;w z systemem bazowym, od teraz konfiguracja (etc i xetc) jest dołączona do systemu bazowego (base i ixbase),<&#47;li>
+<li>wsparcie dla <a href="https:&#47;&#47;pl.wikipedia.org&#47;wiki&#47;GUID_Partition_Table">GPT<&#47;a> w fdisk(8).<&#47;li><br />
+<&#47;ul></p>
